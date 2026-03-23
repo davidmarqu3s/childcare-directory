@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creches Portugal — Wireframe</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #f7f7f5; color: #1a1a1a; }
+
+  /* NAV */
+  nav { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 12px 20px; display: flex; align-items: center; gap: 16px; }
+  nav .logo { font-weight: 700; font-size: 15px; letter-spacing: -0.3px; }
+  nav .logo span { color: #888; font-weight: 400; }
+  nav .search-bar { flex: 1; max-width: 420px; display: flex; border: 1.5px solid #ccc; border-radius: 8px; overflow: hidden; background: #fff; }
+  nav .search-bar input { flex: 1; border: none; padding: 8px 12px; font-size: 14px; outline: none; }
+  nav .search-bar button { background: #1a1a1a; color: #fff; border: none; padding: 8px 16px; font-size: 13px; cursor: pointer; }
+  nav .filters { display: flex; gap: 8px; margin-left: auto; }
+  nav .filter-chip { border: 1px solid #ccc; border-radius: 20px; padding: 5px 12px; font-size: 12px; background: #fff; cursor: pointer; }
+  nav .filter-chip.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+
+  /* MAIN LAYOUT */
+  .main { display: flex; height: calc(100vh - 53px); }
+
+  /* LIST PANEL */
+  .list-panel { width: 380px; min-width: 320px; overflow-y: auto; background: #fff; border-right: 1px solid #e0e0e0; }
+  .list-header { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; font-size: 13px; color: #666; }
+  .list-header strong { color: #1a1a1a; }
+  .result-card { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; cursor: pointer; transition: background 0.1s; }
+  .result-card:hover { background: #f9f9f7; }
+  .result-card.active { background: #fafaf8; border-left: 3px solid #1a1a1a; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .card-name { font-size: 14px; font-weight: 600; line-height: 1.3; }
+  .card-badge { font-size: 10px; padding: 2px 7px; border-radius: 4px; white-space: nowrap; font-weight: 500; }
+  .badge-ipss { background: #e8f5e9; color: #2e7d32; }
+  .badge-private { background: #fff3e0; color: #e65100; }
+  .badge-public { background: #e3f2fd; color: #1565c0; }
+  .card-address { font-size: 12px; color: #888; margin-top: 4px; }
+  .card-meta { display: flex; gap: 12px; margin-top: 8px; }
+  .card-meta span { font-size: 11px; color: #666; }
+  .card-meta .dot { color: #ccc; }
+  .card-dist { font-size: 12px; color: #aaa; font-weight: 500; }
+
+  /* MAP PANEL */
+  .map-panel { flex: 1; background: #e8e4dc; position: relative; overflow: hidden; }
+  /* Fake map grid */
+  .map-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .map-label { position: absolute; font-size: 11px; color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+  /* Fake "roads" */
+  .road { position: absolute; background: rgba(255,255,255,0.7); }
+  .road.h { height: 3px; }
+  .road.v { width: 3px; }
+  /* Map pins */
+  .pin { position: absolute; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.25); transform: translate(-50%, -50%); cursor: pointer; }
+  .pin.ipss { background: #4caf50; }
+  .pin.private { background: #ff9800; }
+  .pin.public { background: #2196f3; }
+  .pin.active { width: 18px; height: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.4); z-index: 10; }
+  /* Map popup */
+  .map-popup { position: absolute; background: #fff; border-radius: 8px; padding: 10px 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); font-size: 13px; min-width: 180px; }
+  .map-popup .popup-name { font-weight: 600; font-size: 13px; }
+  .map-popup .popup-sub { font-size: 11px; color: #888; margin-top: 2px; }
+  /* Map controls */
+  .map-controls { position: absolute; top: 12px; right: 12px; display: flex; flex-direction: column; gap: 4px; }
+  .map-btn { background: #fff; border: 1px solid #ddd; border-radius: 6px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 16px; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  /* Legend */
+  .map-legend { position: absolute; bottom: 16px; left: 16px; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 10px 14px; font-size: 11px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .legend-item { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+  .legend-item:last-child { margin-bottom: 0; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* DETAIL PANEL (mobile detail — shown on click) */
+  .detail-panel { display: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">creches<span>.pt</span></div>
+  <div class="search-bar">
+    <input type="text" value="Alvalade, Lisboa" placeholder="Morada, código postal ou bairro…" />
+    <button>Pesquisar</button>
+  </div>
+  <div class="filters">
+    <div class="filter-chip active">Todos</div>
+    <div class="filter-chip">IPSS</div>
+    <div class="filter-chip">Privado</div>
+    <div class="filter-chip">Público</div>
+    <div class="filter-chip">+ Filtros</div>
+  </div>
+</nav>
+
+<div class="main">
+
+  <!-- LIST -->
+  <div class="list-panel">
+    <div class="list-header"><strong>47 creches</strong> perto de Alvalade, Lisboa</div>
+
+    <!-- Card 1 — active -->
+    <div class="result-card active">
+      <div class="card-top">
+        <div class="card-name">Creche da Paróquia de Alvalade</div>
+        <div class="card-badge badge-ipss">IPSS</div>
+      </div>
+      <div class="card-address">Rua de Angola, 15 · Alvalade</div>
+      <div class="card-meta">
+        <span>Capacidade: 60</span>
+        <span class="dot">·</span>
+        <span>0–3 anos</span>
+        <span class="dot">·</span>
+        <span class="card-dist">320 m</span>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="result-card">
+      <div class="card-top">
+        <div class="card-name">Jardim de Infância Mundo Pequenino</div>
+        <div class="card-badge badge-private">Privado</div>
+      </div>
+      <div class="card-address">Av. da Igreja, 102 · Alvalade</div>
+      <div class="card-meta">
+        <span>Capacidade: 35</span>
+        <span class="dot">·</span>
+        <span>0–6 anos</span>
+        <span class="dot">·</span>
+        <span class="card-dist">510 m</span>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="result-card">
+      <div class="card-top">
+        <div class="card-name">Centro Social S. João de Brito</div>
+        <div class="card-badge badge-ipss">IPSS</div>
+      </div>
+      <div class="card-address">Rua Padre António Vieira, 8</div>
+      <div class="card-meta">
+        <span>Capacidade: 90</span>
+        <span class="dot">·</span>
+        <span>0–3 anos</span>
+        <span class="dot">·</span>
+        <span class="card-dist">730 m</span>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="result-card">
+      <div class="card-top">
+        <div class="card-name">Creche Municipal de Alvalade</div>
+        <div class="card-badge badge-public">Público</div>
+      </div>
+      <div class="card-address">Rua Cidade de Cardiff, 3</div>
+      <div class="card-meta">
+        <span>Capacidade: 45</span>
+        <span class="dot">·</span>
+        <span>0–3 anos</span>
+        <span class="dot">·</span>
+        <span class="card-dist">1.1 km</span>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="result-card">
+      <div class="card-top">
+        <div class="card-name">Jardim Escola João de Deus</div>
+        <div class="card-badge badge-private">Privado</div>
+      </div>
+      <div class="card-address">Av. Almirante Gago Coutinho, 84</div>
+      <div class="card-meta">
+        <span>Capacidade: 120</span>
+        <span class="dot">·</span>
+        <span>3–6 anos</span>
+        <span class="dot">·</span>
+        <span class="card-dist">1.4 km</span>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="result-card">
+      <div class="card-top">
+        <div class="card-name">Infantário Obra Social das Irmãs</div>
+        <div class="card-badge badge-ipss">IPSS</div>
+      </div>
+      <div class="card-address">Rua Augusto Gil, 22 · Areeiro</div>
+      <div class="card-meta">
+        <span>Capacidade: 50</span>
+        <span class="dot">·</span>
+        <span>0–3 anos</span>
+        <span class="dot">·</span>
+        <span class="card-dist">1.7 km</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map-panel">
+
+    <!-- Fake road network -->
+    <div class="road h" style="top:35%;left:0;right:0;"></div>
+    <div class="road h" style="top:55%;left:0;right:0;"></div>
+    <div class="road h" style="top:70%;left:0;right:0;"></div>
+    <div class="road v" style="left:25%;top:0;bottom:0;"></div>
+    <div class="road v" style="left:55%;top:0;bottom:0;"></div>
+    <div class="road v" style="left:75%;top:0;bottom:0;"></div>
+
+    <!-- Fake map labels -->
+    <div class="map-label" style="top:28%;left:28%;">Alvalade</div>
+    <div class="map-label" style="top:62%;left:60%;">Areeiro</div>
+    <div class="map-label" style="top:20%;left:60%;">Roma</div>
+
+    <!-- Pins -->
+    <div class="pin ipss active" style="top:38%;left:32%;" title="Creche Paróquia Alvalade"></div>
+    <div class="pin private" style="top:31%;left:42%;" title="Mundo Pequenino"></div>
+    <div class="pin ipss" style="top:44%;left:48%;" title="S. João de Brito"></div>
+    <div class="pin public" style="top:52%;left:35%;" title="Creche Municipal"></div>
+    <div class="pin private" style="top:29%;left:62%;" title="João de Deus"></div>
+    <div class="pin ipss" style="top:65%;left:68%;" title="Obra Social Irmãs"></div>
+    <div class="pin private" style="top:42%;left:70%;"></div>
+    <div class="pin ipss" style="top:58%;left:25%;"></div>
+    <div class="pin private" style="top:25%;left:52%;"></div>
+    <div class="pin public" style="top:72%;left:45%;"></div>
+    <div class="pin private" style="top:35%;left:80%;"></div>
+
+    <!-- Active popup -->
+    <div class="map-popup" style="top:24%;left:19%;">
+      <div class="popup-name">Creche da Paróquia de Alvalade</div>
+      <div class="popup-sub">IPSS · 320 m · Capacidade: 60</div>
+    </div>
+
+    <!-- Controls -->
+    <div class="map-controls">
+      <div class="map-btn">+</div>
+      <div class="map-btn">−</div>
+    </div>
+
+    <!-- Legend -->
+    <div class="map-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#4caf50"></div> IPSS (gratuito/subsidiado)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ff9800"></div> Privado</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2196f3"></div> Público</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,115 +1,128 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["aiohttp", "tqdm"]
+# ///
 """
-Geocode creches_portugal.csv rows missing lat/lng via Nominatim.
-Writes results back to creches_portugal.csv.
+Geocode creches_portugal.csv rows missing lat/lng using Nominatim.
+Writes results back to creches_portugal.csv in-place.
 
-Query strategy (stops at first hit):
-  1. morada + localidade, Portugal
-  2. morada + concelho, Portugal
-  3. nome + localidade, Portugal
-  4. codigo_postal, Portugal  (always available — reliable fallback)
+Run with: uv run geocode.py
 
-Saves every 50 hits so the script is safe to interrupt and resume.
-Run:  python3 geocode.py          — full run
-      python3 geocode.py 100      — first 100 rows only (for testing)
+Rate: 1 request/sec (Nominatim policy).
+Safe to interrupt and resume — already-geocoded rows are skipped on next run.
+Progress is flushed to disk every 50 rows so a crash loses at most 50 rows of work.
 """
 
+import asyncio
 import csv
+import signal
 import sys
-import time
-import requests
+import aiohttp
+from tqdm import tqdm
 
 INPUT = "creches_portugal.csv"
-HEADERS = {"User-Agent": "childcare-directory-pt/1.0 (github.com/davidmarqu3s/childcare-directory)"}
-RATE_LIMIT = 1.1  # Nominatim policy: max 1 req/sec
+HEADERS = {"User-Agent": "childcare-directory-pt/1.0 (geocode)"}
+RATE_LIMIT = 1.1   # seconds between requests (Nominatim requires ≥1/sec)
+SAVE_EVERY = 50    # flush to disk every N rows processed
 
 
-def nominatim_search(q: str) -> tuple[str, str] | None:
-    params = {"q": q, "format": "json", "limit": 1, "countrycodes": "pt"}
+def save(rows: list[dict], fieldnames: list[str]) -> None:
+    with open(INPUT, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+async def nominatim_geocode(session: aiohttp.ClientSession, q: str) -> tuple[str, str] | None:
+    params = {
+        "q": q,
+        "format": "json",
+        "limit": 1,
+        "countrycodes": "pt",
+        "bounded": 1,
+        "viewbox": "-9.5,36.8,-6.2,42.2",  # Portugal bounding box
+    }
     try:
-        r = requests.get(
+        async with session.get(
             "https://nominatim.openstreetmap.org/search",
             params=params,
             headers=HEADERS,
-            timeout=10,
-        )
-        results = r.json()
-        if results:
-            lat = results[0].get("lat", "")
-            lon = results[0].get("lon", "")
-            if lat and lon:
-                return lat, lon
+            timeout=aiohttp.ClientTimeout(total=10),
+        ) as r:
+            results = await r.json()
+            if results:
+                return results[0]["lat"], results[0]["lon"]
     except Exception as e:
-        print(f"  ERROR: {e}")
+        print(f"\n  ERROR ({q!r}): {e}", file=sys.stderr)
     return None
 
 
-def geocode_row(row: dict) -> tuple[str, str] | None:
-    morada = row["morada"].strip()
-    localidade = row["localidade"].strip()
-    concelho = row["concelho"].strip()
-    nome = row["nome"].strip()
-    cp = row["codigo_postal"].strip()
+async def geocode_row(session: aiohttp.ClientSession, row: dict) -> tuple[str, str] | None:
+    morada = row["morada"]
+    localidade = row["localidade"]
+    cp = row["codigo_postal"]
+    nome = row["nome"]
 
     queries = []
-    if morada:
+    if morada and cp:
+        queries.append(f"{morada}, {cp}, Portugal")
+    if morada and localidade:
         queries.append(f"{morada}, {localidade}, Portugal")
-        queries.append(f"{morada}, {concelho}, Portugal")
-    queries.append(f"{nome}, {localidade}, Portugal")
-    queries.append(f"{cp}, Portugal")
+    if nome and cp:
+        queries.append(f"{nome}, {cp}, Portugal")
+    if nome and localidade:
+        queries.append(f"{nome}, {localidade}, Portugal")
 
     for q in queries:
-        result = nominatim_search(q)
-        time.sleep(RATE_LIMIT)
+        result = await nominatim_geocode(session, q)
+        await asyncio.sleep(RATE_LIMIT)
         if result:
             return result
 
     return None
 
 
-def main(limit: int | None = None):
+async def main():
     with open(INPUT, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
         fieldnames = list(rows[0].keys())
 
-    all_missing = [r for r in rows if not r.get("latitude") or not r.get("longitude")]
-    to_geocode = all_missing[:limit] if limit else all_missing
-
-    print(f"Total rows:    {len(rows)}")
-    print(f"Missing GPS:   {len(all_missing)}")
-    print(f"Already done:  {len(rows) - len(all_missing)}")
-    print(f"This run:      {len(to_geocode)}")
-    print(f"Est. time:     ~{len(to_geocode) * RATE_LIMIT / 3600:.1f}h (best case, 1 query/row)")
-    print()
+    to_geocode = [r for r in rows if not r.get("latitude") or not r.get("longitude")]
+    already_done = len(rows) - len(to_geocode)
+    print(f"Already geocoded: {already_done} / {len(rows)}")
+    print(f"Remaining:        {len(to_geocode)}")
+    est_hours = len(to_geocode) * RATE_LIMIT / 3600
+    print(f"Estimated time:   {est_hours:.1f}h best case, {est_hours * 4:.1f}h worst case")
+    print(f"Saving every {SAVE_EVERY} rows — safe to Ctrl-C and resume.\n")
 
     found = 0
-    failed = 0
+    processed = 0
 
-    def save():
-        with open(INPUT, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(rows)
+    # Register SIGTERM handler so kill also saves cleanly
+    def _shutdown(signum, frame):
+        print(f"\nSignal {signum} received — saving progress ({found} new hits)...")
+        save(rows, fieldnames)
+        sys.exit(0)
 
-    for i, row in enumerate(to_geocode, 1):
-        result = geocode_row(row)
-        if result:
-            row["latitude"], row["longitude"] = result
-            found += 1
-            if found % 50 == 0:
-                save()
-                print(f"  [checkpoint] {found} geocoded so far ({i}/{len(to_geocode)} processed)")
-        else:
-            failed += 1
-            print(f"  FAILED [{i}/{len(to_geocode)}]: {row['nome'][:50]} ({row['codigo_postal']})")
+    signal.signal(signal.SIGTERM, _shutdown)
 
-        # Progress every 100 rows
-        if i % 100 == 0:
-            print(f"  Progress: {i}/{len(to_geocode)} — found={found}, failed={failed}")
+    try:
+        async with aiohttp.ClientSession() as session:
+            for row in tqdm(to_geocode, desc="Geocoding", unit="row"):
+                result = await geocode_row(session, row)
+                if result:
+                    row["latitude"], row["longitude"] = result
+                    found += 1
+                processed += 1
+                if processed % SAVE_EVERY == 0:
+                    save(rows, fieldnames)
 
-    save()
-    print(f"\nGeocoded: {found}/{len(to_geocode)}  |  Failed: {failed}  →  {INPUT}")
+    except KeyboardInterrupt:
+        print(f"\nInterrupted — saving progress ({found} new hits)...")
+
+    save(rows, fieldnames)
+    print(f"\nDone. Geocoded {found}/{len(to_geocode)} rows → {INPUT}")
 
 
 if __name__ == "__main__":
-    limit = int(sys.argv[1]) if len(sys.argv) > 1 else None
-    main(limit)
+    asyncio.run(main())
