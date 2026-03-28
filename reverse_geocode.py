@@ -16,7 +16,7 @@ import urllib.parse
 
 INPUT = "creches_portugal.csv"
 OUTPUT = "reverse_geocode_results.csv"
-DELAY = 1.1  # Nominatim rate limit: 1 req/sec
+DELAY = 1.5  # Nominatim rate limit: 1 req/sec — using 1.5s for safety margin
 
 FIELDNAMES = [
     "id", "nome", "stored_morada", "stored_codigo_postal", "stored_localidade",
