@@ -1,0 +1,19 @@
+[extend]
+useDefault = true
+
+[[rules]]
+description = "Supabase Service Key"
+id = "supabase-service-key"
+regex = '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+'''
+tags = ["supabase", "jwt"]
+
+[[rules]]
+description = "Google Places API Key"
+id = "google-places-key"
+regex = '''AIzaSy[A-Za-z0-9_-]{33}'''
+tags = ["google", "api-key"]
+
+[allowlist]
+paths = [
+    ".env.example",
+]

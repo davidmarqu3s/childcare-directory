@@ -1,5 +1,6 @@
 .env
 .DS_Store
 **/.DS_Store
+.gstack/
 .claude/worktrees/sharp-jennings/
 .claude/worktrees/interesting-agnesi/
