@@ -2,5 +2,7 @@
 .DS_Store
 **/.DS_Store
 .gstack/
+reverse_geocode_results.csv
+geocode.log
 .claude/worktrees/sharp-jennings/
 .claude/worktrees/interesting-agnesi/
