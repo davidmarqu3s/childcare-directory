@@ -84,6 +84,10 @@ components/
 lib/
   supabase.ts            — Client + typed queries
   geo.ts                 — PostGIS radius search RPC
+
+// In app/layout.tsx:
+import { Analytics } from '@vercel/analytics/react'
+// Add <Analytics /> before </body> — that's it
 ```
 
 ### Supabase Schema (proposed)
@@ -242,7 +246,7 @@ NEXT_PUBLIC_MAPBOX_TOKEN=<Mapbox public token>
 - Cost/fee data: not in source data — premium feature or user-contributed
 - Geocoding completion: ~4,616 rows in progress (started at 21:30, finishing ~01:00). Rows without coords after completion go into "Sem localização exacta" list-only fallback.
 - Postcode lookup table: import CTT postcode → lat/lng data to Supabase before launch (one-time)
-- Analytics: Plausible or Vercel Analytics (privacy-friendly, GDPR-safe for EU)
+- ~~Analytics: Plausible or Vercel Analytics~~ **DECIDED: Vercel Analytics** — `@vercel/analytics` package + `<Analytics />` in `app/layout.tsx`. GDPR-safe, no cookie banner needed, free on Vercel hobby tier. Add from day one.
 
 ## Success Criteria
 
