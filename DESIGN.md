@@ -70,14 +70,16 @@ Next.js 14 **App Router** (`app/` directory, not `pages/`):
 app/
   page.tsx               — Search home (postcode / bairro input)
   search/page.tsx        — Results: list + map split view (?q=alvalade&r=2000)
-  creche/[slug]/page.tsx — Crèche detail page (SEO target, generateMetadata)
+  creche/[slug]/page.tsx — Crèche detail page (ISR on-demand, generateMetadata, LocalBusiness JSON-LD)
+  sitemap.ts             — Generates sitemap.xml from all 5,887 slugs (Next.js built-in)
 
 components/
   SearchBar.tsx          — Autocomplete on localidade/concelho (Supabase, debounced)
-  ResultsList.tsx        — Scrollable list panel with pagination
-  MapPanel.tsx           — Mapbox GL with pins, popup on hover
-  CreceheCard.tsx        — List item (nome, badge, address, distance, capacidade)
-  CreecheDetail.tsx      — Full detail (all fields, static map image, contact)
+  SearchResults.tsx      — Client Component; owns activeId state; renders ResultsList + MapPanel side by side
+  ResultsList.tsx        — Scrollable list; receives activeId + onSelect props
+  MapPanel.tsx           — Mapbox GL with pins; receives activeId + onSelect props; lazy-loads on mobile
+  CrecheCard.tsx         — List item (nome, badge, address, distance, capacidade)
+  CrecheDetail.tsx       — Full detail (all fields, static map image, contact)
 
 lib/
   supabase.ts            — Client + typed queries
@@ -118,6 +120,12 @@ CREATE INDEX idx_location ON instituicoes USING GIST(location);
 -- Full-text search index
 CREATE INDEX idx_search ON instituicoes USING GIN(search_vector);
 
+-- Trigram index for ILIKE autocomplete on localidade/concelho
+-- Enables index-scan on ILIKE '%termo%' instead of sequential scan
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+CREATE INDEX idx_instituicoes_localidade_trgm ON instituicoes USING GIN(localidade gin_trgm_ops);
+CREATE INDEX idx_instituicoes_concelho_trgm ON instituicoes USING GIN(concelho gin_trgm_ops);
+
 -- Populate search_vector on insert/update
 CREATE TRIGGER tsvector_update BEFORE INSERT OR UPDATE ON instituicoes
   FOR EACH ROW EXECUTE FUNCTION
@@ -125,17 +133,34 @@ CREATE TRIGGER tsvector_update BEFORE INSERT OR UPDATE ON instituicoes
 
 -- PostGIS radius search RPC (SECURITY DEFINER so anon key can call it)
 -- radius_m capped at 50km to prevent full-table scans; page_offset increments by 50
+-- Returns only the fields needed for search results (not full rows — avoids overfetch)
 CREATE FUNCTION nearby_instituicoes(lat FLOAT, lng FLOAT, radius_m INT, page_offset INT DEFAULT 0)
-RETURNS SETOF instituicoes AS $$
-  SELECT * FROM instituicoes
+RETURNS TABLE(
+  id TEXT, slug TEXT, nome TEXT, natureza_juridica TEXT, tipo TEXT,
+  morada TEXT, localidade TEXT, codigo_postal TEXT,
+  capacidade INTEGER, utentes INTEGER,
+  latitude FLOAT, longitude FLOAT,
+  dist_m FLOAT
+) AS $$
+  SELECT
+    id, slug, nome, natureza_juridica, tipo,
+    morada, localidade, codigo_postal,
+    capacidade, utentes,
+    ST_Y(location::geometry) AS latitude,
+    ST_X(location::geometry) AS longitude,
+    ST_Distance(location, ST_MakePoint(lng, lat)::geography) AS dist_m
+  FROM instituicoes
   WHERE ST_DWithin(
     location,
     ST_MakePoint(lng, lat)::geography,
-    LEAST(radius_m, 50000)   -- guard: max 50km
+    LEAST(radius_m, 50000)
   )
-  ORDER BY ST_Distance(location, ST_MakePoint(lng, lat)::geography)
+  ORDER BY dist_m
   LIMIT 50 OFFSET page_offset;
-$$ LANGUAGE sql SECURITY DEFINER;
+$$ LANGUAGE sql STABLE SECURITY DEFINER;
+
+-- Full row fetch for detail page (by slug)
+-- Use direct table SELECT, not RPC — detail page needs all fields
 
 -- RLS: all rows readable by anon (directory is public)
 ALTER TABLE instituicoes ENABLE ROW LEVEL SECURITY;
@@ -160,10 +185,17 @@ CREATE POLICY "public read" ON instituicoes FOR SELECT USING (true);
    - **Empty state:** "Nenhuma creche encontrada num raio de Xkm. Tente alargar o raio." + button to double radius.
    - **No-coordinates fallback:** rows without `location` are returned by a separate list-only query (no radius filter) and shown in a "Sem localização exacta" section below the map results.
 
+   - **Mobile layout:** On mobile, list fills the screen with a sticky "Ver no mapa" button at the bottom. Tapping it lazy-loads Mapbox GL JS and switches to map view. Map does NOT load on initial page paint — this keeps Time to Interactive fast on mid-range Androids.
+   - **Desktop layout:** List panel (380px, left) + map panel (fills right), both visible simultaneously. Mapbox GL JS loads immediately on desktop.
+
 3. **Detail page (`/creche/[id]-[slug]`):**
+   - `generateStaticParams()` returns `[]` — all pages are ISR on-demand (generated on first visit, then cached). No build-time pre-render of 5,887 pages.
+   - `export const revalidate = 86400` — revalidate cached pages every 24h.
    - Slug format: `[id]-[nome-slugified]` e.g. `1234-creche-da-paroquia-de-alvalade`. Decided — use this format. Slugify on import.
    - Static map image (Mapbox Static Images API, not GL — saves map load quota) on detail page.
    - Shows `ultima_atualizacao` as "Dados actualizados em [date]" — transparency signal.
+   - **JSON-LD structured data:** LocalBusiness schema with nome, morada, telefone, coordinates. Google uses this for local search ranking.
+   - **sitemap.xml:** `app/sitemap.ts` queries all slugs from Supabase and returns them as Next.js sitemap entries. Google discovers all 5,887 pages via crawl.
 
 4. **Filters (v1):** `natureza_juridica` (IPSS / Privado / Público), radius (500m / 1km / 2km / 5km)
 
@@ -172,6 +204,37 @@ CREATE POLICY "public read" ON instituicoes FOR SELECT USING (true);
 Saved at: `childcare-directory/wireframe-v1.html`
 
 Layout: nav bar (logo + search + filter chips) → split view (380px list panel left, map fills right). Active card has left border highlight; active pin shows popup.
+
+## Test Strategy
+
+**Framework:** Vitest (unit) + Playwright (E2E). Add both when scaffolding the Next.js app.
+
+**Unit tests** (write alongside each file):
+- `lib/geo.ts` — `isPostcode()` regex, `lookupPostcode()` with found/not-found/error cases
+- `lib/supabase.ts` — `nearbyInstituicoes()` happy path, 0 results, error; `getInstituicao()` found/not-found
+- `components/SearchBar.tsx` — debounce, postcode detection, empty submit no-op
+- `components/SearchResults.tsx` — activeId state transitions (card click, pin click)
+
+**E2E tests** (Playwright, write after first working build):
+1. Postcode search → list + map renders with results
+2. Card click → map pin highlights
+3. Map pin click → list scrolls to card
+4. Mobile: "Ver no mapa" button → map lazy-loads
+5. Card click → navigate to detail page
+6. Invalid postcode → error message shown
+7. No results → empty state + "Alargar raio" CTA renders
+
+## Environment Variables
+
+```
+# Frontend (.env.local in Next.js app — these are safe to expose, protected by RLS)
+NEXT_PUBLIC_SUPABASE_URL=https://ebeqkfudnghdskfclqpr.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<anon key from Supabase dashboard>
+NEXT_PUBLIC_MAPBOX_TOKEN=<Mapbox public token>
+
+# NEVER use the service key in the frontend — it bypasses RLS.
+# Service key stays in the data pipeline scripts (.env in repo root) only.
+```
 
 ## Open Questions
 
@@ -192,11 +255,23 @@ Layout: nav bar (logo + search + filter chips) → split view (380px list panel 
 
 1. Wait for geocoding to finish (~01:00)
 2. Design and run the Supabase schema migration (load CSV → PostGIS)
-3. Scaffold Next.js project: `npx create-next-app@latest creches-pt`
-4. Implement Supabase client + `nearby_instituicoes` RPC
+3. Add slug generation to `load_supabase.py` — format: `{id}-{nome-slugified}` (lowercase, accents stripped, spaces→hyphens). Re-run upsert to populate slug column.
+4. Scaffold Next.js project: `npx create-next-app@latest creches-pt`
+5. Implement Supabase client + `nearby_instituicoes` RPC
 5. Build `SearchBar` + `ResultsList` + `MapPanel` components
 6. Build detail page with SEO metadata
 7. Deploy to Vercel, test on mobile
+
+## GSTACK REVIEW REPORT
+
+| Review | Trigger | Why | Runs | Status | Findings |
+|--------|---------|-----|------|--------|----------|
+| CEO Review | `/plan-ceo-review` | Scope & strategy | 0 | — | — |
+| Outside Voice | `/plan-eng-review` | Independent 2nd opinion | 1 | issues_found (3 accepted) | slug blocker, trigram index, SEO signals |
+| Eng Review | `/plan-eng-review` | Architecture & tests (required) | 1 | CLEAR (PLAN) | 5 issues, 0 critical gaps |
+| Design Review | `/plan-design-review` | UI/UX gaps | 0 | — | — |
+
+**VERDICT:** ENG CLEARED — ready to implement. Design review recommended before building UI components.
 
 ## What I noticed about how you think
 
