@@ -172,10 +172,34 @@ CREATE POLICY "public read" ON instituicoes FOR SELECT USING (true);
 ```
 
 ### Colour System — by `natureza_juridica` (NOT `tipo`)
-- IPSS: green (#4caf50)
-- Privado: orange (#ff9800)
-- Público: blue (#2196f3)
-- Unknown / other: grey (#9e9e9e) — fallback for edge cases
+
+Institution type colours:
+- IPSS: `#4caf50` (green) — badge bg: `#e8f5e9`, badge text: `#2e7d32`
+- Privado: `#ff9800` (orange) — badge bg: `#fff3e0`, badge text: `#e65100`
+- Público: `#2196f3` (blue) — badge bg: `#e3f2fd`, badge text: `#1565c0`
+- Desconhecido: `#9e9e9e` (grey) — badge bg: `#f5f5f5`, badge text: `#616161`
+
+Surface colours (to be confirmed in Figma, these are the wireframe values):
+- Page background: `#f7f7f5`
+- Card / panel background: `#ffffff`
+- Hero background: `#faf9f5` (slightly warmer than page bg)
+- Border: `#e0e0e0`
+- Border light (card separators): `#f0f0f0`
+
+Text:
+- Primary: `#1a1a1a`
+- Secondary: `#666666`
+- Muted: `#aaaaaa`
+
+**Token naming convention (CSS variables, to be set up in `app/globals.css`):**
+```css
+--color-ipss: #4caf50;
+--color-privado: #ff9800;
+--color-publico: #2196f3;
+--color-unknown: #9e9e9e;
+/* extend with -light and -text variants above */
+```
+All institution type colours must come from CSS variables — never hardcoded in components.
 
 ### Key Interactions
 
@@ -186,8 +210,9 @@ CREATE POLICY "public read" ON instituicoes FOR SELECT USING (true);
    - List (left, scrollable) + Map (right, sticky). Cards show: nome, badge (`natureza_juridica`), address, distance, capacidade.
    - **Bidirectional sync:** shared `activeId` state. Clicking a card: set `activeId`, map flyTo pin. Clicking a pin: set `activeId`, list scrolls to card via `scrollIntoView`.
    - **Pagination:** 50 results per page, "Load more" button increments `page_offset` in RPC.
+   - **List header:** "{N} creches perto de {localidade}" — e.g. "47 creches perto de Alvalade, Lisboa". If 0 results but broader area has results, show count for broader area as a hint.
    - **Empty state:** "Nenhuma creche encontrada num raio de Xkm. Tente alargar o raio." + button to double radius.
-   - **No-coordinates fallback:** rows without `location` are returned by a separate list-only query (no radius filter) and shown in a "Sem localização exacta" section below the map results.
+   - **No-coordinates fallback:** rows without `location` are returned by a separate list-only query (no radius filter) and shown in a "Sem localização exacta" section below the map results. Label: "Sem localização GPS confirmada" — shown below a visual divider, distinct from the main results.
 
    - **Mobile layout:** On mobile, list fills the screen with a sticky "Ver no mapa" button at the bottom. Tapping it lazy-loads Mapbox GL JS and switches to map view. Map does NOT load on initial page paint — this keeps Time to Interactive fast on mid-range Androids.
    - **Desktop layout:** List panel (380px, left) + map panel (fills right), both visible simultaneously. Mapbox GL JS loads immediately on desktop.
@@ -200,8 +225,93 @@ CREATE POLICY "public read" ON instituicoes FOR SELECT USING (true);
    - Shows `ultima_atualizacao` as "Dados actualizados em [date]" — transparency signal.
    - **JSON-LD structured data:** LocalBusiness schema with nome, morada, telefone, coordinates. Google uses this for local search ranking.
    - **sitemap.xml:** `app/sitemap.ts` queries all slugs from Supabase and returns them as Next.js sitemap entries. Google discovers all 5,887 pages via crawl.
+   - **Information hierarchy on detail page** (top → bottom, by parent priority):
+     1. Breadcrumb + back link (orientation)
+     2. Institution type badge (IPSS/Privado/Público) + nome (confirm you're in the right place)
+     3. Address (is it near me?)
+     4. Contact CTAs: "Ligar agora" (primary) + "Enviar email" (secondary) — above the fold on mobile
+     5. Capacity vs. current utentes (can I get a spot?)
+     6. Horário (does it fit my schedule?)
+     7. Tipo de serviço + idade (0–3 / 3–6 / 0–6)
+     8. Static map (where exactly is it?)
+     9. Remaining fields: natureza_jurídica, última actualização, website
+   - **Missing data handling:** Fields absent from Carta Social (telefone, email, website) are hidden, not shown as "N/A". If no contact info exists, show: "Contacto não disponível — tente pesquisar o nome directamente."
 
 4. **Filters (v1):** `natureza_juridica` (IPSS / Privado / Público), radius (500m / 1km / 2km / 5km)
+
+## Responsive Specs
+
+### Breakpoints
+- Mobile: < 768px (design at 390px)
+- Desktop: ≥ 768px (design at 1440px)
+- No tablet breakpoint in v1 — at 768px, switch directly to desktop split-panel layout.
+
+### Home page
+- Mobile: headline scales to ~28–32px. Search box full-width minus 32px margin. "Pesquisar" button full-width below search bar. Filter chips scroll horizontally if they overflow.
+- Desktop: centered column, max-width 560px for search box.
+
+### Results page
+- Mobile: full-width list (no map panel). Sticky "Ver no mapa" button at bottom (48px tall, full-width minus 32px margin, above the browser chrome). Map view replaces list on tap — back navigation returns to list.
+- Desktop: 380px list panel (fixed, scrollable) + map panel fills remaining width.
+- The split-panel layout does NOT collapse to a stacked layout — it switches directly to mobile-list-only.
+
+### Detail page
+- Mobile: single column, full width minus 32px margin. Contact CTAs full-width stacked. Static map full-width. Info fields in single column.
+- Desktop: centred content column, max-width 720px.
+
+## Accessibility (v1)
+
+**Non-negotiable for v1:**
+- Touch targets: minimum 44×44px for all interactive elements (cards, buttons, chips, map controls).
+- Colour contrast: all text must meet WCAG AA (4.5:1 for body text, 3:1 for large text). The IPSS badge (`#2e7d32` on `#e8f5e9`) is ~4.6:1 — passes AA but is borderline. Accepted for v1; revisit if an accessibility audit flags it.
+- Focus indicators: visible keyboard focus ring on all interactive elements (cards, buttons, search box, filter chips). Do not remove outline without replacing it.
+- ARIA landmarks: `<main>`, `<nav>`, `<aside>` (for map panel). Results list: `role="list"` + `aria-label="Resultados da pesquisa"`.
+- Map accessibility: Mapbox GL JS map is not screen-reader accessible — this is acceptable for v1. The list is the primary interface and is fully accessible.
+- Language: `<html lang="pt">` (already in wireframe).
+
+**Deferred to v2:**
+- Screen reader announcements for search results loading (ARIA live regions)
+- Keyboard navigation between map pins
+- Reduced-motion preference for map animations
+
+## User Journey & Emotional Arc
+
+| Step | User does | User feels | Design supports it |
+|---|---|---|---|
+| 1. First visit | Lands on home page | "What is this? Can I trust it?" | Clean, uncluttered home. Stat "5.887 instituições" signals authority. No signup wall. |
+| 2. Enters location | Types postcode or bairro | "Will this actually work?" | Debounced autocomplete responds immediately. Postcode resolves fast (static table lookup). |
+| 3. Sees results | 47 pins appear, list loads | **"Whoa — I didn't know there were this many."** | Count prominent in list header. Map shows coloured pins spatially. IPSS/Privado/Público visible at a glance. |
+| 4. Scans list | Reads cards | "Which ones are worth looking at?" | Distance sorted by default. Badges (IPSS = subsidised = parents care). Capacity visible. |
+| 5. Selects one | Clicks card | "Let me find out more" | Active state: card highlights, map pin enlarges, popup appears. Feels responsive. |
+| 6. Views detail | Reads detail page | "Can I actually get my child in here? How do I contact them?" | Contact CTAs above the fold. Capacity vs utentes shows demand. Horário visible. |
+| 7. Contacts institution | Taps "Ligar agora" | "I found it." | Task complete. Nothing to do after this — no account, no booking, just the contact. |
+
+**First 5 seconds (visceral):** The home page must communicate "this is the place to find childcare in Portugal" without any explanation. The stat + headline + search box does this. No hero image needed.
+
+**5-minute experience (behavioural):** The search → results → detail flow must take under 30 seconds. Every interaction is one tap: search, select, call.
+
+**Trust signals throughout:**
+- "Fonte: Carta Social (MTSSS)" on every detail page — government data, not user-generated
+- `ultima_atualizacao` visible — not stale
+- IPSS badge signals subsidised, which Portuguese parents understand as a quality/cost signal
+- No ads, no popups, no signup — pure utility
+
+## Interaction States
+
+| Screen / Feature | Loading | Empty | Error | Success | Partial |
+|---|---|---|---|---|---|
+| **Home — autocomplete** | Spinner inside search box (16px, right side), debounce 300ms | No dropdown shown | Dropdown hidden, no error shown (silent fail — user continues typing) | Dropdown with matches | — |
+| **Home — postcode lookup** | Spinner inside search box | "Código postal não encontrado" inline below box | "Código postal não encontrado" inline below box | Navigates to /search | — |
+| **Results — list** | 4 skeleton cards (grey shimmer, same height as real cards) | Empty state: "Nenhuma creche encontrada num raio de Xkm." + "Alargar para Xkm" button | "Erro ao carregar resultados. Tente novamente." + retry button | List renders | Results render but map fails: list is primary, map shows "Mapa indisponível" placeholder |
+| **Results — map** | Map tiles load progressively (Mapbox default behaviour, no custom state needed) | No pins shown, map still renders | "Mapa indisponível" grey placeholder — list remains fully functional | Pins visible | Some pins missing (rows without GPS): shown in "Sem localização GPS confirmada" section only |
+| **Results — "Ver no mapa" (mobile)** | Button shows spinner while Mapbox GL JS loads (~2–4s on slow 4G) | — | If Mapbox fails to load: "Mapa indisponível" toast, return to list | Map view renders | — |
+| **Detail page** | Skeleton: badge + title block + two rows of info fields as grey bars | — | "Página não encontrada" — slug doesn't exist in DB → 404 with link back to home | Full detail renders | Missing contact info: hide field, show "Contacto não disponível" note if ALL contact fields are missing |
+| **Postcode lookup (runtime)** | — | "Código postal não encontrado na base de dados" — offer free-text search fallback | Same as empty | Lat/lng resolved, search proceeds | — |
+
+**Notes:**
+- Skeleton loaders only on the results list and detail page — not on the home page (instant render, no async on load).
+- All error states offer a recovery action. Never a dead end.
+- Toast duration: 4 seconds, bottom of screen on mobile.
 
 ## Wireframe
 
@@ -240,6 +350,19 @@ NEXT_PUBLIC_MAPBOX_TOKEN=<Mapbox public token>
 # Service key stays in the data pipeline scripts (.env in repo root) only.
 ```
 
+## Design Decisions (resolved)
+
+- **Autocomplete dropdown:** Each suggestion shows "Localidade, Concelho" — e.g. "Alvalade, Lisboa". Disambiguates places with the same name (there are multiple Alvalades in Portugal). No extra query needed, localidade + concelho already in the DB.
+- **Sort order:** Distance only (closest first). No IPSS boost. Parents filter by type themselves.
+- **Loading state (results list):** Skeleton cards (4 shimmer cards while fetching). Not map-first.
+- **Home page structure:** Separate home + /search results page. Not a single-page app.
+
+## Design Decisions (to resolve in Figma)
+
+- **Typography:** Typeface choice deferred to visual design. Must be readable at 13–14px on mid-range Android. System-ui/Inter is the fallback but not the final decision.
+- **Active card treatment:** Left border vs. background tint vs. other — deferred to visual design. Do not default to 3px left border without designer sign-off.
+- **Logo/brand mark:** "creches.pt" as wordmark only, or is there a mark/icon? Deferred.
+
 ## Open Questions
 
 - Waiting list data: not in Carta Social — source TBD (could be crowdsourced later)
@@ -273,9 +396,9 @@ NEXT_PUBLIC_MAPBOX_TOKEN=<Mapbox public token>
 | CEO Review | `/plan-ceo-review` | Scope & strategy | 0 | — | — |
 | Outside Voice | `/plan-eng-review` | Independent 2nd opinion | 1 | issues_found (3 accepted) | slug blocker, trigram index, SEO signals |
 | Eng Review | `/plan-eng-review` | Architecture & tests (required) | 1 | CLEAR (PLAN) | 5 issues, 0 critical gaps |
-| Design Review | `/plan-design-review` | UI/UX gaps | 0 | — | — |
+| Design Review | `/plan-design-review` | UI/UX gaps | 1 | CLEAR (PLAN) | score: 4/10 → 8/10, 8 decisions |
 
-**VERDICT:** ENG CLEARED — ready to implement. Design review recommended before building UI components.
+**VERDICT:** ENG + DESIGN CLEARED — ready to implement. Typography, active card style, and logo deferred to Figma (see Design Decisions section).
 
 ## What I noticed about how you think
 
