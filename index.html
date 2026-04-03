@@ -888,7 +888,26 @@ async function fetchNearby() {
           .ilike('codigo_postal', `${prefix}-%`)
           .order('nome')
           .limit(1000);
-        if (!error && data && data.length) rows = data;
+        if (!error && data && data.length) {
+          rows = data;
+          // Also fetch the full concelho so zooming out shows more creches
+          const concelhoFromPostcode = data.map(r => r.concelho).filter(Boolean)
+            .reduce((acc, c) => { acc[c] = (acc[c] || 0) + 1; return acc; }, {});
+          const topConcelho = Object.entries(concelhoFromPostcode).sort((a, b) => b[1] - a[1])[0]?.[0];
+          if (topConcelho) {
+            const { data: extra } = await sb
+              .from('institutions')
+              .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
+              .eq('is_active', true)
+              .ilike('concelho', `%${topConcelho}%`)
+              .order('nome')
+              .limit(1000);
+            if (extra && extra.length) {
+              const seen = new Set(rows.map(r => r.id));
+              rows = rows.concat(extra.filter(r => !seen.has(r.id)));
+            }
+          }
+        }
       }
     } catch(e) { console.warn('[creches] fetch error:', e); }
   }
