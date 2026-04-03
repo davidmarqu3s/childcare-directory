@@ -273,9 +273,10 @@ input  { font-family: inherit; }
 .app-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
-  height: 56px;
-  padding: 0 24px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  min-height: 56px;
+  padding: 8px 24px;
   background: var(--white);
   border-bottom: 1px solid var(--border2);
   flex-shrink: 0;
@@ -327,31 +328,6 @@ input  { font-family: inherit; }
 }
 .btn-ir:hover { background: #163D6E; }
 
-/* RADIUS PICKER (geo mode) */
-.radius-picker {
-  display: none;
-  align-items: center;
-  gap: 4px;
-  margin-left: 8px;
-  border-left: 1px solid var(--border);
-  padding-left: 12px;
-}
-.radius-picker.visible { display: flex; }
-.rpill {
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--muted);
-  background: transparent;
-  cursor: pointer;
-  transition: all .15s;
-  white-space: nowrap;
-}
-.rpill:hover { border-color: var(--text2); color: var(--text); }
-.rpill.active { background: var(--text); border-color: var(--text); color: #fff; }
-
 /* DISTANCE BADGE on cards */
 .card-dist {
   font-size: 10px;
@@ -364,28 +340,65 @@ input  { font-family: inherit; }
   margin-left: auto;
 }
 
-/* FILTER CHIPS */
-.filter-chips {
+/* FILTER BAR */
+#filter-bar { display: none; }
+#filter-bar.visible { display: flex; }
+.filter-bar {
   display: flex;
   gap: 6px;
+  align-items: center;
   margin-left: 8px;
 }
-.fchip {
+.filter-group {
+  position: relative;
+}
+.fpill {
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 5px 14px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text2);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.fpill:hover { border-color: var(--text2); color: var(--text); }
+.fpill.has-value { background: var(--text); border-color: var(--text); color: #fff; }
+.fpill-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.10);
+  padding: 6px;
+  z-index: 200;
+  min-width: 140px;
+  flex-direction: column;
+  gap: 2px;
+}
+.fpill-dropdown.open { display: flex; }
+.fopt {
+  padding: 7px 12px;
   font-size: 12px;
   font-weight: 500;
   color: var(--text2);
   background: transparent;
+  border: none;
+  border-radius: 7px;
   cursor: pointer;
-  transition: all .15s;
-  white-space: nowrap;
+  text-align: left;
+  transition: background .1s, color .1s;
 }
-.fchip:hover { border-color: var(--text2); color: var(--text); }
-.fchip.active          { background: var(--text);   border-color: var(--text);   color: #fff; }
-.fchip.gratuito.active { background: var(--green);  border-color: var(--green);  color: #fff; }
-.fchip.privado.active  { background: var(--orange); border-color: var(--orange); color: #fff; }
+.fopt:hover { background: var(--bg); color: var(--text); }
+.fopt.active { background: var(--bg); color: var(--text); font-weight: 600; }
 
 /* APP BODY */
 .app-body {
@@ -529,7 +542,7 @@ input  { font-family: inherit; }
 /* ─── RESPONSIVE ──────────────────────────────────────*/
 @media (max-width: 900px) {
   .ln-nav-links { display: none; }
-  .filter-chips { display: none; }
+  #filter-bar.visible { flex-wrap: wrap; }
   .app-search-bar { max-width: none; }
 }
 @media (max-width: 640px) {
@@ -634,19 +647,42 @@ input  { font-family: inherit; }
       <button class="btn-ir" id="app-btn">Ir</button>
     </div>
 
-    <div class="radius-picker" id="radius-picker">
-      <span style="font-size:11px;color:var(--muted);font-weight:500;">Raio:</span>
-      <button class="rpill" data-r="500">500m</button>
-      <button class="rpill active" data-r="1000">1km</button>
-      <button class="rpill" data-r="2000">2km</button>
-      <button class="rpill" data-r="5000">5km</button>
-      <button class="rpill" data-r="10000">10km</button>
-    </div>
-
-    <div class="filter-chips">
-      <button class="fchip active"   data-filter="all">Todos</button>
-      <button class="fchip gratuito" data-filter="gratuito">Gratuito</button>
-      <button class="fchip privado"  data-filter="privado">Privado</button>
+    <div class="filter-bar" id="filter-bar">
+      <div class="filter-group" id="fg-dist">
+        <button class="fpill active" data-filter="dist" data-val="">Distância</button>
+        <div class="fpill-dropdown" id="dd-dist">
+          <button class="fopt active" data-val="">Qualquer</button>
+          <button class="fopt" data-val="500">500m</button>
+          <button class="fopt" data-val="1000">1km</button>
+          <button class="fopt" data-val="2000">2km</button>
+          <button class="fopt" data-val="5000">5km</button>
+          <button class="fopt" data-val="10000">10km</button>
+        </div>
+      </div>
+      <div class="filter-group" id="fg-tipo">
+        <button class="fpill active" data-filter="tipo" data-val="">Tipo</button>
+        <div class="fpill-dropdown" id="dd-tipo">
+          <button class="fopt active" data-val="">Todos</button>
+          <button class="fopt" data-val="creche">Creche</button>
+          <button class="fopt" data-val="jardim">Jardim de Infância</button>
+        </div>
+      </div>
+      <div class="filter-group" id="fg-cat">
+        <button class="fpill active" data-filter="cat" data-val="">Categoria</button>
+        <div class="fpill-dropdown" id="dd-cat">
+          <button class="fopt active" data-val="">Todos</button>
+          <button class="fopt" data-val="gratuito">Gratuito</button>
+          <button class="fopt" data-val="privado">Privado</button>
+        </div>
+      </div>
+      <div class="filter-group" id="fg-horario">
+        <button class="fpill active" data-filter="horario" data-val="">Horário</button>
+        <div class="fpill-dropdown" id="dd-horario">
+          <button class="fopt active" data-val="">Todos</button>
+          <button class="fopt" data-val="early">Abre até 8h</button>
+          <button class="fopt" data-val="late">Fecha às 19h+</button>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -673,8 +709,6 @@ input  { font-family: inherit; }
 // ── CONFIG ──────────────────────────────────────────────
 const SUPABASE_URL = 'https://ebeqkfudnghdskfclqpr.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImViZXFrZnVkbmdoZHNrZmNscXByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE3NTczNzEsImV4cCI6MjA4NzMzMzM3MX0.q6a9MZBbBTWrcIlJei72Fo18j5yV18c1yAMfa8VLLrc';
-const DEFAULT_RADIUS = 1000; // metres (postcodes)
-const PLACE_RADIUS   = 5000; // metres (place name searches)
 
 // ── SUPABASE ────────────────────────────────────────────
 let sb = null;
@@ -685,17 +719,16 @@ try {
 }
 
 // ── STATE ───────────────────────────────────────────────
-let allResults   = [];
-let activeFilter = 'all';
-let activeId     = null;
-let lastQuery    = '';
-let searchMode   = 'text';          // 'text' | 'geo'
-let searchCoords = null;            // {lat, lng} when in geo mode
-let searchRadius = DEFAULT_RADIUS;  // metres
-let map          = null;
-let mapLoaded    = false;
-let markers      = {};
-let activePopup  = null;
+let allResults    = [];
+let activeFilters = { dist: '', tipo: '', cat: '', horario: '' };
+let activeId      = null;
+let lastQuery     = '';
+let searchMode    = 'text';   // 'text' | 'geo'
+let searchCoords  = null;     // {lat, lng} when in geo mode
+let map           = null;
+let mapLoaded     = false;
+let markers       = {};
+let activePopup   = null;
 
 // ── CATEGORY ────────────────────────────────────────────
 function getCategory(r) {
@@ -758,30 +791,21 @@ async function doSearch(q) {
   q = (q || '').trim();
   if (!q) return;
   lastQuery = q;
-
   showApp(q);
   renderSkeletons();
   setCount('A geocodificar…');
-
-  if (isPostcode(q)) {
-    setRadius(DEFAULT_RADIUS);
-    await doGeoSearch(q);
+  const geo = await geocode(q);
+  if (geo) {
+    await doGeoSearch(q, geo);
   } else {
-    // Try to resolve as a place name first
-    const geo = await geocode(q);
-    if (geo) {
-      if (searchRadius === DEFAULT_RADIUS) setRadius(PLACE_RADIUS);
-      await doGeoSearch(q, geo);
-    } else {
-      await doTextSearch(q);
-    }
+    await doTextSearch(q);
   }
 }
 
 async function doTextSearch(q) {
   searchMode   = 'text';
   searchCoords = null;
-  setRadiusPicker(false);
+  document.getElementById('filter-bar').classList.remove('visible');
 
   let rows = [];
   if (sb) {
@@ -820,7 +844,6 @@ async function doTextSearch(q) {
 async function doGeoSearch(q, preGeo = null) {
   searchMode = 'geo';
   setCount('A geocodificar…');
-
   const geo = preGeo || await geocode(q);
   if (!geo) {
     setCount('Localização não encontrada');
@@ -829,7 +852,7 @@ async function doGeoSearch(q, preGeo = null) {
     return;
   }
   searchCoords = geo;
-  setRadiusPicker(true);
+  document.getElementById('filter-bar').classList.add('visible');
   await fetchNearby();
 }
 
@@ -839,103 +862,109 @@ async function fetchNearby() {
   setCount('A pesquisar…');
 
   const { lat, lng, concelho, distrito } = searchCoords;
-
-  // 1. Try PostgREST st_dwithin (geography, metres)
   let rows = [];
   if (sb) {
     try {
-      const point = `POINT(${lng} ${lat})`;
-      const { data, error } = await sb
-        .from('institutions')
-        .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
-        .eq('is_active', true)
-        .filter('location', 'st_dwithin', `${point},${searchRadius}`)
-        .order('nome')
-        .limit(200);
-      if (!error && data && data.length) {
-        console.log(`[creches] st_dwithin returned ${data.length} rows`);
-        rows = data;
-      } else {
-        if (error) console.warn('[creches] st_dwithin error:', error.message, '— falling back');
-      }
-    } catch(e) { console.warn('[creches] st_dwithin exception:', e); }
-  }
-
-  // 2. Fallback: find nearby postcodes from codigos_postais, then query institutions
-  if (!rows.length && sb) {
-    try {
-      const delta = (searchRadius * 1.5) / 111000; // degrees, 1.5× buffer
-
-      // Paginate codigos_postais to avoid the 1000-row Supabase default cap
-      let cps = [], cpPage = 0, cpDone = false;
-      const PAGE = 1000;
-      while (!cpDone) {
-        const { data: page } = await sb
-          .from('codigos_postais')
-          .select('codigo_postal,latitude,longitude')
-          .gte('latitude',  lat - delta).lte('latitude',  lat + delta)
-          .gte('longitude', lng - delta).lte('longitude', lng + delta)
-          .range(cpPage * PAGE, (cpPage + 1) * PAGE - 1);
-        if (!page || page.length < PAGE) cpDone = true;
-        if (page) cps = cps.concat(page);
-        cpPage++;
-      }
-
-      const nearbyCPs = cps
-        .filter(cp => haversine(lat, lng, cp.latitude, cp.longitude) <= searchRadius * 1.5)
-        .map(cp => cp.codigo_postal);
-
-      if (nearbyCPs.length) {
+      // 1. Fast path: query by concelho/distrito name (single request)
+      const area = concelho || distrito;
+      if (area) {
         const { data, error } = await sb
           .from('institutions')
           .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
           .eq('is_active', true)
-          .in('codigo_postal', nearbyCPs)
+          .ilike('concelho', `%${area}%`)
           .order('nome')
           .limit(1000);
-        if (!error && data) rows = data;
+        if (!error && data && data.length) rows = data;
       }
-    } catch(e) { console.warn('[creches] postcode fallback error:', e); }
+
+      // 2. Fallback: postcode bbox (paginated) for postcode searches or unknown areas
+      if (!rows.length) {
+        const delta = 8000 / 111000; // 8km fetch area
+        let cps = [], cpPage = 0, cpDone = false;
+        while (!cpDone) {
+          const { data: page } = await sb
+            .from('codigos_postais')
+            .select('codigo_postal,latitude,longitude')
+            .gte('latitude',  lat - delta).lte('latitude',  lat + delta)
+            .gte('longitude', lng - delta).lte('longitude', lng + delta)
+            .range(cpPage * 1000, (cpPage + 1) * 1000 - 1);
+          if (!page || page.length < 1000) cpDone = true;
+          if (page) cps = cps.concat(page);
+          cpPage++;
+        }
+        const nearbyCPs = cps
+          .filter(cp => haversine(lat, lng, cp.latitude, cp.longitude) <= 8000)
+          .map(cp => cp.codigo_postal);
+        if (nearbyCPs.length) {
+          const { data, error } = await sb
+            .from('institutions')
+            .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
+            .eq('is_active', true)
+            .in('codigo_postal', nearbyCPs)
+            .order('nome')
+            .limit(1000);
+          if (!error && data) rows = data;
+        }
+      }
+    } catch(e) { console.warn('[creches] fetch error:', e); }
   }
 
-  // 3. Last resort: concelho/distrito name query
-  if (!rows.length && sb && (concelho || distrito)) {
-    try {
-      const area = concelho || distrito;
-      const { data } = await sb
-        .from('institutions')
-        .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
-        .eq('is_active', true)
-        .ilike('concelho', `%${area}%`)
-        .order('nome').limit(500);
-      if (data) rows = data;
-    } catch(e) { console.warn('[creches] concelho fallback error:', e); }
-  }
-
-  // 3. Demo data fallback
   if (!rows.length) rows = DEMO;
 
-  // Attach distance and filter by radius (handles both st_dwithin result and JS fallback)
+  // Attach distance for display (no radius filtering)
   rows = rows
     .map(r => {
       const c = getCoords(r);
       if (!c) return null;
-      const dist = haversine(lat, lng, c[1], c[0]);
-      return { ...r, _dist: dist };
+      return { ...r, _dist: haversine(lat, lng, c[1], c[0]) };
     })
-    .filter(r => r && r._dist <= searchRadius)
+    .filter(Boolean)
     .sort((a, b) => a._dist - b._dist);
 
   allResults = rows;
   renderAll();
-  drawRadiusCircle(lng, lat, searchRadius);
+  // Center map on search point at a reasonable zoom
+  if (map && mapLoaded) map.easeTo({ center: [lng, lat], zoom: 13, duration: 600 });
 }
 
 // ── FILTER & RENDER ─────────────────────────────────────
 function filtered() {
   const base = (searchMode === 'geo' && map && mapLoaded) ? visibleResults() : allResults;
-  if (activeFilter === 'all') return base;
-  return base.filter(r => getCategory(r) === activeFilter);
+  return base.filter(r => {
+    // distance filter (from search center)
+    if (activeFilters.dist && searchCoords) {
+      const c = getCoords(r);
+      if (!c || haversine(searchCoords.lat, searchCoords.lng, c[1], c[0]) > parseInt(activeFilters.dist)) return false;
+    }
+    // tipo filter
+    if (activeFilters.tipo) {
+      const tipo = (r.tipo || '').toLowerCase();
+      if (activeFilters.tipo === 'creche' && !tipo.includes('creche')) return false;
+      if (activeFilters.tipo === 'jardim' && !tipo.includes('infância') && !tipo.includes('infancia')) return false;
+    }
+    // categoria filter
+    if (activeFilters.cat) {
+      if (getCategory(r) !== activeFilters.cat) return false;
+    }
+    // horario filter
+    if (activeFilters.horario) {
+      const h = r.horario || '';
+      const openMatch  = h.match(/^(\d+):(\d+)/);
+      const closeMatch = h.match(/(\d+):(\d+)\s*$/);
+      if (activeFilters.horario === 'early') {
+        if (!openMatch) return false;
+        const openMins = parseInt(openMatch[1]) * 60 + parseInt(openMatch[2]);
+        if (openMins > 8 * 60) return false; // opens after 8:00
+      }
+      if (activeFilters.horario === 'late') {
+        if (!closeMatch) return false;
+        const closeMins = parseInt(closeMatch[1]) * 60 + parseInt(closeMatch[2]);
+        if (closeMins < 19 * 60) return false; // closes before 19:00
+      }
+    }
+    return true;
+  });
 }
 
 function visibleResults() {
@@ -947,15 +976,6 @@ function visibleResults() {
     return c[1] >= bounds.getSouth() && c[1] <= bounds.getNorth() &&
            c[0] >= bounds.getWest()  && c[0] <= bounds.getEast();
   });
-}
-
-function setFilter(f) {
-  activeFilter = f;
-  document.querySelectorAll('.fchip').forEach(c => {
-    if (c.id === 'btn-more-filters') return;
-    c.classList.toggle('active', c.dataset.filter === f);
-  });
-  renderAll();
 }
 
 function renderAll() {
@@ -982,15 +1002,10 @@ function renderList() {
   list.innerHTML = '';
   list.appendChild(frag);
 
-  let label;
-  if (searchMode === 'geo') {
-    const total = (activeFilter === 'all' ? allResults : allResults.filter(r => getCategory(r) === activeFilter)).length;
-    label = rows.length < total
-      ? `${rows.length} de ${total} creches visíveis · ${formatDist(searchRadius)} de ${lastQuery}`
-      : `${rows.length} creche${rows.length !== 1 ? 's' : ''} num raio de ${formatDist(searchRadius)} de ${lastQuery}`;
-  } else {
-    label = `${rows.length} resultado${rows.length !== 1 ? 's' : ''} perto de ${lastQuery}`;
-  }
+  const total = allResults.length;
+  const label = rows.length < total
+    ? `${rows.length} de ${total} creches visíveis perto de ${lastQuery}`
+    : `${rows.length} creche${rows.length !== 1 ? 's' : ''} perto de ${lastQuery}`;
   setCount(label);
 }
 
@@ -1116,59 +1131,6 @@ function initMap() {
   map.on('moveend', () => { if (searchMode === 'geo' && allResults.length) renderList(); });
 }
 
-// ── RADIUS CIRCLE ───────────────────────────────────────
-function drawRadiusCircle(lng, lat, radiusM) {
-  if (!map || !mapLoaded) return;
-  const id = 'radius-circle';
-
-  // Generate circle polygon (64 points)
-  const pts = [];
-  for (let i = 0; i <= 64; i++) {
-    const angle = (i / 64) * 2 * Math.PI;
-    const dLat  = (radiusM / 6371000) * (180 / Math.PI) * Math.cos(angle);
-    const dLng  = (radiusM / 6371000) * (180 / Math.PI) / Math.cos(lat * Math.PI / 180) * Math.sin(angle);
-    pts.push([lng + dLng, lat + dLat]);
-  }
-  const geojson = { type: 'Feature', geometry: { type: 'Polygon', coordinates: [pts] } };
-
-  if (map.getSource(id)) {
-    map.getSource(id).setData(geojson);
-  } else {
-    map.addSource(id, { type: 'geojson', data: geojson });
-    map.addLayer({ id: id + '-fill', type: 'fill',   source: id, paint: { 'fill-color': '#1E4E8C', 'fill-opacity': 0.06 } });
-    map.addLayer({ id: id + '-line', type: 'line',   source: id, paint: { 'line-color': '#1E4E8C', 'line-width': 1.5, 'line-dasharray': [4, 3] } });
-  }
-
-  // Centre pin
-  const pinId = 'radius-center';
-  if (map.getSource(pinId)) {
-    map.getSource(pinId).setData({ type: 'Feature', geometry: { type: 'Point', coordinates: [lng, lat] } });
-  } else {
-    map.addSource(pinId, { type: 'geojson', data: { type: 'Feature', geometry: { type: 'Point', coordinates: [lng, lat] } } });
-    map.addLayer({ id: pinId, type: 'circle', source: pinId, paint: { 'circle-radius': 5, 'circle-color': '#1E4E8C', 'circle-stroke-width': 2, 'circle-stroke-color': '#fff' } });
-  }
-
-  map.easeTo({ center: [lng, lat], zoom: radiusM <= 500 ? 15 : radiusM <= 1000 ? 14 : radiusM <= 2000 ? 13 : 12, duration: 600 });
-}
-
-function clearRadiusCircle() {
-  if (!map || !mapLoaded) return;
-  ['radius-circle-fill', 'radius-circle-line', 'radius-center'].forEach(id => { if (map.getLayer(id)) map.removeLayer(id); });
-  ['radius-circle', 'radius-center'].forEach(id => { if (map.getSource(id)) map.removeSource(id); });
-}
-
-// ── RADIUS PICKER UI ────────────────────────────────────
-function setRadiusPicker(visible) {
-  document.getElementById('radius-picker').classList.toggle('visible', visible);
-}
-
-function setRadius(r) {
-  searchRadius = r;
-  document.querySelectorAll('.rpill').forEach(b => {
-    b.classList.toggle('active', parseInt(b.dataset.r) === r);
-  });
-  if (searchMode === 'geo') fetchNearby();
-}
 
 function updateMap() {
   if (!map || !mapLoaded) return;
@@ -1313,14 +1275,48 @@ document.getElementById('app-logo').addEventListener('click', () => {
   document.getElementById('ln-input').value = '';
   allResults = []; lastQuery = '';
   searchMode = 'text'; searchCoords = null;
-  setRadiusPicker(false);
-  clearRadiusCircle();
+  document.getElementById('filter-bar').classList.remove('visible');
+  // Reset all filter pills to default state
+  activeFilters = { dist: '', tipo: '', cat: '', horario: '' };
+  document.querySelectorAll('.filter-group').forEach(group => {
+    const pill = group.querySelector('.fpill');
+    const dd   = group.querySelector('.fpill-dropdown');
+    pill.classList.remove('has-value');
+    const key = pill.dataset.filter;
+    pill.textContent = key === 'dist' ? 'Distância' : key === 'tipo' ? 'Tipo' : key === 'cat' ? 'Categoria' : 'Horário';
+    dd.querySelectorAll('.fopt').forEach((o, i) => o.classList.toggle('active', i === 0));
+  });
 });
-document.querySelectorAll('.fchip').forEach(c => {
-  c.addEventListener('click', () => setFilter(c.dataset.filter));
+// Filter dropdowns
+document.querySelectorAll('.filter-group').forEach(group => {
+  const pill = group.querySelector('.fpill');
+  const dd   = group.querySelector('.fpill-dropdown');
+  const key  = pill.dataset.filter;
+
+  pill.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = dd.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.fpill-dropdown').forEach(d => d.classList.remove('open'));
+    if (!isOpen) dd.classList.add('open');
+  });
+
+  dd.querySelectorAll('.fopt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      activeFilters[key] = opt.dataset.val;
+      dd.querySelectorAll('.fopt').forEach(o => o.classList.toggle('active', o === opt));
+      pill.classList.toggle('has-value', !!opt.dataset.val);
+      // Update pill label
+      pill.textContent = opt.dataset.val ? opt.textContent : key === 'dist' ? 'Distância' :
+        key === 'tipo' ? 'Tipo' :
+        key === 'cat' ? 'Categoria' : 'Horário';
+      dd.classList.remove('open');
+      renderAll();
+    });
+  });
 });
-document.querySelectorAll('.rpill').forEach(b => {
-  b.addEventListener('click', () => setRadius(parseInt(b.dataset.r)));
+document.addEventListener('click', () => {
+  document.querySelectorAll('.fpill-dropdown').forEach(d => d.classList.remove('open'));
 });
 document.querySelectorAll('.sug-pill').forEach(b => {
   b.addEventListener('click', () => doSearch(b.dataset.q));
