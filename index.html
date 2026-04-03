@@ -640,6 +640,7 @@ input  { font-family: inherit; }
       <button class="rpill active" data-r="1000">1km</button>
       <button class="rpill" data-r="2000">2km</button>
       <button class="rpill" data-r="5000">5km</button>
+      <button class="rpill" data-r="10000">10km</button>
     </div>
 
     <div class="filter-chips">
@@ -672,7 +673,8 @@ input  { font-family: inherit; }
 // ── CONFIG ──────────────────────────────────────────────
 const SUPABASE_URL = 'https://ebeqkfudnghdskfclqpr.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImViZXFrZnVkbmdoZHNrZmNscXByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE3NTczNzEsImV4cCI6MjA4NzMzMzM3MX0.q6a9MZBbBTWrcIlJei72Fo18j5yV18c1yAMfa8VLLrc';
-const DEFAULT_RADIUS = 1000; // metres
+const DEFAULT_RADIUS = 1000; // metres (postcodes)
+const PLACE_RADIUS   = 5000; // metres (place name searches)
 
 // ── SUPABASE ────────────────────────────────────────────
 let sb = null;
@@ -759,12 +761,20 @@ async function doSearch(q) {
 
   showApp(q);
   renderSkeletons();
-  setCount('A carregar…');
+  setCount('A geocodificar…');
 
   if (isPostcode(q)) {
+    setRadius(DEFAULT_RADIUS);
     await doGeoSearch(q);
   } else {
-    await doTextSearch(q);
+    // Try to resolve as a place name first
+    const geo = await geocode(q);
+    if (geo) {
+      if (searchRadius === DEFAULT_RADIUS) setRadius(PLACE_RADIUS);
+      await doGeoSearch(q, geo);
+    } else {
+      await doTextSearch(q);
+    }
   }
 }
 
@@ -807,13 +817,13 @@ async function doTextSearch(q) {
   renderAll();
 }
 
-async function doGeoSearch(postcode) {
+async function doGeoSearch(q, preGeo = null) {
   searchMode = 'geo';
   setCount('A geocodificar…');
 
-  const geo = await geocode(postcode);
+  const geo = preGeo || await geocode(q);
   if (!geo) {
-    setCount('Código postal não encontrado');
+    setCount('Localização não encontrada');
     allResults = [];
     renderList();
     return;
