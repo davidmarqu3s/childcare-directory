@@ -865,22 +865,31 @@ async function fetchNearby() {
   let rows = [];
   if (sb) {
     try {
-      // 1. Fast path: query by distrito (covers all concelhos within it), paginated
-      const area = distrito || concelho;
-      if (area) {
-        let page = 0, done = false;
+      // 1. Query by distrito first (broad), fall back to concelho (specific)
+      const fetchByField = async (field, value) => {
+        let result = [], page = 0, done = false;
         while (!done) {
           const { data, error } = await sb
             .from('institutions')
             .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
             .eq('is_active', true)
-            .ilike('distrito', `%${area}%`)
+            .ilike(field, `%${value}%`)
             .order('nome')
             .range(page * 1000, (page + 1) * 1000 - 1);
           if (error || !data || data.length < 1000) done = true;
-          if (data) rows = rows.concat(data);
+          if (data) result = result.concat(data);
           page++;
         }
+        return result;
+      };
+
+      if (distrito) {
+        rows = await fetchByField('distrito', distrito);
+      } else if (concelho) {
+        // Try distrito column with the concelho name first (in case it's also a distrito name)
+        rows = await fetchByField('distrito', concelho);
+        // If nothing, query by concelho
+        if (!rows.length) rows = await fetchByField('concelho', concelho);
       }
 
       // 2. Postcode prefix query — fast single request for postcode searches
