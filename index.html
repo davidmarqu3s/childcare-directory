@@ -912,8 +912,7 @@ async function fetchNearby() {
 }
 
 // ── FILTER & RENDER ─────────────────────────────────────
-function filtered() {
-  const base = (searchMode === 'geo' && map && mapLoaded) ? visibleResults() : allResults;
+function applyFilters(base) {
   return base.filter(r => {
     // distance filter (from search center)
     if (activeFilters.dist && searchCoords) {
@@ -948,6 +947,17 @@ function filtered() {
     }
     return true;
   });
+}
+
+// filtered() — for the list: applies all filters + viewport
+function filtered() {
+  const base = (searchMode === 'geo' && map && mapLoaded) ? visibleResults() : allResults;
+  return applyFilters(base);
+}
+
+// filteredForMap() — for markers: applies all filters except viewport
+function filteredForMap() {
+  return applyFilters(allResults);
 }
 
 function visibleResults() {
@@ -985,7 +995,7 @@ function renderList() {
   list.innerHTML = '';
   list.appendChild(frag);
 
-  const total = allResults.length;
+  const total = filteredForMap().length;
   const label = rows.length < total
     ? `${rows.length} de ${total} creches visíveis perto de ${lastQuery}`
     : `${rows.length} creche${rows.length !== 1 ? 's' : ''} perto de ${lastQuery}`;
@@ -1121,7 +1131,7 @@ function updateMap() {
   markers = {};
   if (activePopup) { activePopup.remove(); activePopup = null; }
 
-  const rows = filtered();
+  const rows = filteredForMap();
   const bounds = new maplibregl.LngLatBounds();
   let hasBounds = false;
 
