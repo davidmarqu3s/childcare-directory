@@ -878,34 +878,17 @@ async function fetchNearby() {
         if (!error && data && data.length) rows = data;
       }
 
-      // 2. Fallback: postcode bbox (paginated) for postcode searches or unknown areas
-      if (!rows.length) {
-        const delta = 8000 / 111000; // 8km fetch area
-        let cps = [], cpPage = 0, cpDone = false;
-        while (!cpDone) {
-          const { data: page } = await sb
-            .from('codigos_postais')
-            .select('codigo_postal,latitude,longitude')
-            .gte('latitude',  lat - delta).lte('latitude',  lat + delta)
-            .gte('longitude', lng - delta).lte('longitude', lng + delta)
-            .range(cpPage * 1000, (cpPage + 1) * 1000 - 1);
-          if (!page || page.length < 1000) cpDone = true;
-          if (page) cps = cps.concat(page);
-          cpPage++;
-        }
-        const nearbyCPs = cps
-          .filter(cp => haversine(lat, lng, cp.latitude, cp.longitude) <= 8000)
-          .map(cp => cp.codigo_postal);
-        if (nearbyCPs.length) {
-          const { data, error } = await sb
-            .from('institutions')
-            .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
-            .eq('is_active', true)
-            .in('codigo_postal', nearbyCPs)
-            .order('nome')
-            .limit(1000);
-          if (!error && data) rows = data;
-        }
+      // 2. Postcode prefix query — fast single request for postcode searches
+      if (!rows.length && isPostcode(lastQuery)) {
+        const prefix = lastQuery.trim().replace(/(\d{4})-?\d{3}/, '$1');
+        const { data, error } = await sb
+          .from('institutions')
+          .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
+          .eq('is_active', true)
+          .ilike('codigo_postal', `${prefix}-%`)
+          .order('nome')
+          .limit(1000);
+        if (!error && data && data.length) rows = data;
       }
     } catch(e) { console.warn('[creches] fetch error:', e); }
   }
