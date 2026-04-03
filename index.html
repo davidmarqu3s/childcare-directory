@@ -933,8 +933,20 @@ async function fetchNearby() {
 
 // ── FILTER & RENDER ─────────────────────────────────────
 function filtered() {
-  if (activeFilter === 'all') return allResults;
-  return allResults.filter(r => getCategory(r) === activeFilter);
+  const base = (searchMode === 'geo' && map && mapLoaded) ? visibleResults() : allResults;
+  if (activeFilter === 'all') return base;
+  return base.filter(r => getCategory(r) === activeFilter);
+}
+
+function visibleResults() {
+  if (!map || !mapLoaded) return allResults;
+  const bounds = map.getBounds();
+  return allResults.filter(r => {
+    const c = getCoords(r);
+    if (!c) return false;
+    return c[1] >= bounds.getSouth() && c[1] <= bounds.getNorth() &&
+           c[0] >= bounds.getWest()  && c[0] <= bounds.getEast();
+  });
 }
 
 function setFilter(f) {
@@ -970,9 +982,15 @@ function renderList() {
   list.innerHTML = '';
   list.appendChild(frag);
 
-  const label = searchMode === 'geo'
-    ? `${rows.length} creche${rows.length !== 1 ? 's' : ''} num raio de ${formatDist(searchRadius)} de ${lastQuery}`
-    : `${rows.length} resultado${rows.length !== 1 ? 's' : ''} perto de ${lastQuery}`;
+  let label;
+  if (searchMode === 'geo') {
+    const total = (activeFilter === 'all' ? allResults : allResults.filter(r => getCategory(r) === activeFilter)).length;
+    label = rows.length < total
+      ? `${rows.length} de ${total} creches visíveis · ${formatDist(searchRadius)} de ${lastQuery}`
+      : `${rows.length} creche${rows.length !== 1 ? 's' : ''} num raio de ${formatDist(searchRadius)} de ${lastQuery}`;
+  } else {
+    label = `${rows.length} resultado${rows.length !== 1 ? 's' : ''} perto de ${lastQuery}`;
+  }
   setCount(label);
 }
 
@@ -1095,6 +1113,7 @@ function initMap() {
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
   map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
   map.on('load', () => { mapLoaded = true; updateMap(); });
+  map.on('moveend', () => { if (searchMode === 'geo' && allResults.length) renderList(); });
 }
 
 // ── RADIUS CIRCLE ───────────────────────────────────────
