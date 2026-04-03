@@ -383,10 +383,9 @@ input  { font-family: inherit; }
   white-space: nowrap;
 }
 .fchip:hover { border-color: var(--text2); color: var(--text); }
-.fchip.active        { background: var(--text);   border-color: var(--text);   color: #fff; }
-.fchip.ipss.active   { background: var(--green);  border-color: var(--green);  color: #fff; }
-.fchip.privado.active{ background: var(--orange); border-color: var(--orange); color: #fff; }
-.fchip.publico.active{ background: var(--blue);   border-color: var(--blue);   color: #fff; }
+.fchip.active          { background: var(--text);   border-color: var(--text);   color: #fff; }
+.fchip.gratuito.active { background: var(--green);  border-color: var(--green);  color: #fff; }
+.fchip.privado.active  { background: var(--orange); border-color: var(--orange); color: #fff; }
 
 /* APP BODY */
 .app-body {
@@ -453,9 +452,8 @@ input  { font-family: inherit; }
   flex-shrink: 0;
   white-space: nowrap;
 }
-.badge-ipss    { background: var(--green-bg);  color: var(--green); }
-.badge-privado { background: var(--orange-bg); color: var(--orange); }
-.badge-publico { background: var(--blue-bg);   color: var(--blue-text); }
+.badge-gratuito { background: var(--green-bg);  color: var(--green); }
+.badge-privado  { background: var(--orange-bg); color: var(--orange); }
 
 .rcard-addr {
   font-size: 11px;
@@ -645,10 +643,9 @@ input  { font-family: inherit; }
     </div>
 
     <div class="filter-chips">
-      <button class="fchip active"  data-filter="all">Todos</button>
-      <button class="fchip ipss"    data-filter="ipss">IPSS</button>
-      <button class="fchip privado" data-filter="privado">Privado</button>
-      <button class="fchip publico" data-filter="publico">Público</button>
+      <button class="fchip active"   data-filter="all">Todos</button>
+      <button class="fchip gratuito" data-filter="gratuito">Gratuito</button>
+      <button class="fchip privado"  data-filter="privado">Privado</button>
     </div>
   </nav>
 
@@ -662,9 +659,8 @@ input  { font-family: inherit; }
     <div class="map-panel">
       <div id="map"></div>
       <div class="map-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#4A7C59"></div><span class="legend-label">IPSS (gratuito/subsidiado)</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4A7C59"></div><span class="legend-label">Gratuito / Subsidiado</span></div>
         <div class="legend-item"><div class="legend-dot" style="background:#C4622D"></div><span class="legend-label">Privado</span></div>
-        <div class="legend-item"><div class="legend-dot" style="background:#2B6CB0"></div><span class="legend-label">Público / Municipal</span></div>
       </div>
     </div>
 
@@ -702,9 +698,7 @@ let activePopup  = null;
 // ── CATEGORY ────────────────────────────────────────────
 function getCategory(r) {
   const nj = (r.natureza_juridica || '').toLowerCase();
-  if (/câmara|camara|municipal|junta de|autarquia|ministér|estado público|serviço público/i.test(nj)) return 'publico';
-  if (/solidariedade|misericórdia|misericordia|associa[çc]|funda[çc]|cooperativa|ipss|santa casa|irmandade|institui[çc]ão particular/i.test(nj)) return 'ipss';
-  return 'privado';
+  return /lucrativ/i.test(nj) ? 'privado' : 'gratuito';
 }
 
 // ── POSTCODE DETECTION ──────────────────────────────────
@@ -977,7 +971,7 @@ function makeCard(r) {
   nm.textContent = r.nome;
   const bdg = document.createElement('div');
   bdg.className = 'badge badge-' + cat;
-  bdg.textContent = cat === 'ipss' ? 'IPSS' : cat === 'publico' ? 'Público' : 'Privado';
+  bdg.textContent = cat === 'privado' ? 'Privado' : 'Gratuito';
   top.appendChild(nm);
   top.appendChild(bdg);
 
@@ -1042,7 +1036,7 @@ function selectCard(r) {
 }
 
 // ── MAP ─────────────────────────────────────────────────
-const CAT_COLOR = { ipss:'#4A7C59', privado:'#C4622D', publico:'#2B6CB0' };
+const CAT_COLOR = { gratuito:'#4A7C59', privado:'#C4622D' };
 
 // Supabase returns geography columns as EWKB hex — decode to [lng, lat]
 function parseEWKB(hex) {
@@ -1180,7 +1174,7 @@ function updateMap() {
       const sub = document.createElement('div');
       sub.className = 'pop-sub';
       const cat = getCategory(r);
-      const catLabel = cat === 'ipss' ? 'IPSS' : cat === 'publico' ? 'Público' : 'Privado';
+      const catLabel = cat === 'privado' ? 'Privado' : 'Gratuito';
       sub.textContent = [catLabel, r.capacidade ? `${r.capacidade} crianças` : null].filter(Boolean).join(' · ');
       const link = document.createElement('a');
       link.className = 'pop-link';
@@ -1235,7 +1229,7 @@ function panToCard(r) {
   if (activePopup) activePopup.remove();
 
   const cat = getCategory(r);
-  const catLabel = cat === 'ipss' ? 'IPSS' : cat === 'publico' ? 'Público' : 'Privado';
+  const catLabel = cat === 'privado' ? 'Privado' : 'Gratuito';
 
   const content = document.createElement('div');
   const nm = document.createElement('div');
