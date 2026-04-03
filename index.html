@@ -865,14 +865,23 @@ async function fetchNearby() {
   if (!rows.length && sb) {
     try {
       const delta = (searchRadius * 1.5) / 111000; // degrees, 1.5× buffer
-      const { data: cps } = await sb
-        .from('codigos_postais')
-        .select('codigo_postal,latitude,longitude')
-        .gte('latitude',  lat - delta).lte('latitude',  lat + delta)
-        .gte('longitude', lng - delta).lte('longitude', lng + delta)
-        .limit(1000);
 
-      const nearbyCPs = (cps || [])
+      // Paginate codigos_postais to avoid the 1000-row Supabase default cap
+      let cps = [], cpPage = 0, cpDone = false;
+      const PAGE = 1000;
+      while (!cpDone) {
+        const { data: page } = await sb
+          .from('codigos_postais')
+          .select('codigo_postal,latitude,longitude')
+          .gte('latitude',  lat - delta).lte('latitude',  lat + delta)
+          .gte('longitude', lng - delta).lte('longitude', lng + delta)
+          .range(cpPage * PAGE, (cpPage + 1) * PAGE - 1);
+        if (!page || page.length < PAGE) cpDone = true;
+        if (page) cps = cps.concat(page);
+        cpPage++;
+      }
+
+      const nearbyCPs = cps
         .filter(cp => haversine(lat, lng, cp.latitude, cp.longitude) <= searchRadius * 1.5)
         .map(cp => cp.codigo_postal);
 
@@ -883,7 +892,7 @@ async function fetchNearby() {
           .eq('is_active', true)
           .in('codigo_postal', nearbyCPs)
           .order('nome')
-          .limit(500);
+          .limit(1000);
         if (!error && data) rows = data;
       }
     } catch(e) { console.warn('[creches] postcode fallback error:', e); }
