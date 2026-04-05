@@ -1144,31 +1144,33 @@ function updateMap() {
 
     let hoverPopup = null;
 
-    el.addEventListener('mouseenter', () => {
-      dot.style.transform = 'scale(1.7)';
+    const showPopup = () => {
       if (hoverPopup) return;
+      const cat = getCategory(r);
       const content = document.createElement('div');
       const nm = document.createElement('div');
       nm.className = 'pop-name';
       nm.textContent = r.nome;
       const sub = document.createElement('div');
       sub.className = 'pop-sub';
-      const cat = getCategory(r);
-      sub.textContent = cat === 'privado' ? 'Privado' : 'Gratuito';
+      const parts = [cat === 'privado' ? 'Privado' : 'Gratuito'];
+      if (r._dist != null) parts.push(formatDist(r._dist));
+      sub.textContent = parts.join(' · ');
       content.appendChild(nm);
       content.appendChild(sub);
-      hoverPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: true, offset: 10, maxWidth: '220px' })
+      hoverPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10, maxWidth: '220px' })
         .setLngLat(coords).setDOMContent(content).addTo(map);
       hoverPopup.on('close', () => { hoverPopup = null; });
-    });
+    };
 
+    el.addEventListener('mouseenter', () => { dot.style.transform = 'scale(1.7)'; showPopup(); });
     el.addEventListener('mouseleave', () => {
       dot.style.transform = 'scale(1)';
       if (hoverPopup) { hoverPopup.remove(); hoverPopup = null; }
     });
-
     el.addEventListener('click', e => {
       e.stopPropagation();
+      // Navigate to creche detail (list card scroll + select)
       selectCard(r);
       const cardEl = document.querySelector(`.rcard[data-id="${r.id}"]`);
       if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1190,24 +1192,7 @@ function updateMap() {
 function panToCard(r) {
   const coords = getCoords(r);
   if (!map || !mapLoaded || !coords) return;
-  if (activePopup) activePopup.remove();
-
-  const cat = getCategory(r);
-  const catLabel = cat === 'privado' ? 'Privado' : 'Gratuito';
-
-  const content = document.createElement('div');
-  const nm = document.createElement('div');
-  nm.className = 'pop-name';
-  nm.textContent = r.nome;
-  const sub = document.createElement('div');
-  sub.className = 'pop-sub';
-  sub.textContent = [catLabel, r.capacidade ? `${r.capacidade} crianças` : null, r.horario].filter(Boolean).join(' · ');
-  content.appendChild(nm);
-  content.appendChild(sub);
-
-  activePopup = new maplibregl.Popup({ closeOnClick: false, maxWidth: '260px', offset: 14 })
-    .setLngLat(coords).setDOMContent(content).addTo(map);
-
+  if (activePopup) { activePopup.remove(); activePopup = null; }
   map.easeTo({ center: coords, zoom: Math.max(map.getZoom(), 14), duration: 400 });
 }
 
