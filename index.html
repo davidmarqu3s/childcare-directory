@@ -729,6 +729,7 @@ let map           = null;
 let mapLoaded     = false;
 let markers       = {};
 let activePopup   = null;
+let mapFitOnLoad  = false; // true only for the initial render after a new search
 
 // ── CATEGORY ────────────────────────────────────────────
 function getCategory(r) {
@@ -894,8 +895,8 @@ async function fetchNearby() {
     .sort((a, b) => a._dist - b._dist);
 
   allResults = rows;
+  mapFitOnLoad = true;
   renderAll();
-  // Center map on search point at a reasonable zoom
   if (map && mapLoaded) map.easeTo({ center: [lng, lat], zoom: 13, duration: 600 });
 }
 
@@ -1199,8 +1200,9 @@ function updateMap() {
     hasBounds = true;
   });
 
-  if (hasBounds && rows.length > 1) {
+  if (hasBounds && rows.length > 1 && mapFitOnLoad) {
     map.fitBounds(bounds, { padding: 60, maxZoom: 14, duration: 700 });
+    mapFitOnLoad = false;
   }
 }
 
