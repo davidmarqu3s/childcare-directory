@@ -516,8 +516,6 @@ input  { font-family: inherit; }
 .maplibregl-popup-close-button { font-size: 16px; color: var(--muted); right: 8px; top: 6px; }
 .pop-name { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.3; margin-bottom: 3px; }
 .pop-sub  { font-size: 11px; color: var(--text2); line-height: 14px; }
-.pop-link { display: inline-block; margin-top: 8px; font-size: 11px; font-weight: 600; color: var(--blue); cursor: pointer; text-decoration: none; }
-.pop-link:hover { text-decoration: underline; }
 
 /* MAP LEGEND */
 .map-legend {
@@ -1156,21 +1154,9 @@ function updateMap() {
       const sub = document.createElement('div');
       sub.className = 'pop-sub';
       const cat = getCategory(r);
-      const catLabel = cat === 'privado' ? 'Privado' : 'Gratuito';
-      sub.textContent = [catLabel, r.capacidade ? `${r.capacidade} crianças` : null].filter(Boolean).join(' · ');
-      const link = document.createElement('a');
-      link.className = 'pop-link';
-      link.textContent = 'Ver creche →';
-      link.href = '#';
-      link.addEventListener('click', ev => {
-        ev.preventDefault();
-        selectCard(r);
-        const cardEl = document.querySelector(`.rcard[data-id="${r.id}"]`);
-        if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
+      sub.textContent = cat === 'privado' ? 'Privado' : 'Gratuito';
       content.appendChild(nm);
       content.appendChild(sub);
-      content.appendChild(link);
       hoverPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: true, offset: 10, maxWidth: '220px' })
         .setLngLat(coords).setDOMContent(content).addTo(map);
       hoverPopup.on('close', () => { hoverPopup = null; });
@@ -1178,12 +1164,7 @@ function updateMap() {
 
     el.addEventListener('mouseleave', () => {
       dot.style.transform = 'scale(1)';
-      // Delay removal so user can move mouse into popup
-      setTimeout(() => {
-        if (hoverPopup && !hoverPopup.getElement()?.matches(':hover')) {
-          hoverPopup.remove(); hoverPopup = null;
-        }
-      }, 200);
+      if (hoverPopup) { hoverPopup.remove(); hoverPopup = null; }
     });
 
     el.addEventListener('click', e => {
