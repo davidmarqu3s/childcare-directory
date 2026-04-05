@@ -861,71 +861,22 @@ async function fetchNearby() {
   renderSkeletons();
   setCount('A pesquisar…');
 
-  const { lat, lng, concelho, distrito } = searchCoords;
+  const { lat, lng } = searchCoords;
   let rows = [];
   if (sb) {
     try {
-      // 1. Query by distrito first (broad), fall back to concelho (specific)
-      const fetchByField = async (field, value) => {
-        let result = [], page = 0, done = false;
-        while (!done) {
-          const { data, error } = await sb
-            .from('institutions')
-            .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
-            .eq('is_active', true)
-            .ilike(field, `%${value}%`)
-            .order('nome')
-            .range(page * 1000, (page + 1) * 1000 - 1);
-          if (error || !data || data.length < 1000) done = true;
-          if (data) result = result.concat(data);
-          page++;
-        }
-        return result;
-      };
-
-      if (distrito) {
-        rows = await fetchByField('distrito', distrito);
-      } else if (concelho) {
-        // Try distrito column with the concelho name first (in case it's also a distrito name)
-        rows = await fetchByField('distrito', concelho);
-        // If nothing, query by concelho
-        if (!rows.length) rows = await fetchByField('concelho', concelho);
-      }
-
-      // 2. Postcode prefix query — fast single request for postcode searches
-      if (!rows.length && isPostcode(lastQuery)) {
-        const prefix = lastQuery.trim().replace(/(\d{4})-?\d{3}/, '$1');
+      // Fetch all institutions in Portugal — viewport filters the list, zoom reveals more
+      let page = 0, done = false;
+      while (!done) {
         const { data, error } = await sb
           .from('institutions')
           .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
           .eq('is_active', true)
-          .ilike('codigo_postal', `${prefix}-%`)
           .order('nome')
-          .limit(1000);
-        if (!error && data && data.length) {
-          rows = data;
-          // Also fetch the full distrito so zooming out shows more creches
-          const distritoFromPostcode = data.map(r => r.distrito).filter(Boolean)
-            .reduce((acc, d) => { acc[d] = (acc[d] || 0) + 1; return acc; }, {});
-          const topDistrito = Object.entries(distritoFromPostcode).sort((a, b) => b[1] - a[1])[0]?.[0];
-          if (topDistrito) {
-            const seen = new Set(rows.map(r => r.id));
-            let page = 0, done = false;
-            while (!done) {
-              const { data: extra } = await sb
-                .from('institutions')
-                .select('id,nome,morada,localidade,freguesia,concelho,distrito,codigo_postal,natureza_juridica,tipo,capacidade,horario,location')
-                .eq('is_active', true)
-                .ilike('distrito', `%${topDistrito}%`)
-                .order('nome')
-                .range(page * 1000, (page + 1) * 1000 - 1);
-              if (!extra || extra.length < 1000) done = true;
-              if (extra) rows = rows.concat(extra.filter(r => !seen.has(r.id)));
-              extra?.forEach(r => seen.add(r.id));
-              page++;
-            }
-          }
-        }
+          .range(page * 1000, (page + 1) * 1000 - 1);
+        if (error || !data || data.length < 1000) done = true;
+        if (data) rows = rows.concat(data);
+        page++;
       }
     } catch(e) { console.warn('[creches] fetch error:', e); }
   }
