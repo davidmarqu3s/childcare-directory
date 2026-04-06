@@ -186,6 +186,29 @@ input  { font-family: inherit; }
   min-width: 0;
 }
 .ln-search-box input::placeholder { color: var(--muted); }
+.ln-tipo-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.ln-tipo-select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  padding: 0 10px 0 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231A1614' stroke-opacity='.4' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 22px;
+}
 .btn-pesquisar {
   background: var(--blue);
   color: #fff;
@@ -748,6 +771,12 @@ input  { font-family: inherit; }
         <circle cx="7" cy="7" r="5.5" stroke="#1A1614" stroke-width="1.5"/>
         <path d="m11.5 11.5 2.5 2.5" stroke="#1A1614" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
+      <select id="ln-tipo" class="ln-tipo-select">
+        <option value="">Todas as idades</option>
+        <option value="creche">Menos de 3 anos</option>
+        <option value="jardim">3 ou mais anos</option>
+      </select>
+      <div class="ln-tipo-divider"></div>
       <input id="ln-input" type="text" placeholder="Bairro, cidade ou código postal…" autocomplete="off">
       <button class="btn-pesquisar" id="ln-btn">Pesquisar</button>
     </div>
@@ -1511,11 +1540,15 @@ function showApp(q) {
 }
 
 // ── EVENTS ──────────────────────────────────────────────
+function applyLandingTipo() {
+  activeFilters.tipo = document.getElementById('ln-tipo').value;
+}
 document.getElementById('ln-btn').addEventListener('click', () => {
+  applyLandingTipo();
   doSearch(document.getElementById('ln-input').value);
 });
 document.getElementById('ln-input').addEventListener('keydown', e => {
-  if (e.key === 'Enter') doSearch(e.target.value);
+  if (e.key === 'Enter') { applyLandingTipo(); doSearch(e.target.value); }
 });
 document.getElementById('app-btn').addEventListener('click', () => {
   doSearch(document.getElementById('app-input').value);
@@ -1527,6 +1560,7 @@ document.getElementById('app-logo').addEventListener('click', () => {
   document.getElementById('app').style.display = 'none';
   document.getElementById('landing').style.display = 'flex';
   document.getElementById('ln-input').value = '';
+  document.getElementById('ln-tipo').value = '';
   allResults = []; lastQuery = '';
   searchMode = 'text'; searchCoords = null;
   document.getElementById('filter-bar').classList.remove('visible');
