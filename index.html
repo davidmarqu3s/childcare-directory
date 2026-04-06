@@ -1548,6 +1548,13 @@ function showApp(q) {
   const app = document.getElementById('app');
   app.style.display = 'flex';
   document.getElementById('app-input').value = q;
+  // Sync tipo filter bar to match landing page age pill selection
+  const tipoPill = document.querySelector('#fg-tipo .fpill');
+  const tipoDD   = document.querySelector('#dd-tipo');
+  const tipoVal  = activeFilters.tipo;
+  tipoDD.querySelectorAll('.fopt').forEach(o => o.classList.toggle('active', o.dataset.val === tipoVal));
+  tipoPill.classList.toggle('has-value', !!tipoVal);
+  tipoPill.textContent = tipoVal === 'creche' ? 'Creche' : tipoVal === 'jardim' ? 'J. Infância' : 'Tipo';
   if (!map) initMap();
 }
 
