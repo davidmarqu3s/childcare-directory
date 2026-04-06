@@ -1006,9 +1006,12 @@ async function doSearch(q) {
   lastQuery = q;
   showApp(q);
   renderSkeletons();
-  setCount('A geocodificar…');
+  setCount('A pesquisar…');
   const geo = await geocode(q);
-  if (geo) {
+  // Only treat as a location search if the geocoder's label actually contains the query.
+  // e.g. "desagravo" → geo label "Convento do Louriçal, Rua do Convento" → not a place match.
+  const isPlaceSearch = geo && geo.label.toLowerCase().includes(q.toLowerCase());
+  if (isPlaceSearch) {
     await doGeoSearch(q, geo);
   } else {
     await doTextSearch(q);
