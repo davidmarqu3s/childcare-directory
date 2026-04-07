@@ -748,6 +748,118 @@ input  { font-family: inherit; }
 .dp-loading.visible { display: block; }
 
 /* Placeholder sections */
+
+/* FEEDBACK */
+.dp-feedback-row {
+  padding: 8px 24px 32px;
+  max-width: 680px;
+}
+.dp-feedback-btn {
+  font-size: 12px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .15s;
+}
+.dp-feedback-btn:hover { color: var(--text2); }
+#feedback-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.feedback-modal {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 16px 64px rgba(0,0,0,.2);
+}
+.feedback-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  font-size: 14px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+.feedback-close:hover { color: var(--text); }
+.feedback-title {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.feedback-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.feedback-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.feedback-checks label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.feedback-checks input[type=checkbox] {
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+.feedback-msg {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  transition: border-color .15s;
+}
+.feedback-msg:focus { border-color: var(--blue); }
+.feedback-submit {
+  background: var(--blue);
+  color: #fff;
+  border-radius: 10px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  transition: background .15s;
+}
+.feedback-submit:hover { background: #163D6E; }
+.feedback-submit:disabled { opacity: .5; cursor: not-allowed; }
+.feedback-thanks {
+  text-align: center;
+  font-size: 14px;
+  color: var(--green);
+  margin-top: 12px;
+}
 </style>
 </head>
 <body>
@@ -945,7 +1057,29 @@ input  { font-family: inherit; }
       <div class="skel" style="height:13px;width:40%"></div>
     </div>
 
+    <div class="dp-feedback-row">
+      <button class="dp-feedback-btn" id="dp-feedback-btn">Reportar informação incorrecta</button>
+    </div>
 
+  </div>
+</div>
+
+<!-- ══════════════ FEEDBACK MODAL ══════════════ -->
+<div id="feedback-overlay" style="display:none">
+  <div class="feedback-modal">
+    <button class="feedback-close" id="feedback-close">✕</button>
+    <h3 class="feedback-title">Reportar problema</h3>
+    <p class="feedback-sub" id="feedback-inst-name"></p>
+    <div class="feedback-checks">
+      <label><input type="checkbox" value="morada">Morada incorrecta ou em falta</label>
+      <label><input type="checkbox" value="contactos">Contactos incorrectos ou em falta</label>
+      <label><input type="checkbox" value="encerrada">Creche encerrada ou inexistente</label>
+      <label><input type="checkbox" value="tipo">Tipo errado (creche / jardim de infância)</label>
+      <label><input type="checkbox" value="outro">Outro</label>
+    </div>
+    <textarea class="feedback-msg" id="feedback-msg" placeholder="Detalhes adicionais (opcional)…" rows="3"></textarea>
+    <button class="feedback-submit" id="feedback-submit">Enviar</button>
+    <p class="feedback-thanks" id="feedback-thanks" style="display:none">Obrigado! O seu feedback foi enviado.</p>
   </div>
 </div>
 
@@ -1664,6 +1798,8 @@ function openDetail(r) {
   pageApp.style.display = 'none';
   pageDetail.style.display = 'block';
   pageDetail.scrollTop = 0;
+  feedbackInstitutionId   = r.id;
+  feedbackInstitutionNome = r.nome;
 
   // Hero
   const cat = getCategory(r);
@@ -1743,6 +1879,47 @@ async function fetchDetailExtra(id) {
     document.getElementById('dps-loading').classList.remove('visible');
   }
 }
+
+// ── FEEDBACK ─────────────────────────────────────────────
+let feedbackInstitutionId   = null;
+let feedbackInstitutionNome = null;
+
+document.getElementById('dp-feedback-btn').addEventListener('click', () => {
+  document.getElementById('feedback-inst-name').textContent = feedbackInstitutionNome || '';
+  document.getElementById('feedback-msg').value = '';
+  document.getElementById('feedback-thanks').style.display = 'none';
+  document.getElementById('feedback-submit').disabled = false;
+  document.querySelectorAll('.feedback-checks input').forEach(c => c.checked = false);
+  document.getElementById('feedback-overlay').style.display = 'flex';
+});
+document.getElementById('feedback-close').addEventListener('click', () => {
+  document.getElementById('feedback-overlay').style.display = 'none';
+});
+document.getElementById('feedback-overlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) e.currentTarget.style.display = 'none';
+});
+document.getElementById('feedback-submit').addEventListener('click', async () => {
+  const issues = [...document.querySelectorAll('.feedback-checks input:checked')].map(c => c.value);
+  const message = document.getElementById('feedback-msg').value.trim();
+  if (!issues.length && !message) return;
+  const btn = document.getElementById('feedback-submit');
+  btn.disabled = true;
+  try {
+    if (sb) {
+      await sb.from('feedback').insert({
+        institution_id:   feedbackInstitutionId,
+        institution_nome: feedbackInstitutionNome,
+        issues,
+        message: message || null,
+      });
+    }
+    document.getElementById('feedback-thanks').style.display = 'block';
+    setTimeout(() => { document.getElementById('feedback-overlay').style.display = 'none'; }, 2000);
+  } catch(e) {
+    console.warn('[creches] feedback error:', e);
+    btn.disabled = false;
+  }
+});
 
 function dpSetCell(cellId, valId, value) {
   const cell = document.getElementById(cellId);
