@@ -162,71 +162,82 @@ input  { font-family: inherit; }
   display: flex;
   flex-direction: column;
   background: var(--white);
-  border: 1.5px solid var(--border);
-  border-radius: 14px;
-  box-shadow: 0 4px 32px #1A161414;
-  width: 560px;
+  border-radius: 20px;
+  box-shadow: 0 8px 48px #1A161420;
+  width: 620px;
   max-width: calc(100vw - 48px);
-  transition: border-color .15s;
   overflow: hidden;
 }
-.ln-search-box:focus-within { border-color: var(--blue); }
+/* Tab row */
 .ln-search-row1 {
   display: flex;
   align-items: center;
+  gap: 4px;
+  padding: 10px 10px 0;
+  background: var(--white);
+}
+.ln-age-pill {
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  padding: 9px 16px 10px;
+  cursor: pointer;
+  transition: background .12s, color .12s;
+  white-space: nowrap;
+  position: relative;
+}
+.ln-age-pill:hover { color: var(--text); background: var(--bg); }
+.ln-age-pill.active {
+  color: var(--text);
+  font-weight: 600;
+  background: #F0F4FA;
+}
+.ln-age-pill.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 2px 2px 0 0;
+}
+/* Input row */
+.ln-search-row2 {
+  display: flex;
+  align-items: center;
+  background: #F0F4FA;
+  margin: 0 10px 10px;
+  border-radius: 0 12px 12px 12px;
+  padding: 4px 4px 4px 18px;
+  gap: 8px;
 }
 .ln-search-icon {
-  margin-left: 18px;
   flex-shrink: 0;
-  opacity: 0.35;
+  opacity: 0.4;
 }
 .ln-search-box input {
   flex: 1;
   border: none;
   outline: none;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   background: transparent;
-  padding: 16px 14px;
+  padding: 14px 8px;
   min-width: 0;
 }
 .ln-search-box input::placeholder { color: var(--muted); }
-.ln-search-row2 {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid var(--border2);
-  padding: 8px 10px 8px 14px;
-  gap: 6px;
-}
-.ln-age-pills {
-  display: flex;
-  gap: 6px;
-  flex: 1;
-  flex-wrap: wrap;
-}
-.ln-age-pill {
-  font-size: 13px;
-  font-family: inherit;
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 5px 12px;
-  cursor: pointer;
-  transition: background .12s, color .12s, border-color .12s;
-  white-space: nowrap;
-}
-.ln-age-pill:hover { border-color: var(--text); color: var(--text); }
-.ln-age-pill.active { background: var(--text); color: var(--white); border-color: var(--text); }
 .btn-pesquisar {
   background: var(--blue);
   color: #fff;
   border-radius: 10px;
-  margin: 5px;
-  padding: 12px 26px;
-  font-size: 14px;
+  padding: 13px 28px;
+  font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
+  flex-shrink: 0;
   transition: background .15s, transform .1s;
 }
 .btn-pesquisar:hover { background: #163D6E; }
@@ -777,18 +788,16 @@ input  { font-family: inherit; }
 
     <div class="ln-search-box">
       <div class="ln-search-row1">
+        <button class="ln-age-pill active" data-val="">Todas as idades</button>
+        <button class="ln-age-pill" data-val="creche">&lt; 3 anos</button>
+        <button class="ln-age-pill" data-val="jardim">3+ anos</button>
+      </div>
+      <div class="ln-search-row2">
         <svg class="ln-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
           <circle cx="7" cy="7" r="5.5" stroke="#1A1614" stroke-width="1.5"/>
           <path d="m11.5 11.5 2.5 2.5" stroke="#1A1614" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <input id="ln-input" type="text" placeholder="Bairro, cidade ou código postal…" autocomplete="off">
-      </div>
-      <div class="ln-search-row2">
-        <div class="ln-age-pills">
-          <button class="ln-age-pill active" data-val="">Todas as idades</button>
-          <button class="ln-age-pill" data-val="creche">&lt; 3 anos</button>
-          <button class="ln-age-pill" data-val="jardim">3+ anos</button>
-        </div>
         <button class="btn-pesquisar" id="ln-btn">Pesquisar</button>
       </div>
     </div>
