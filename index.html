@@ -160,29 +160,72 @@ input  { font-family: inherit; }
 /* SEARCH BOX */
 .ln-search-box {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   background: var(--white);
-  border: 1.5px solid var(--border);
-  border-radius: 14px;
-  box-shadow: 0 4px 32px #1A161414;
-  width: 580px;
+  border-radius: 20px;
+  box-shadow: 0 8px 48px #1A161420;
+  width: 620px;
   max-width: calc(100vw - 48px);
-  transition: border-color .15s;
+  overflow: hidden;
 }
-.ln-search-box:focus-within { border-color: var(--blue); }
+/* Tab row */
+.ln-search-row1 {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 10px 0;
+  background: var(--white);
+}
+.ln-age-pill {
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  padding: 9px 16px 10px;
+  cursor: pointer;
+  transition: background .12s, color .12s;
+  white-space: nowrap;
+  position: relative;
+}
+.ln-age-pill:hover { color: var(--text); background: var(--bg); }
+.ln-age-pill.active {
+  color: var(--text);
+  font-weight: 600;
+  background: #F0F4FA;
+}
+.ln-age-pill.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 2px 2px 0 0;
+}
+/* Input row */
+.ln-search-row2 {
+  display: flex;
+  align-items: center;
+  background: #F0F4FA;
+  margin: 0 10px 10px;
+  border-radius: 0 12px 12px 12px;
+  padding: 4px 4px 4px 18px;
+  gap: 8px;
+}
 .ln-search-icon {
-  margin-left: 18px;
   flex-shrink: 0;
-  opacity: 0.35;
+  opacity: 0.4;
 }
 .ln-search-box input {
   flex: 1;
   border: none;
   outline: none;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   background: transparent;
-  padding: 16px 14px;
+  padding: 14px 8px;
   min-width: 0;
 }
 .ln-search-box input::placeholder { color: var(--muted); }
@@ -190,11 +233,11 @@ input  { font-family: inherit; }
   background: var(--blue);
   color: #fff;
   border-radius: 10px;
-  margin: 5px;
-  padding: 12px 26px;
-  font-size: 14px;
+  padding: 13px 28px;
+  font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
+  flex-shrink: 0;
   transition: background .15s, transform .1s;
 }
 .btn-pesquisar:hover { background: #163D6E; }
@@ -409,9 +452,9 @@ input  { font-family: inherit; }
 
 /* LIST PANEL */
 .list-panel {
-  width: 400px;
-  min-width: 320px;
-  flex-shrink: 0;
+  flex: 1 1 50%;
+  min-width: 280px;
+  max-width: 520px;
   display: flex;
   flex-direction: column;
   background: var(--white);
@@ -501,7 +544,7 @@ input  { font-family: inherit; }
 .empty { padding: 48px 24px; text-align: center; font-size: 13px; color: var(--muted); line-height: 1.6; }
 
 /* MAP */
-.map-panel { flex: 1; position: relative; overflow: hidden; }
+.map-panel { flex: 1 1 50%; position: relative; overflow: hidden; }
 #map { width: 100%; height: 100%; }
 
 /* MAPLIBRE OVERRIDES */
@@ -536,6 +579,7 @@ input  { font-family: inherit; }
 .legend-item { display: flex; align-items: center; gap: 7px; }
 .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 .legend-label { font-size: 11px; color: var(--text2); line-height: 14px; }
+.legend-note  { font-size: 10px; color: var(--text3); margin-top: 5px; line-height: 13px; }
 
 /* ─── RESPONSIVE ──────────────────────────────────────*/
 @media (max-width: 900px) {
@@ -560,6 +604,261 @@ input  { font-family: inherit; }
     border-top: 1px solid var(--border2);
   }
   .map-legend { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   DETAIL PAGE
+═══════════════════════════════════════════════════════ */
+#page-detail {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  overflow-y: auto;
+  z-index: 100;
+}
+#page-detail::-webkit-scrollbar { width: 4px; }
+#page-detail::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* Nav */
+.dp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 52px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.dp-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blue-text);
+  padding: 5px 10px;
+  border-radius: 7px;
+  transition: background 0.12s;
+}
+.dp-back-btn:hover { background: var(--blue-bg); }
+.dp-nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+/* Hero */
+.dp-hero {
+  background: linear-gradient(135deg, #2A4A35 0%, #1A2E21 60%, #0F1A14 100%);
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 24px 28px;
+}
+.dp-hero-inner { max-width: 680px; width: 100%; }
+.dp-hero-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.dp-hero-badge.badge-gratuito { background: rgba(74,124,89,.25); color: #8fc9a0; }
+.dp-hero-badge.badge-privado  { background: rgba(196,98,45,.25);  color: #f0a07a; }
+.dp-hero-name {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.dp-hero-loc {
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Body */
+.dp-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+/* Info grid */
+.dp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.dp-cell { background: var(--white); padding: 14px 16px; }
+.dp-cell.hidden { display: none; }
+.dp-cell-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.dp-cell-val { font-size: 14px; font-weight: 500; color: var(--text); }
+
+/* Sections */
+.dp-section { margin-bottom: 24px; }
+.dp-section.hidden { display: none; }
+.dp-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.dp-section-val { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+/* Contacts */
+.dp-contact-list { display: flex; flex-direction: column; gap: 10px; }
+.dp-contact-item { display: flex; align-items: center; gap: 12px; font-size: 13px; }
+.dp-contact-item a { color: var(--blue-text); text-decoration: none; }
+.dp-contact-item a:hover { text-decoration: underline; }
+.dp-contact-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--white); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: var(--text2);
+}
+
+/* Loading */
+.dp-loading { display: none; }
+.dp-loading.visible { display: block; }
+
+/* Placeholder sections */
+
+/* FEEDBACK */
+.dp-feedback-row {
+  padding: 8px 24px 32px;
+  max-width: 680px;
+}
+.dp-feedback-btn {
+  font-size: 12px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .15s;
+}
+.dp-feedback-btn:hover { color: var(--text2); }
+#feedback-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.feedback-modal {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 16px 64px rgba(0,0,0,.2);
+}
+.feedback-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  font-size: 14px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+.feedback-close:hover { color: var(--text); }
+.feedback-title {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.feedback-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.feedback-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.feedback-checks label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.feedback-checks input[type=checkbox] {
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+.feedback-msg {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  transition: border-color .15s;
+}
+.feedback-msg:focus { border-color: var(--blue); }
+.feedback-submit {
+  background: var(--blue);
+  color: #fff;
+  border-radius: 10px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  transition: background .15s;
+}
+.feedback-submit:hover { background: #163D6E; }
+.feedback-submit:disabled { opacity: .5; cursor: not-allowed; }
+.feedback-thanks {
+  text-align: center;
+  font-size: 14px;
+  color: var(--green);
+  margin-top: 12px;
 }
 </style>
 </head>
@@ -600,22 +899,21 @@ input  { font-family: inherit; }
     <p class="ln-sub">Todas as creches e jardins de infância de Portugal, num só lugar.</p>
 
     <div class="ln-search-box">
-      <svg class="ln-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <circle cx="7" cy="7" r="5.5" stroke="#1A1614" stroke-width="1.5"/>
-        <path d="m11.5 11.5 2.5 2.5" stroke="#1A1614" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <input id="ln-input" type="text" placeholder="Bairro, cidade ou código postal…" autocomplete="off">
-      <button class="btn-pesquisar" id="ln-btn">Pesquisar</button>
+      <div class="ln-search-row1">
+        <button class="ln-age-pill active" data-val="">Todas as idades</button>
+        <button class="ln-age-pill" data-val="creche">&lt; 3 anos</button>
+        <button class="ln-age-pill" data-val="jardim">3+ anos</button>
+      </div>
+      <div class="ln-search-row2">
+        <svg class="ln-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="7" cy="7" r="5.5" stroke="#1A1614" stroke-width="1.5"/>
+          <path d="m11.5 11.5 2.5 2.5" stroke="#1A1614" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input id="ln-input" type="text" placeholder="Bairro, cidade ou código postal…" autocomplete="off">
+        <button class="btn-pesquisar" id="ln-btn">Pesquisar</button>
+      </div>
     </div>
 
-    <div class="suggestions">
-      <span class="sug-label">Sugestões:</span>
-      <button class="sug-pill" data-q="Lisboa">Lisboa</button>
-      <button class="sug-pill" data-q="Porto">Porto</button>
-      <button class="sug-pill" data-q="Braga">Braga</button>
-      <button class="sug-pill" data-q="Coimbra">Coimbra</button>
-      <button class="sug-pill" data-q="Setúbal">Setúbal</button>
-    </div>
   </div>
 
   <div class="ln-stats">
@@ -669,8 +967,8 @@ input  { font-family: inherit; }
         <button class="fpill active" data-filter="cat" data-val="">Categoria</button>
         <div class="fpill-dropdown" id="dd-cat">
           <button class="fopt active" data-val="">Todos</button>
-          <button class="fopt" data-val="gratuito">Gratuito</button>
-          <button class="fopt" data-val="privado">Privado</button>
+          <button class="fopt" data-val="gratuito">Público / IPSS</button>
+          <button class="fopt" data-val="privado">Privado / Creche Feliz</button>
         </div>
       </div>
       <div class="filter-group" id="fg-horario">
@@ -689,16 +987,99 @@ input  { font-family: inherit; }
     <div class="list-panel">
       <div class="list-count" id="list-count">A carregar…</div>
       <div class="list-scroll" id="list-scroll"></div>
+
     </div>
 
     <div class="map-panel">
       <div id="map"></div>
       <div class="map-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#4A7C59"></div><span class="legend-label">Gratuito / Subsidiado</span></div>
-        <div class="legend-item"><div class="legend-dot" style="background:#C4622D"></div><span class="legend-label">Privado</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4A7C59"></div><span class="legend-label">Público / IPSS</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#C4622D"></div><span class="legend-label">Privado / Creche Feliz</span></div>
       </div>
     </div>
 
+  </div>
+</div>
+
+<!-- ══════════════ DETAIL PAGE ══════════════ -->
+<div id="page-detail" style="display:none">
+  <nav class="dp-nav">
+    <button class="dp-back-btn" id="dp-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Voltar
+    </button>
+    <span class="dp-nav-logo">creches.pt</span>
+    <div style="width:72px"></div>
+  </nav>
+
+  <div class="dp-hero" id="dp-hero">
+    <div class="dp-hero-inner">
+      <div class="dp-hero-badge" id="dp-hero-badge"></div>
+      <h1 class="dp-hero-name" id="dp-hero-name"></h1>
+      <div class="dp-hero-loc" id="dp-hero-loc"></div>
+    </div>
+  </div>
+
+  <div class="dp-body">
+
+    <div class="dp-grid">
+      <div class="dp-cell" id="dpc-tipo">
+        <div class="dp-cell-label">Tipo</div>
+        <div class="dp-cell-val" id="dpc-tipo-val"></div>
+      </div>
+      <div class="dp-cell" id="dpc-cap">
+        <div class="dp-cell-label">Capacidade</div>
+        <div class="dp-cell-val" id="dpc-cap-val"></div>
+      </div>
+      <div class="dp-cell" id="dpc-horario">
+        <div class="dp-cell-label">Horário</div>
+        <div class="dp-cell-val" id="dpc-horario-val"></div>
+      </div>
+    </div>
+
+    <div class="dp-section" id="dps-morada">
+      <div class="dp-section-label">Morada</div>
+      <div class="dp-section-val" id="dp-morada"></div>
+    </div>
+
+    <div class="dp-section hidden" id="dps-entidade">
+      <div class="dp-section-label">Entidade proprietária</div>
+      <div class="dp-section-val" id="dp-entidade"></div>
+    </div>
+
+    <div class="dp-section hidden" id="dps-contacts">
+      <div class="dp-section-label">Contactos</div>
+      <div class="dp-contact-list" id="dp-contact-list"></div>
+    </div>
+
+    <div class="dp-section dp-loading" id="dps-loading">
+      <div class="skel" style="height:13px;width:55%;margin-bottom:10px"></div>
+      <div class="skel" style="height:13px;width:40%"></div>
+    </div>
+
+    <div class="dp-feedback-row">
+      <button class="dp-feedback-btn" id="dp-feedback-btn">Reportar informação incorrecta</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════ FEEDBACK MODAL ══════════════ -->
+<div id="feedback-overlay" style="display:none">
+  <div class="feedback-modal">
+    <button class="feedback-close" id="feedback-close">✕</button>
+    <h3 class="feedback-title">Reportar problema</h3>
+    <p class="feedback-sub" id="feedback-inst-name"></p>
+    <div class="feedback-checks">
+      <label><input type="checkbox" value="morada">Morada incorrecta ou em falta</label>
+      <label><input type="checkbox" value="contactos">Contactos incorrectos ou em falta</label>
+      <label><input type="checkbox" value="encerrada">Creche encerrada ou inexistente</label>
+      <label><input type="checkbox" value="tipo">Tipo errado (creche / jardim de infância)</label>
+      <label><input type="checkbox" value="outro">Outro</label>
+    </div>
+    <textarea class="feedback-msg" id="feedback-msg" placeholder="Detalhes adicionais (opcional)…" rows="3"></textarea>
+    <button class="feedback-submit" id="feedback-submit">Enviar</button>
+    <p class="feedback-thanks" id="feedback-thanks" style="display:none">Obrigado! O seu feedback foi enviado.</p>
   </div>
 </div>
 
@@ -727,12 +1108,21 @@ let map           = null;
 let mapLoaded     = false;
 let markers       = {};
 let activePopup   = null;
+let hoveredMarkerId = null;
+let searchMarker  = null;
 let mapFitOnLoad  = false; // true only for the initial render after a new search
 
 // ── CATEGORY ────────────────────────────────────────────
 function getCategory(r) {
   const nj = (r.natureza_juridica || '').toLowerCase();
   return /lucrativ/i.test(nj) ? 'privado' : 'gratuito';
+}
+
+function getTipoLabel(tipo) {
+  if (!tipo) return 'Creche';
+  if (tipo === 'Creche e Jardim de Infância') return 'Creche & J. Infância';
+  if (tipo.includes('Infância')) return 'J. Infância';
+  return tipo;
 }
 
 // ── POSTCODE DETECTION ──────────────────────────────────
@@ -792,9 +1182,12 @@ async function doSearch(q) {
   lastQuery = q;
   showApp(q);
   renderSkeletons();
-  setCount('A geocodificar…');
+  setCount('A pesquisar…');
   const geo = await geocode(q);
-  if (geo) {
+  // Only treat as a location search if the geocoder's label actually contains the query.
+  // e.g. "desagravo" → geo label "Convento do Louriçal, Rua do Convento" → not a place match.
+  const isPlaceSearch = geo && geo.label.toLowerCase().includes(q.toLowerCase());
+  if (isPlaceSearch) {
     await doGeoSearch(q, geo);
   } else {
     await doTextSearch(q);
@@ -895,7 +1288,7 @@ async function fetchNearby() {
   allResults = rows;
   mapFitOnLoad = true;
   renderAll();
-  if (map && mapLoaded) map.easeTo({ center: [lng, lat], zoom: 13, duration: 600 });
+  if (map && mapLoaded) map.easeTo({ center: [lng, lat], zoom: 14, duration: 600 });
 }
 
 // ── FILTER & RENDER ─────────────────────────────────────
@@ -1003,21 +1396,20 @@ function makeCard(r) {
   nm.textContent = r.nome;
   const bdg = document.createElement('div');
   bdg.className = 'badge badge-' + cat;
-  bdg.textContent = cat === 'privado' ? 'Privado' : 'Gratuito';
+  bdg.textContent = cat === 'privado' ? 'Privado / Creche Feliz' : 'Público / IPSS';
   top.appendChild(nm);
   top.appendChild(bdg);
 
   // address
   const addr = document.createElement('div');
   addr.className = 'rcard-addr';
-  addr.textContent = [r.morada, r.localidade || r.freguesia || r.concelho].filter(Boolean).join(' · ');
+  addr.textContent = [r.morada, r.localidade || r.concelho].filter(Boolean).join(' · ');
 
   // meta: tipo · crianças · horario (plain text, exact Paper style)
   const meta = document.createElement('div');
   meta.className = 'rcard-meta';
   const metaItems = [
-    r.tipo ? (r.tipo.includes('Infância') ? 'J. Infância' : r.tipo) : null,
-    r.capacidade ? `${r.capacidade} crianças` : null,
+    getTipoLabel(r.tipo),
     r.horario || null,
   ].filter(Boolean);
   metaItems.forEach(t => {
@@ -1038,6 +1430,25 @@ function makeCard(r) {
   card.appendChild(addr);
   if (metaItems.length) card.appendChild(meta);
   card.addEventListener('click', () => selectCard(r));
+  card.addEventListener('mouseenter', () => {
+    // Close any previously hovered marker's popup
+    if (hoveredMarkerId && hoveredMarkerId !== r.id) {
+      const prev = markers[hoveredMarkerId];
+      if (prev) { prev.dot.style.transform = 'scale(1)'; prev.hidePopup(); }
+    }
+    hoveredMarkerId = r.id;
+    const m = markers[r.id];
+    if (!m) return;
+    m.dot.style.transform = 'scale(1.7)';
+    m.showPopup();
+  });
+  card.addEventListener('mouseleave', () => {
+    const m = markers[r.id];
+    if (!m) return;
+    m.dot.style.transform = 'scale(1)';
+    m.hidePopup();
+    if (hoveredMarkerId === r.id) hoveredMarkerId = null;
+  });
   return card;
 }
 
@@ -1064,7 +1475,7 @@ function selectCard(r) {
   document.querySelectorAll('.rcard').forEach(el => {
     el.classList.toggle('active', el.dataset.id == r.id);
   });
-  panToCard(r);
+  openDetail(r);
 }
 
 // ── MAP ─────────────────────────────────────────────────
@@ -1107,16 +1518,23 @@ function initMap() {
   });
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
   map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
-  map.on('load', () => { mapLoaded = true; updateMap(); });
+  map.on('load', () => {
+    mapLoaded = true;
+    updateMap();
+    // Collapse attribution on load (MapLibre auto-expands on wide viewports)
+    document.querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show');
+  });
   map.on('moveend', () => { if (searchMode === 'geo' && allResults.length) renderList(); });
 }
 
 
 function updateMap() {
   if (!map || !mapLoaded) return;
-  Object.values(markers).forEach(m => m.remove());
+  Object.values(markers).forEach(m => m.marker.remove());
   markers = {};
+  hoveredMarkerId = null;
   if (activePopup) { activePopup.remove(); activePopup = null; }
+  if (searchMarker) { searchMarker.remove(); searchMarker = null; }
 
   const rows = filteredForMap();
   const bounds = new maplibregl.LngLatBounds();
@@ -1153,8 +1571,8 @@ function updateMap() {
       nm.textContent = r.nome;
       const sub = document.createElement('div');
       sub.className = 'pop-sub';
-      const parts = [cat === 'privado' ? 'Privado' : 'Gratuito'];
-      if (r._dist != null) parts.push(formatDist(r._dist));
+      const tipo = getTipoLabel(r.tipo);
+      const parts = [tipo, cat === 'privado' ? 'Privado / Creche Feliz' : 'Público / IPSS'];
       sub.textContent = parts.join(' · ');
       content.appendChild(nm);
       content.appendChild(sub);
@@ -1163,7 +1581,10 @@ function updateMap() {
       hoverPopup.on('close', () => { hoverPopup = null; });
     };
 
-    el.addEventListener('mouseenter', () => { dot.style.transform = 'scale(1.7)'; showPopup(); });
+    el.addEventListener('mouseenter', () => {
+      dot.style.transform = 'scale(1.7)';
+      showPopup();
+    });
     el.addEventListener('mouseleave', () => {
       dot.style.transform = 'scale(1)';
       if (hoverPopup) { hoverPopup.remove(); hoverPopup = null; }
@@ -1176,16 +1597,76 @@ function updateMap() {
       if (cardEl) cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
 
+    const hidePopup = () => {
+      if (hoverPopup) { hoverPopup.remove(); hoverPopup = null; }
+    };
+
     const marker = new maplibregl.Marker({ element: el }).setLngLat(coords).addTo(map);
 
-    markers[r.id] = marker;
+    markers[r.id] = { marker, dot, showPopup, hidePopup };
     bounds.extend(coords);
     hasBounds = true;
   });
 
   if (hasBounds && rows.length > 1 && mapFitOnLoad) {
-    map.fitBounds(bounds, { padding: 60, maxZoom: 14, duration: 700 });
+    map.fitBounds(bounds, { padding: 60, maxZoom: 13, duration: 700 });
     mapFitOnLoad = false;
+  }
+
+  // Radius circle
+  updateRadiusCircle();
+
+  // Search location pin
+  if (searchCoords) {
+    const el = document.createElement('div');
+    Object.assign(el.style, {
+      width: '14px', height: '14px', borderRadius: '50%',
+      background: '#1a1a1a', border: '3px solid #fff',
+      boxShadow: '0 0 0 2px #1a1a1a, 0 2px 6px rgba(0,0,0,.35)',
+    });
+    searchMarker = new maplibregl.Marker({ element: el })
+      .setLngLat([searchCoords.lng, searchCoords.lat])
+      .addTo(map);
+  }
+}
+
+function makeCircleGeoJSON(lat, lng, radiusM, steps = 64) {
+  const R = 6371000;
+  const coords = [];
+  for (let i = 0; i <= steps; i++) {
+    const angle = (i / steps) * 2 * Math.PI;
+    const dLat = (radiusM / R) * (180 / Math.PI) * Math.cos(angle);
+    const dLng = (radiusM / R) * (180 / Math.PI) * Math.sin(angle) / Math.cos(lat * Math.PI / 180);
+    coords.push([lng + dLng, lat + dLat]);
+  }
+  return { type: 'Feature', geometry: { type: 'LineString', coordinates: coords } };
+}
+
+function updateRadiusCircle() {
+  if (!map || !mapLoaded) return;
+  const dist = activeFilters.dist ? parseInt(activeFilters.dist) : 0;
+  const show = dist > 0 && searchCoords;
+
+  if (!map.getSource('radius-circle')) {
+    map.addSource('radius-circle', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+    map.addLayer({
+      id: 'radius-circle-line',
+      type: 'line',
+      source: 'radius-circle',
+      paint: {
+        'line-color': '#1a1a1a',
+        'line-width': 1.5,
+        'line-dasharray': [3, 3],
+        'line-opacity': 0.4,
+      },
+    });
+  }
+
+  const src = map.getSource('radius-circle');
+  if (show) {
+    src.setData(makeCircleGeoJSON(searchCoords.lat, searchCoords.lng, dist));
+  } else {
+    src.setData({ type: 'FeatureCollection', features: [] });
   }
 }
 
@@ -1202,10 +1683,24 @@ function showApp(q) {
   const app = document.getElementById('app');
   app.style.display = 'flex';
   document.getElementById('app-input').value = q;
+  // Sync tipo filter bar to match landing page age pill selection
+  const tipoPill = document.querySelector('#fg-tipo .fpill');
+  const tipoDD   = document.querySelector('#dd-tipo');
+  const tipoVal  = activeFilters.tipo;
+  tipoDD.querySelectorAll('.fopt').forEach(o => o.classList.toggle('active', o.dataset.val === tipoVal));
+  tipoPill.classList.toggle('has-value', !!tipoVal);
+  tipoPill.textContent = tipoVal === 'creche' ? 'Creche' : tipoVal === 'jardim' ? 'J. Infância' : 'Tipo';
   if (!map) initMap();
 }
 
 // ── EVENTS ──────────────────────────────────────────────
+document.querySelectorAll('.ln-age-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.ln-age-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    activeFilters.tipo = pill.dataset.val;
+  });
+});
 document.getElementById('ln-btn').addEventListener('click', () => {
   doSearch(document.getElementById('ln-input').value);
 });
@@ -1222,6 +1717,7 @@ document.getElementById('app-logo').addEventListener('click', () => {
   document.getElementById('app').style.display = 'none';
   document.getElementById('landing').style.display = 'flex';
   document.getElementById('ln-input').value = '';
+  document.querySelectorAll('.ln-age-pill').forEach((p,i) => p.classList.toggle('active', i===0));
   allResults = []; lastQuery = '';
   searchMode = 'text'; searchCoords = null;
   document.getElementById('filter-bar').classList.remove('visible');
@@ -1279,13 +1775,159 @@ const DEMO = [
   { id:4,  nome:'Creche Municipal de Alvalade',        morada:'Rua Cidade de Cardiff, 3',       localidade:'Alvalade',  francisco:'Alvalade', concelho:'Lisboa', distrito:'Lisboa',  tipo:'Creche',             natureza_juridica:'Câmara Municipal de Lisboa',         capacidade:45,  horario:'7:30–18:30', codigo_postal:'1700-108', location:{coordinates:[-9.1438,38.7502]} },
   { id:5,  nome:'Jardim Escola João de Deus',          morada:'Av. Alm. Gago Coutinho, 84',     localidade:'Roma',      francisco:'Areeiro',  concelho:'Lisboa', distrito:'Lisboa',  tipo:'Jardim de Infância', natureza_juridica:'Associação de Solidariedade Social', capacidade:120, horario:'8:00–18:00', codigo_postal:'1700-031', location:{coordinates:[-9.1331,38.7578]} },
   { id:6,  nome:'Infantário Obra Social das Irmãs',    morada:'Rua Augusto Gil, 22',            localidade:'Areeiro',   francisco:'Areeiro',  concelho:'Lisboa', distrito:'Lisboa',  tipo:'Creche',             natureza_juridica:'Entidade Privada',                   capacidade:50,  horario:'7:30–19:00', codigo_postal:'1000-048', location:{coordinates:[-9.1299,38.7439]} },
-  { id:7,  nome:'Creche Feliz Infância',               morada:'Rua de Almada, 5',               localidade:'Porto',     francisco:'Sé',       concelho:'Porto',  distrito:'Porto',   tipo:'Creche',             natureza_juridica:'Entidade Privada',                   capacidade:40,  horario:'7:30–18:30', codigo_postal:'4050-037', location:{coordinates:[-8.6133,41.1496]} },
+  { id:7,  nome:'Público / IPSS Infância',               morada:'Rua de Almada, 5',               localidade:'Porto',     francisco:'Sé',       concelho:'Porto',  distrito:'Porto',   tipo:'Creche',             natureza_juridica:'Entidade Privada',                   capacidade:40,  horario:'7:30–18:30', codigo_postal:'4050-037', location:{coordinates:[-8.6133,41.1496]} },
   { id:8,  nome:'Centro Infantil do Bolhão',           morada:'Rua Sá da Bandeira, 22',         localidade:'Porto',     francisco:'Santo Ildefonso', concelho:'Porto',  distrito:'Porto', tipo:'Creche',          natureza_juridica:'Associação de Solidariedade Social', capacidade:55, horario:'7:00–19:00', codigo_postal:'4000-427', location:{coordinates:[-8.6091,41.1521]} },
   { id:9,  nome:'Creche Municipal do Porto',           morada:'Rua Mouzinho da Silveira, 9',    localidade:'Porto',     francisco:'Bonfim',   concelho:'Porto',  distrito:'Porto',   tipo:'Creche',             natureza_juridica:'Câmara Municipal do Porto',          capacidade:70,  horario:'7:30–18:30', codigo_postal:'4300-315', location:{coordinates:[-8.6147,41.1458]} },
   { id:10, nome:'Jardim de Infância Estrelinhas',      morada:'Av. da Boavista, 334',           localidade:'Boavista',  francisco:'Cedofeita', concelho:'Porto',  distrito:'Porto',  tipo:'Jardim de Infância', natureza_juridica:'Entidade Privada',                   capacidade:30,  horario:'8:00–18:00', codigo_postal:'4050-113', location:{coordinates:[-8.6303,41.1567]} },
   { id:11, nome:'IPSS São Vicente de Paulo',           morada:'Rua da Palma, 3',                localidade:'Braga',     francisco:'Maximinos', concelho:'Braga',  distrito:'Braga',  tipo:'Creche',             natureza_juridica:'Associação de Solidariedade Social', capacidade:80,  horario:'7:30–19:00', codigo_postal:'4700-316', location:{coordinates:[-8.4266,41.5503]} },
   { id:12, nome:'Creche Particular Braguinha',         morada:'Av. Central, 88',                localidade:'Braga',     francisco:'Braga',    concelho:'Braga',  distrito:'Braga',   tipo:'Creche',             natureza_juridica:'Entidade Privada',                   capacidade:45,  horario:'8:00–18:30', codigo_postal:'4710-229', location:{coordinates:[-8.4315,41.5477]} },
 ];
+
+// ── DETAIL PAGE ──────────────────────────────────────────
+const pageDetail = document.getElementById('page-detail');
+const pageApp    = document.getElementById('app');
+
+document.getElementById('dp-back').addEventListener('click', () => {
+  pageDetail.style.display = 'none';
+  pageApp.style.display = 'flex';
+  document.getElementById('landing').style.display = 'none';
+});
+
+function openDetail(r) {
+  // Show detail page, hide app
+  pageApp.style.display = 'none';
+  pageDetail.style.display = 'block';
+  pageDetail.scrollTop = 0;
+  feedbackInstitutionId   = r.id;
+  feedbackInstitutionNome = r.nome;
+
+  // Hero
+  const cat = getCategory(r);
+  const badge = document.getElementById('dp-hero-badge');
+  badge.className = 'dp-hero-badge badge-' + cat;
+  badge.textContent = cat === 'privado' ? 'Privado / Creche Feliz' : 'Público / IPSS';
+  document.getElementById('dp-hero-name').textContent = r.nome || '';
+  const loc = [r.concelho, r.distrito].filter(Boolean).join(', ');
+  document.getElementById('dp-hero-loc').textContent = loc;
+
+  // Info grid
+  dpSetCell('dpc-tipo',    'dpc-tipo-val',    r.tipo);
+  dpSetCell('dpc-cap',     'dpc-cap-val',     r.capacidade ? `${r.capacidade} crianças` : null);
+  dpSetCell('dpc-horario', 'dpc-horario-val', r.horario || null);
+
+  // Address
+  const city = r.localidade || r.concelho;
+  const addrLine1 = [r.morada, r.codigo_postal ? `${r.codigo_postal}${city ? ' ' + city : ''}` : city].filter(Boolean);
+  document.getElementById('dp-morada').textContent = addrLine1.join(', ');
+
+  // Reset enriched sections
+  document.getElementById('dps-entidade').classList.add('hidden');
+  document.getElementById('dps-contacts').classList.add('hidden');
+  document.getElementById('dp-contact-list').innerHTML = '';
+  document.getElementById('dps-loading').classList.add('visible');
+
+  fetchDetailExtra(r.id);
+}
+
+async function fetchDetailExtra(id) {
+  const loadEl = document.getElementById('dps-loading');
+  if (!sb) { loadEl.classList.remove('visible'); return; }
+  try {
+    const { data, error } = await sb
+      .from('institutions')
+      .select('telefone,telefone_google,email,website_google,entidade_proprietaria')
+      .eq('id', id)
+      .single();
+    loadEl.classList.remove('visible');
+    if (error || !data) return;
+
+    if (data.entidade_proprietaria) {
+      document.getElementById('dp-entidade').textContent = data.entidade_proprietaria;
+      document.getElementById('dps-entidade').classList.remove('hidden');
+    }
+
+    const contacts = [];
+    const tel = data.telefone || data.telefone_google;
+    if (tel) contacts.push({ type: 'phone', label: tel, href: `tel:${tel.replace(/\s/g, '')}` });
+    if (data.email) contacts.push({ type: 'email', label: data.email, href: `mailto:${data.email}` });
+    if (data.website_google) contacts.push({ type: 'web', label: data.website_google.replace(/^https?:\/\//, '').replace(/\/$/, ''), href: data.website_google });
+
+    if (contacts.length) {
+      const icons = {
+        phone: '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 3.5-1.75 1.05A9 9 0 0 0 9.5 9.25L10.5 7.5 14 9v3a1 1 0 0 1-1 1C6.28 13 3 6.72 3 3a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+        email: '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M2 5.5l6 4 6-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+        web:   '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M2 8h12M8 2c-1.5 2-2 3.8-2 6s.5 4 2 6M8 2c1.5 2 2 3.8 2 6s-.5 4-2 6" stroke="currentColor" stroke-width="1.4"/></svg>',
+      };
+      const list = document.getElementById('dp-contact-list');
+      contacts.forEach(c => {
+        const item = document.createElement('div');
+        item.className = 'dp-contact-item';
+        const icon = document.createElement('div');
+        icon.className = 'dp-contact-icon';
+        icon.innerHTML = icons[c.type];
+        const a = document.createElement('a');
+        a.href = c.href;
+        a.textContent = c.label;
+        if (c.type === 'web') a.target = '_blank';
+        item.appendChild(icon);
+        item.appendChild(a);
+        list.appendChild(item);
+      });
+      document.getElementById('dps-contacts').classList.remove('hidden');
+    }
+  } catch(e) {
+    document.getElementById('dps-loading').classList.remove('visible');
+  }
+}
+
+// ── FEEDBACK ─────────────────────────────────────────────
+let feedbackInstitutionId   = null;
+let feedbackInstitutionNome = null;
+
+document.getElementById('dp-feedback-btn').addEventListener('click', () => {
+  document.getElementById('feedback-inst-name').textContent = feedbackInstitutionNome || '';
+  document.getElementById('feedback-msg').value = '';
+  document.getElementById('feedback-thanks').style.display = 'none';
+  document.getElementById('feedback-submit').disabled = false;
+  document.querySelectorAll('.feedback-checks input').forEach(c => c.checked = false);
+  document.getElementById('feedback-overlay').style.display = 'flex';
+});
+document.getElementById('feedback-close').addEventListener('click', () => {
+  document.getElementById('feedback-overlay').style.display = 'none';
+});
+document.getElementById('feedback-overlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) e.currentTarget.style.display = 'none';
+});
+document.getElementById('feedback-submit').addEventListener('click', async () => {
+  const issues = [...document.querySelectorAll('.feedback-checks input:checked')].map(c => c.value);
+  const message = document.getElementById('feedback-msg').value.trim();
+  if (!issues.length && !message) return;
+  const btn = document.getElementById('feedback-submit');
+  btn.disabled = true;
+  try {
+    if (sb) {
+      await sb.from('feedback').insert({
+        institution_id:   feedbackInstitutionId,
+        institution_nome: feedbackInstitutionNome,
+        issues,
+        message: message || null,
+      });
+    }
+    document.getElementById('feedback-thanks').style.display = 'block';
+    setTimeout(() => { document.getElementById('feedback-overlay').style.display = 'none'; }, 2000);
+  } catch(e) {
+    console.warn('[creches] feedback error:', e);
+    btn.disabled = false;
+  }
+});
+
+function dpSetCell(cellId, valId, value) {
+  const cell = document.getElementById(cellId);
+  const valEl = document.getElementById(valId);
+  if (!cell || !valEl) return;
+  if (value) { cell.classList.remove('hidden'); valEl.textContent = value; }
+  else { cell.classList.add('hidden'); }
+}
 </script>
 </body>
 </html>
