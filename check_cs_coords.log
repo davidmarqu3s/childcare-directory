@@ -1,0 +1,1790 @@
+Total: 5879 | Already done: 906 | Remaining: 4973
+  [1/4973] MINOR        id=31419  dist=283m  Escola Básica de Agrolongo
+  [8/4973] MINOR        id=31436  dist=117m  Escola Básica de Requião
+  [9/4973] MINOR        id=31437  dist=151m  Jardim de Infância de Mouquim
+  [10/4973] MISMATCH     id=31440  dist=675m  Escola Básica de Telhado
+  [16/4973] MISMATCH     id=31472  dist=3236m  Escola Básica de Monte-Guardizela
+  [19/4973] MINOR        id=31488  dist=397m  Escola Básica de Curvos, Esposende
+  [20/4973] MINOR        id=31489  dist=115m  Escola Básica de Gandra
+  [27/4973] MINOR        id=31585  dist=480m  Escola Básica de Infantas
+  [28/4973] MISMATCH     id=31586  dist=21627m  Escola Básica de São Romão
+  [29/4973] MISMATCH     id=31587  dist=19810m  Escola Básica de Serzedo, Guimarães
+  [30/4973] MINOR        id=31615  dist=244m  Escola Básica de Calvos, Guimarães
+  [31/4973] MISMATCH     id=31616  dist=222585m  Escola Básica de Tabuadelo
+  [35/4973] MISMATCH     id=31688  dist=11403m  Jardim de Infância de Chorense
+  [36/4973] MINOR        id=31691  dist=110m  Escola Básica Padre Dr. Joaquim Santos, Refojos de
+  [37/4973] MISMATCH     id=31696  dist=5784m  Escola Básica de Pedraça
+  [38/4973] MISMATCH     id=31699  dist=826m  Jardim de Infância de Santa Senhorinha
+  [39/4973] MINOR        id=31714  dist=233m  Centro Escolar da Naia, Ferreiros
+  [41/4973] MINOR        id=32005  dist=115m  Escola Básica de Estação, Tadim
+  [45/4973] MISMATCH     id=32033  dist=6997m  Escola Básica de Ferreirinha
+  [49/4973] MINOR        id=32045  dist=180m  Escola Básica de Ucha
+  [50/4973] MISMATCH     id=32049  dist=4148m  Escola Básica de Faia
+  [51/4973] MINOR        id=32051  dist=139m  Escola Básica do Arco de Baúlhe
+  [52/4973] MINOR        id=32062  dist=396m  Escola Básica de Garapôa
+  [53/4973] MISMATCH     id=32085  dist=4407m  Escola Básica de Cruz
+  [54/4973] MISMATCH     id=32086  dist=4048m  Escola Básica de Figueiredo
+  [56/4973] MISMATCH     id=32316  dist=1716m  Jardim de Infância e Escola Básica da Quinta da Ve
+  [58/4973] MISMATCH     id=32433  dist=22455m  EB de Guilhofrei
+  [68/4973] MISMATCH     id=32700  dist=937m  Jardim de Infância de Roupeire Airão S. João
+  [72/4973] MISMATCH     id=32724  dist=704m  Jardim de Infância de Ronfe
+  [79/4973] MISMATCH     id=33176  dist=7546m  Jardim de Infância de Santa Luzia, Canedo
+  [88/4973] MINOR        id=33263  dist=266m  Escola Básica de Areias de Vilar
+  [96/4973] MISMATCH     id=33308  dist=928m  Eb1ji de Caneiros
+  [98/4973] MISMATCH     id=33345  dist=22217m  Escola Básica da Cruz de Argola
+  [100/4973] 2%  {'MATCH': 22, 'MINOR': 14, 'MISMATCH': 19, 'CS_ONLY': 0, 'NO_CS_COORDS': 45, 'ERROR': 0}
+  [105/4973] MINOR        id=33380  dist=108m  Escola Básica N.º 2 de Vila Verde
+  [106/4973] MISMATCH     id=33381  dist=2120m  Jardim de Infância de Atães
+  [112/4973] MINOR        id=33396  dist=462m  Escola Básica de Oriz - São Miguel
+  [118/4973] MISMATCH     id=33944  dist=58416m  Escola Básica de Alheira
+  [119/4973] MINOR        id=33945  dist=240m  Escola Básica de Alvito S. Pedro
+  [155/4973] MISMATCH     id=34945  dist=232920m  Escola Básica de Cambeses
+  [156/4973] MINOR        id=34948  dist=428m  Escola Básica de Rio Covo - Santa Eulália
+  [169/4973] MISMATCH     id=34962  dist=2411m  Escola Básica Maria de Lurdes Sampaio de Melo
+  [189/4973] MISMATCH     id=4291  dist=89452m  Jardim de Infância Nossa Senhora de Fátima
+  [190/4973] MISMATCH     id=4300  dist=296755m  Lar Nosso Senhor da Misericórdia
+  [191/4973] MINOR        id=4304  dist=248m  Centro Paroquial de Assistência de Freixo de Espad
+  [192/4973] MISMATCH     id=4311  dist=79150m  Jardim de Infância Centro Paroquial de Assistência
+  [193/4973] MISMATCH     id=4328  dist=776m  Centro Social do Sagrado Coração de Jesus
+  [194/4973] MISMATCH     id=4333  dist=27848m  Jardim de Infância Centro Social Nossa Senhora do 
+  [196/4973] MISMATCH     id=4359  dist=13194m  Equip. Soc. Santa Casa Misericórdia Carrazeda de A
+  [197/4973] MISMATCH     id=4372  dist=238449m  Centro Infantil de Alfândega da Fé
+  [198/4973] MISMATCH     id=4379  dist=49848m  Centro Infantil "O Miminho"
+  [199/4973] MISMATCH     id=4380  dist=285242m  Centro Infantil Arco Íris
+  [200/4973] 4%  {'MATCH': 37, 'MINOR': 19, 'MISMATCH': 32, 'CS_ONLY': 0, 'NO_CS_COORDS': 112, 'ERROR': 0}
+  [201/4973] MINOR        id=4400  dist=122m  Centro Infantil São João de Deus
+  [203/4973] MISMATCH     id=5303  dist=130316m  Nuclisol Jean Piaget
+  [207/4973] MISMATCH     id=19142  dist=216477m  Jardim Infantil da Santa Casa da Misericórdia de V
+  [211/4973] MINOR        id=25531  dist=336m  Creche João Lopes da Silva
+  [213/4973] MISMATCH     id=4316  dist=76230m  Obra Kolping da Diocese de Bragança-Miranda
+  [215/4973] MISMATCH     id=4338  dist=178198m  Equip. Soc. Centro Social Paroquial Santos Mártire
+  [216/4973] MISMATCH     id=15159  dist=51287m  Equip. Soc. da Santa Casa da Misericórdia de Freix
+  [218/4973] MINOR        id=29576  dist=317m  Colégio do Sagrado Coração de Jesus
+  [221/4973] MISMATCH     id=29902  dist=13601m  Jardim de Infância de Avidagos
+  [230/4973] MISMATCH     id=30838  dist=120137m  Escola Básica Guerra Junqueiro
+  [232/4973] MISMATCH     id=31462  dist=2040m  Jardim de Infância de Palaçoulo
+  [233/4973] MISMATCH     id=31463  dist=4462m  Jardim de Infância N.º 1 de Sendim
+  [234/4973] MISMATCH     id=31464  dist=810m  Escola Básica de Miranda do Douro
+  [239/4973] MISMATCH     id=31719  dist=38073m  Jardim de Infância de Bragança
+  [240/4973] MINOR        id=31776  dist=225m  Escola Básica de Santa Maria
+  [244/4973] MISMATCH     id=32064  dist=4623m  Jardim de Infância de Rebordelo
+  [266/4973] MINOR        id=1319  dist=248m  Equip. Soc. do Centro Paroquial de Assistência Nos
+  [267/4973] MISMATCH     id=1341  dist=10168m  Creche e Jardim de Infância "O Cortiço"
+  [268/4973] MISMATCH     id=1345  dist=76056m  Lar I
+  [269/4973] MINOR        id=1349  dist=179m  Equip. Soc. Centro Social e Cultural de Santo Alei
+  [270/4973] MISMATCH     id=1352  dist=4522m  Creche e Jardim de Infância da Santa Casa da Miser
+  [271/4973] MINOR        id=1364  dist=113m  Creche, Pré-Escolar e CATL "O Pinheirinho"
+  [272/4973] MISMATCH     id=1371  dist=353784m  Equip.soc.centro de Apoio a Crianças e Idosos de C
+  [274/4973] MISMATCH     id=1373  dist=239995m  Infantário "O Meu Cantinho"
+  [275/4973] MINOR        id=1375  dist=124m  Equip. Socialdo Centro Social Nossa Senhora das Ne
+  [276/4973] MISMATCH     id=1380  dist=211706m  Santa Casa da Misericórdia de Idanha-A-Nova
+  [277/4973] MISMATCH     id=1390  dist=7739m  Santa Casa da Misericórdia de Vila de Rei
+  [278/4973] MISMATCH     id=1391  dist=161340m  Equip. Soc. do Centro Social São Nuno de Santa Mar
+  [279/4973] MINOR        id=1396  dist=173m  Capuchinho Vermelho
+  [281/4973] MISMATCH     id=2002  dist=151898m  Equip. Social da Associação de Solidariedade Socia
+  [282/4973] MINOR        id=2012  dist=300m  O Pimpão - Centro de Educação para a Infância
+  [286/4973] MISMATCH     id=2023  dist=209380m  Equip. Soc. Centro Paroquial de Bem-Estar Social d
+  [287/4973] MISMATCH     id=2025  dist=213953m  Equip. Soc. do Centro Social Paroquial de Alcaide
+  [288/4973] MISMATCH     id=2031  dist=505m  Centro Infantil Guardado Moreira
+  [289/4973] MISMATCH     id=2036  dist=78036m  Equip. Soc. do Centro Paroquial de Assistência das
+  [290/4973] MISMATCH     id=2040  dist=122694m  Obra de Santa Zita - Covilhã
+  [291/4973] MISMATCH     id=2041  dist=152047m  Jardim de Infância Dr. Alfredo Mota
+  [292/4973] MISMATCH     id=2045  dist=57105m  Centro Social Padres Redentoristas - Infantário "O
+  [293/4973] MINOR        id=2052  dist=259m  Fundação Imaculada Conceição
+  [295/4973] MISMATCH     id=2058  dist=90946m  Jardim de Infância Girassol
+  [296/4973] MISMATCH     id=2063  dist=244923m  Jardim Infantil Maria Augusta Silva
+  [297/4973] MISMATCH     id=2065  dist=11798m  Creche e Jardim-De-Infância da Santa Casa da Miser
+  [299/4973] MISMATCH     id=4448  dist=142743m  Casa Nossa Senhora de Fátima
+  [300/4973] MISMATCH     id=4452  dist=182040m  Jardim de Infância da Associação Nossa Senhora da 
+  [301/4973] MISMATCH     id=4455  dist=34621m  Equip. Soc. do Movimento de Apoio e Solidariedade 
+  [302/4973] MISMATCH     id=11178  dist=13964m  Casa Menino Jesus
+  [303/4973] CS_ONLY      id=12321  dist=—  Centro Social Jesus Maria José - Covilhã
+  [305/4973] MISMATCH     id=19205  dist=246287m  Equip. Soc. da Misericórdia de Penamacor
+  [306/4973] MINOR        id=19210  dist=272m  CACFF - Centro Assistencial Cultural e Formativo d
+  [309/4973] MINOR        id=29014  dist=176m  Centro Infantil Alberto Trindade (Antigo Centro In
+  [312/4973] MISMATCH     id=36545  dist=630m  Centro Infantil do Lar Major Rato
+  [315/4973] MISMATCH     id=29558  dist=529m  Conservatório Regional de Música da Covilhã
+  [319/4973] MINOR        id=30141  dist=449m  Jardim de Infância de Póvoa de Rio de Moinhos
+  [324/4973] MISMATCH     id=30207  dist=1525m  Escola Básica de Fatela
+  [326/4973] MINOR        id=30291  dist=221m  Escola Básica de Escalos de Baixo
+  [328/4973] MINOR        id=30293  dist=347m  Escola Básica de Valongo
+  [330/4973] MISMATCH     id=30320  dist=135918m  Escola Básica de Vale Formoso
+  [335/4973] MINOR        id=30371  dist=106m  Escola Básica de Refúgio
+  [341/4973] MINOR        id=30503  dist=251m  Escola Básica de Castelejo
+  [347/4973] MINOR        id=30509  dist=126m  Escola Básica de Vale de Prazeres
+  [350/4973] MINOR        id=30702  dist=436m  Escola Básica de Cortes
+  [352/4973] MISMATCH     id=30705  dist=626m  Escola Básica N.º 1 de Paúl
+  [354/4973] MINOR        id=30740  dist=349m  Escola Básica de Ladoeiro
+  [358/4973] MISMATCH     id=31093  dist=684m  Escola Básica de Sobreira Formosa
+  [359/4973] MINOR        id=32040  dist=214m  Jardim de Infância dos Penedos Altos
+  [369/4973] MINOR        id=33451  dist=135m  Jardim de Infância de Lardosa
+  [370/4973] MISMATCH     id=33484  dist=670m  Escola Básica Integrada de São Vicente da Beira
+  [397/4973] MINOR        id=2806  dist=245m  Casa da Criança D. Elsa Sotto Mayor
+  [399/4973] MISMATCH     id=2814  dist=6405m  Centro Social Vela Azul
+  [400/4973] MINOR        id=2816  dist=108m  Equip. Soc. Centro Paroquial de Solidariedade Soci
+  [401/4973] MISMATCH     id=2818  dist=1433m  Centro Social da Cova e Gala - Equip. da Morraceir
+  [402/4973] MINOR        id=2826  dist=409m  Equip. Soc. Centro Social e Paroquial de Meãs do C
+  [403/4973] MISMATCH     id=2831  dist=574m  Equip. Soc. Associação de Desenvolvimento, Progres
+  [404/4973] MISMATCH     id=2832  dist=62087m  Equip. Soc. Centro Social Comunitário da Varziela
+  [406/4973] MISMATCH     id=2836  dist=850m  Gira Sol- Associação de Desenvolvimento de Febres
+  [408/4973] MISMATCH     id=2849  dist=206558m  Centro Paroquial de Solidariedade Social da Fregue
+  [411/4973] MISMATCH     id=2853  dist=18346m  Creche da Santa Casa da Misericórdia de Penacova
+  [413/4973] MINOR        id=2858  dist=158m  Equip. Soc. Centro Social de Alfarelos
+  [415/4973] MISMATCH     id=2866  dist=556m  Centro Social São Teotónio
+  [416/4973] MISMATCH     id=2878  dist=9615m  Creche e Erpi do Centro de Apoio Social de Sousela
+  [419/4973] MISMATCH     id=2891  dist=15387m  Equip. do Centro Social de São João
+  [420/4973] MINOR        id=2893  dist=139m  Centro Social Paroquial de Trouxemil
+  [421/4973] MISMATCH     id=2895  dist=10308m  Equip. Soc. Centro Paroquial de Bem Estar Social d
+  [422/4973] MINOR        id=2897  dist=353m  Equip. Soc. Centro Social Paroquial de Sarzedo
+  [424/4973] MISMATCH     id=2902  dist=45219m  Equip. Soc. Centro Social Nossa Senhora da Alegria
+  [428/4973] MINOR        id=2913  dist=262m  Casa da Criança Joaquina Barreto Rosa
+  [430/4973] MISMATCH     id=2926  dist=879m  Centro Infante Dom Pedro - Creche
+  [431/4973] MISMATCH     id=2928  dist=115616m  Creche da AFMP - Cantinho das Cegonhas
+  [432/4973] MISMATCH     id=2930  dist=106772m  Creche de Montemor-O-Velho - Centro Ilda Moreno
+  [433/4973] MISMATCH     id=2940  dist=108979m  Centro Social Comunitário N.ª S.ª dos Milagres
+  [434/4973] MISMATCH     id=2943  dist=567m  Centro Social de São Pedro
+  [435/4973] MISMATCH     id=2946  dist=21271m  Creche e Jardim de Infância Nossa Senhora de Fátim
+  [436/4973] MISMATCH     id=2949  dist=240422m  Centro Social Nossa Senhora da Conceição
+  [438/4973] MISMATCH     id=2953  dist=5539m  Equip. Soc. do Centro Social Polivalente de Palhei
+  [439/4973] MISMATCH     id=2955  dist=640m  Equip. do Centro Paroquial de Solidariedade Social
+  [440/4973] MISMATCH     id=2957  dist=3522m  Equip. Soc. do Centro Social de Castelo de Viegas
+  [444/4973] MINOR        id=2965  dist=410m  Equip. Soc. do Centro de Bem-Estar Infantil de San
+  [445/4973] MINOR        id=2969  dist=403m  Casa da Criança Sarah Beirão
+  [447/4973] MINOR        id=2984  dist=226m  Casa de São Pedro
+  [449/4973] MISMATCH     id=4405  dist=81534m  Equip. Soc. do Centro Social Paroquial de Cadima
+  [450/4973] MISMATCH     id=4410  dist=4529m  Fundação Aurélio Amaro Diniz
+  [452/4973] MINOR        id=4530  dist=352m  Creche da Casa do Povo de Quiaios
+  [456/4973] MINOR        id=4554  dist=274m  Centro Social Polivalente da Freguesia de Murtede
+  [459/4973] MINOR        id=4570  dist=241m  Equip. Soc. do Centro Social de Aldeia das Dez
+  [460/4973] MISMATCH     id=4574  dist=24476m  Creche e Jardim de Infância de São Miguel
+  [461/4973] MISMATCH     id=4587  dist=17152m  Jardim de Infância "A Previdência Portuguesa"
+  [464/4973] MINOR        id=5601  dist=117m  Equip. Soc. I da Misericórdia de Pampilhosa da Ser
+  [466/4973] MINOR        id=5607  dist=311m  Equipamento Social Centro Social Rocha Barros
+  [471/4973] MINOR        id=12170  dist=160m  Equip. Social do Centro de Assistência Paroquial d
+  [472/4973] MISMATCH     id=12195  dist=112411m  Creche Anip
+  [473/4973] MISMATCH     id=12197  dist=30750m  Equip. Social do Centro Soc. e Recreativo de Quimb
+  [474/4973] MINOR        id=12202  dist=373m  Casa do Povo Mouronho
+  [478/4973] MINOR        id=17126  dist=445m  Santa Casa da Misericórdia de Semide
+  [479/4973] MINOR        id=17280  dist=428m  Lar de Cortes
+  [481/4973] MISMATCH     id=17611  dist=5046m  Equipamento do Centro Social Paroquial de Lavos
+  [483/4973] MINOR        id=17675  dist=102m  Equipamento do Centro de Solidariedade Social "O P
+  [484/4973] MISMATCH     id=17681  dist=506m  Pézinhos de Lã - Creche da Misericórdia de Condeix
+  [485/4973] MISMATCH     id=17686  dist=503m  Centro de Solidariedade Social da Adémia
+  [487/4973] MISMATCH     id=18367  dist=28776m  Equip. Social do Centro Social e Polivalente de Ou
+  [488/4973] MINOR        id=18403  dist=486m  Creche e Jardim de Infância - Pintainhos D'ouro, L
+  [490/4973] MISMATCH     id=19832  dist=3731m  Associação Social, Cultural e Recreativa de S.paul
+  [493/4973] MINOR        id=21633  dist=117m  Creche, Jardim de Infância - O Ninho da Luz
+  [494/4973] MISMATCH     id=22533  dist=187718m  Aldeia dos Pimpolhos
+  [496/4973] MINOR        id=22536  dist=143m  Associação de Jardins-Escola João de Deus - Estab.
+  [499/4973] MISMATCH     id=24060  dist=3637m  Centro Social Bem-Querer da Brenha
+  [500/4973] MISMATCH     id=24216  dist=169331m  Casa da Criança de Penela
+  [507/4973] MINOR        id=25772  dist=141m  Creche Margarida Brandão
+  [508/4973] MINOR        id=25829  dist=101m  Centro Sócio-Cultural Polivalente de S. Martinho
+  [509/4973] MINOR        id=26440  dist=174m  Lar da Saibreira
+  [510/4973] MINOR        id=26958  dist=419m  Creche Tico e Teca
+  [513/4973] MISMATCH     id=28301  dist=1339m  O Cocas
+  [515/4973] MISMATCH     id=29392  dist=92687m  Creche e Jardim de Infância da Casa do Pessoal dos
+  [520/4973] MISMATCH     id=35723  dist=2034m  Edifício Arco-Íris
+  [524/4973] MISMATCH     id=2817  dist=2412m  Centro Social da Cova e Gala
+  [527/4973] MINOR        id=4417  dist=154m  Adic - Associação de Defesa do Idoso e da Criança 
+  [528/4973] MISMATCH     id=5610  dist=9487m  Casa da Criança de Soure
+  [531/4973] MISMATCH     id=17959  dist=4055m  Colégio Beija-Flor
+  [561/4973] MINOR        id=30323  dist=168m  Escola Básica de Montemor-O-Velho
+  [563/4973] MISMATCH     id=30325  dist=1615m  Jardim de Infância de Carapinheira
+  [571/4973] MINOR        id=31032  dist=344m  Jardim de Infância de Sanguinheira
+  [572/4973] MINOR        id=31221  dist=218m  Jardim de Infância de Lousã
+  [573/4973] CS_ONLY      id=31307  dist=—  EB1 e Jardim de Infância de Vilamar, Cantanhede
+  [576/4973] MISMATCH     id=31663  dist=1660m  Escola Básica de Seixo
+  [578/4973] MINOR        id=31665  dist=321m  Jardim de Infância de Miro
+  [589/4973] MINOR        id=31799  dist=253m  Jardim de Infância de São João do Campo
+  [591/4973] MISMATCH     id=31813  dist=3472m  Jardim de Infância de Travanca de Lagos
+  [595/4973] MINOR        id=31817  dist=235m  Jardim de Infância de Seixas da Beira
+  [596/4973] MINOR        id=31818  dist=338m  Jardim de Infância de Penalva de Alva
+  [597/4973] MINOR        id=31820  dist=114m  Escola Básica de Nogueira do Cravo
+  [600/4973] 12%  {'MATCH': 126, 'MINOR': 78, 'MISMATCH': 120, 'CS_ONLY': 2, 'NO_CS_COORDS': 274, 'ERROR': 0}
+  [601/4973] MINOR        id=31901  dist=150m  Jardim Escola João de Deus N.º 1
+  [605/4973] MINOR        id=32016  dist=218m  Escola Básica de Degracias
+  [607/4973] MINOR        id=32018  dist=372m  Escola Básica de Tapeus
+  [608/4973] MINOR        id=32019  dist=100m  Escola Básica de Carapelhos com Jardim de Infância
+  [611/4973] MINOR        id=32023  dist=183m  Escola Básica de Figueiró do Campo
+  [612/4973] MISMATCH     id=32024  dist=1164m  Escola Básica de Sobral
+  [613/4973] MINOR        id=32025  dist=117m  Escola Básica de Vinha da Rainha
+  [615/4973] MISMATCH     id=32108  dist=508m  Jardim de Infância de Soure
+  [621/4973] MISMATCH     id=32346  dist=719m  Jardim de Infância de Cantanhede
+  [626/4973] MINOR        id=32686  dist=482m  Escola Básica de Semide
+  [636/4973] MISMATCH     id=33330  dist=548m  Escola Básica do 1ºceb/Jardim-De-Infância de Sarze
+  [668/4973] MINOR        id=35040  dist=145m  Escola Básica Infante D. Pedro
+  [688/4973] MISMATCH     id=1083  dist=261158m  Equip. Soc. Santa Casa Misericórdia do Vimieiro
+  [690/4973] MINOR        id=1090  dist=490m  Equip. Soc. Santa Casa Misericórdia de Arraiolos
+  [692/4973] MINOR        id=1106  dist=107m  Jardim de Infância D.ana Angélica Silveira Santa C
+  [694/4973] MISMATCH     id=1112  dist=116348m  Creche, ATL ,Sad e Centro de Convívio da 3ª Idade 
+  [698/4973] MISMATCH     id=1121  dist=723m  Jardim de Infância do Centro Social Paroquial do C
+  [700/4973] 14%  {'MATCH': 141, 'MINOR': 88, 'MISMATCH': 127, 'CS_ONLY': 2, 'NO_CS_COORDS': 342, 'ERROR': 0}
+  [701/4973] MISMATCH     id=1130  dist=825m  O Casulo - Évora
+  [704/4973] MISMATCH     id=1138  dist=1963m  Obra Promoção Social Sagrada Família - Casa Sagrad
+  [705/4973] MISMATCH     id=1142  dist=108177m  Centro Infantil Irene Lisboa
+  [707/4973] MISMATCH     id=1154  dist=1060m  Casa São José Operário - Évora
+  [708/4973] MISMATCH     id=1158  dist=188473m  Centro Infantil Nossa Senhora da Saúde
+  [709/4973] MISMATCH     id=1162  dist=176508m  Creche e Jardim de Infância da Santa Casa da Miser
+  [713/4973] MINOR        id=1176  dist=203m  Equip. Soc. Centro Paroquial Bem Estar Social São 
+  [714/4973] MINOR        id=1191  dist=247m  Creche Anastácia Franco de Carvalho
+  [716/4973] MINOR        id=1197  dist=383m  Quinta dos Sonhos-Évora
+  [717/4973] MISMATCH     id=1198  dist=39628m  Legado Caixeiro Alentejano
+  [719/4973] MISMATCH     id=17387  dist=911m  Colégio Jardim dos Sentidos - Assoc. das Obras Ass
+  [720/4973] MINOR        id=17690  dist=188m  Adbes - Associação para o Desenvolvimento Bem Esta
+  [722/4973] MISMATCH     id=19667  dist=789m  Creche Lydia Maia Cabeça
+  [723/4973] MISMATCH     id=22112  dist=131444m  Associação Solidariedade Social Ninho
+  [725/4973] MINOR        id=24765  dist=143m  Centro Comunitário Pastorinhos de Fátima
+  [726/4973] MISMATCH     id=25692  dist=13659m  Creche e Aparece
+  [727/4973] MINOR        id=25915  dist=288m  Creche da Cáritas Diocesana de Évora
+  [730/4973] MISMATCH     id=28997  dist=29343m  Creche - Santa Casa da Misericórdia de Alcáçovas
+  [732/4973] MINOR        id=33596  dist=174m  Fundação Salesianos - Salesianos de Évora
+  [755/4973] MINOR        id=31413  dist=364m  Escola Básica 2 3 Padre Bento Pereira
+  [757/4973] MISMATCH     id=31415  dist=7020m  Escola Básica de Rio de Moinhos, Borba
+  [758/4973] MISMATCH     id=31473  dist=7100m  Jardim de Infância de Aguiar
+  [762/4973] MISMATCH     id=32211  dist=3673m  Jardim de Infância da Escola Básica de Alcáçovas
+  [763/4973] MINOR        id=32245  dist=274m  EB1/JI de Arraiolos
+  [798/4973] MISMATCH     id=1914  dist=10377m  Equipamento Social do Centro Popular de Lagoa
+  [799/4973] MISMATCH     id=1915  dist=11738m  Amigos dos Pequeninos
+  [800/4973] MISMATCH     id=1918  dist=258301m  Centro Infantil de Santo Amaro
+  [801/4973] MINOR        id=1919  dist=115m  Centro Infantil e Juventude de São João
+  [803/4973] MISMATCH     id=1921  dist=255194m  Centro Infantil do Chinicato
+  [806/4973] MINOR        id=1928  dist=140m  Colégio Bambino
+  [807/4973] MISMATCH     id=1936  dist=251681m  Complexo Social Coca Maravilhas - Santa Casa da Mi
+  [808/4973] MISMATCH     id=1938  dist=555m  Creche "Os Pipocas" - Complexo Social Coca Maravil
+  [810/4973] MINOR        id=1955  dist=358m  Creche "Sagrada Família"
+  [812/4973] MINOR        id=1965  dist=191m  Jardim - Escola João de Deus - São Bartolomeu de M
+  [813/4973] MINOR        id=1968  dist=349m  Lar da Criança de Portimão
+  [814/4973] MISMATCH     id=1971  dist=2088m  Centro Paroquial de Estombar - Creche e Pré-Escola
+  [815/4973] MINOR        id=1973  dist=343m  A Flor
+  [819/4973] MISMATCH     id=1987  dist=1390200m  Centro de Educação e Desenvolvimento Infantil "Por
+  [824/4973] MINOR        id=4012  dist=328m  Centro Infantil "A Joaninha"
+  [827/4973] MINOR        id=4034  dist=275m  Centro Infantil a Cegonha
+  [828/4973] MINOR        id=4040  dist=108m  Centro Infantil "O Pinóquio"
+  [832/4973] MINOR        id=4057  dist=419m  Centro de Bem Estar Infantil Nossa Senhora de Fáti
+  [833/4973] MISMATCH     id=4060  dist=509m  A Turma Traquinas
+  [835/4973] MINOR        id=4067  dist=416m  Centro Infantil Quinta dos Pardais
+  [836/4973] MINOR        id=4068  dist=354m  Tempos de Infância
+  [839/4973] MINOR        id=4079  dist=474m  Centro Infantil "Despertar"
+  [841/4973] MINOR        id=4090  dist=131m  Casa da Primeira Infância
+  [843/4973] MISMATCH     id=4096  dist=14997m  Centro Infantil do Hospital Faro
+  [844/4973] MISMATCH     id=4101  dist=1212m  Centro Comunitário de Estoi
+  [845/4973] MISMATCH     id=4102  dist=4665m  Centro de Bem-Estar - Lar da Terceira Idade de San
+  [846/4973] MISMATCH     id=4107  dist=6929m  Infantário Palhacinho
+  [849/4973] MISMATCH     id=4191  dist=38016m  Creche, Jardim Infância e ATL "Gaivota"
+  [851/4973] MINOR        id=16075  dist=201m  Centro Comunitário António Aleixo
+  [852/4973] MINOR        id=16077  dist=111m  Creche "As Luzinhas"
+  [853/4973] MINOR        id=16085  dist=166m  Centro Social "Espaço Aberto" De Pêra
+  [854/4973] MINOR        id=16086  dist=111m  Associação Jardim Escola - Infantário de Tavira " 
+  [855/4973] MISMATCH     id=17327  dist=59274m  Creche "Os Vivaços"
+  [856/4973] MISMATCH     id=17328  dist=40420m  Centro Infantil Estrela do Mar
+  [857/4973] MISMATCH     id=18126  dist=1777m  O Jardim dos Palhacinhos
+  [858/4973] MISMATCH     id=18164  dist=944m  Colégio Oficina Divertida, Lda
+  [859/4973] MISMATCH     id=18225  dist=1190m  Creche NT Social - Vale de Rãs
+  [860/4973] MISMATCH     id=18237  dist=8412m  Centro de Bem Estar Infantil da Falfosa
+  [861/4973] MINOR        id=18269  dist=203m  Creche "São José"
+  [862/4973] MISMATCH     id=18270  dist=723m  Centro Comunitário de Paderne
+  [863/4973] MISMATCH     id=18281  dist=500906m  Centro Comunitário de Salir
+  [866/4973] MINOR        id=18420  dist=192m  Centro Comunitário de Benafim
+  [868/4973] MISMATCH     id=20164  dist=5833m  Casa da Criança do Rogil - Pólo de Aljezur
+  [869/4973] MINOR        id=20181  dist=121m  Creche os Amendoinhas
+  [870/4973] MISMATCH     id=21281  dist=578m  O Paraíso Jardim Infantil
+  [874/4973] MISMATCH     id=22509  dist=367432m  Grãozinho D'areia
+  [876/4973] MINOR        id=23861  dist=459m  Creche e Jardim Infância Chebebé
+  [877/4973] MINOR        id=24054  dist=158m  Centro Infantil Nossa Senhora das Dores
+  [878/4973] MISMATCH     id=24823  dist=511m  Creche e Jardim de Infância o Cantinho dos Avós
+  [884/4973] MINOR        id=25004  dist=242m  Colégio do Rio
+  [886/4973] MINOR        id=25185  dist=182m  Creche "Era Uma Vez ..."
+  [890/4973] MINOR        id=25941  dist=127m  Creche Sítio do Bebé
+  [892/4973] MISMATCH     id=25943  dist=505m  A Estação dos Pequeninos
+  [893/4973] MINOR        id=26059  dist=139m  Colégio Origami
+  [894/4973] MINOR        id=26060  dist=132m  Academia dos Marinheiros
+  [895/4973] MINOR        id=26061  dist=202m  Creche e Jardim de Infância da Penha
+  [896/4973] MINOR        id=26253  dist=243m  Ti-Té, Estabelecimentos de Ensino
+  [899/4973] MISMATCH     id=26602  dist=2158m  Creche Jardim do Sol
+  [900/4973] MINOR        id=26959  dist=248m  A Colmeia das Abelhinhas, Unipessoal, Lda
+  [901/4973] MINOR        id=27240  dist=172m  Creche Três Pastorinhos
+  [902/4973] MINOR        id=27427  dist=136m  Centro Intergeracional da Pegada
+  [905/4973] MISMATCH     id=27762  dist=527m  Colégio João Paulo II
+  [906/4973] MISMATCH     id=27763  dist=2851m  Bela Infância
+  [907/4973] MISMATCH     id=29025  dist=4524m  Equip Soc. o Pontão Associação de Solidariedade So
+  [914/4973] MISMATCH     id=36506  dist=688m  Creche Cantinho do Bebé
+  [921/4973] MINOR        id=4021  dist=115m  Jardim de Infância da Associação Social da Fregues
+  [924/4973] MISMATCH     id=17333  dist=473562m  Centro Comunitário da Fuzeta da Delegagação da Cru
+  [925/4973] MISMATCH     id=18205  dist=17180m  Centro Comunitário da Associação Nossa Senhora dos
+  [928/4973] MISMATCH     id=29464  dist=2525m  Nobel International School Algarve
+  [930/4973] MINOR        id=29519  dist=225m  Colégio de N.ª Sr.ª do Alto
+  [931/4973] MINOR        id=29534  dist=315m  Externato "Menino Jesus"
+  [934/4973] MINOR        id=29653  dist=204m  Externato Jardim Infantil da Torraltinha
+  [944/4973] MINOR        id=31285  dist=311m  Centro Educativo e Comunitário Multiserviços de Bu
+  [947/4973] MISMATCH     id=31302  dist=504m  Escola Básica de São João da Venda
+  [948/4973] MISMATCH     id=31304  dist=2287m  Jardim de Infância de Almancil
+  [959/4973] MINOR        id=31403  dist=399m  Escola Básica N.º 1 de Algoz
+  [960/4973] MINOR        id=31404  dist=413m  Escola Básica de Alcantarilha
+  [961/4973] MISMATCH     id=31405  dist=12172m  Jardim de Infância de Armação de Pêra
+  [969/4973] MINOR        id=31597  dist=124m  EB1/JI de Vendas
+  [989/4973] MISMATCH     id=31824  dist=353067m  Escola Básica de Conceição, Faro
+  [994/4973] MISMATCH     id=32112  dist=83314m  Escola EB1/JI Bordeira
+  [996/4973] MINOR        id=32165  dist=230m  EB D.manuel I - Tavira
+  [997/4973] MINOR        id=32295  dist=222m  EB1/JI da Coca Maravilhas
+  [1000/4973] 20%  {'MATCH': 205, 'MINOR': 140, 'MISMATCH': 182, 'CS_ONLY': 2, 'NO_CS_COORDS': 471, 'ERROR': 0}
+  [1009/4973] MINOR        id=32463  dist=345m  E.b.1/JI de Vale Silves
+  [1013/4973] MINOR        id=33233  dist=120m  Jardim de Infância de Vale Serves
+  [1017/4973] MISMATCH     id=33756  dist=52045m  Jardim de Infância N.º 3
+  [1018/4973] MISMATCH     id=33775  dist=202679m  Escola Básica da Fonte Santa
+  [1019/4973] MINOR        id=34375  dist=482m  Jardim de Infância de Escanchinas
+  [1032/4973] MINOR        id=35087  dist=174m  Escola Básica de Monte Gordo
+  [1038/4973] MINOR        id=35100  dist=238m  Escola Básica Major David Neto
+  [1039/4973] MINOR        id=35103  dist=286m  Escola Básica Sophia de Mello Breyner Andresen
+  [1040/4973] MISMATCH     id=35104  dist=860m  Escola Básica Vale de Pedras
+  [1041/4973] MISMATCH     id=35105  dist=693m  Escola Básica de Correeira
+  [1042/4973] MINOR        id=35106  dist=171m  Escola Básica de Caliços
+  [1043/4973] MISMATCH     id=35107  dist=3290m  Escola Básica Prof. Caldeira Alexandre
+  [1048/4973] MINOR        id=35113  dist=223m  Escola Básica José Carlos da Maia
+  [1062/4973] MISMATCH     id=3832  dist=179183m  Casa Dom João de Oliveira Matos
+  [1064/4973] MISMATCH     id=3845  dist=1006m  Jardim de Infância da Casa do Povo de Vila Nova de
+  [1066/4973] MINOR        id=3855  dist=162m  Equip. Soc. I da Associação de Beneficência Popula
+  [1068/4973] MISMATCH     id=3859  dist=234439m  Creche da Misericórdia de Seia
+  [1069/4973] MISMATCH     id=3861  dist=780m  Equip. Soc. do Centro Paroquial de Seia
+  [1070/4973] MISMATCH     id=3868  dist=18310m  Centro de Assistência Cultura e Recreio de Paços d
+  [1071/4973] MINOR        id=3879  dist=191m  Equip. Soc. do Centro de Assistência Paroquial de 
+  [1073/4973] MISMATCH     id=3895  dist=780m  Centro Social Paroquial de Vila Franca das Naves
+  [1074/4973] MINOR        id=3896  dist=119m  Jardim de Infância do Instituto D. Maria do Carmo 
+  [1075/4973] MINOR        id=3901  dist=277m  Equip. Soc. Centro Social Padre José Augusto da Fo
+  [1080/4973] MISMATCH     id=3916  dist=4805m  Equip. Soc. da Fundação João Raimundo
+  [1081/4973] MINOR        id=3917  dist=126m  Jardim de Infância do Lactário Doutor Proença
+  [1082/4973] MISMATCH     id=3918  dist=644m  Casa de Trabalho Jesus, Maria e José
+  [1083/4973] MISMATCH     id=3927  dist=12574m  Abrigo Infantil da Sagrada Família
+  [1084/4973] MISMATCH     id=3929  dist=1026m  Associação Cultural e Social da Freguesia de Panoi
+  [1085/4973] MISMATCH     id=3932  dist=165233m  Equip. Soc. da Misericórdia do Soito
+  [1086/4973] MISMATCH     id=3937  dist=66228m  Jardim de Infância da Fundação D. Teodora F. da Gr
+  [1087/4973] MISMATCH     id=3940  dist=573m  Equip. Soc. da Misericórdia de Almeida
+  [1088/4973] MISMATCH     id=3945  dist=198460m  Centro de Assistência Social (Cerdeira)
+  [1089/4973] MINOR        id=3951  dist=130m  Equip. Soc. da Misericórdia do Sabugal
+  [1091/4973] MISMATCH     id=3959  dist=28552m  Centro de Assistência Social do Instituto São Migu
+  [1092/4973] MINOR        id=3966  dist=111m  Equip. Soc. da Associação de Beneficência Cultura 
+  [1093/4973] MINOR        id=3977  dist=231m  Erpi Santo António
+  [1094/4973] MISMATCH     id=3980  dist=7504m  Creche do Centro de Assistência Social Infantil de
+  [1095/4973] MISMATCH     id=3994  dist=6737m  Infantário Favo de Mel
+  [1096/4973] MINOR        id=5619  dist=191m  Santa Casa da Misericórdia de Trancoso - Creche e 
+  [1097/4973] MINOR        id=12059  dist=441m  Unidade de Apoio à Infância da Fund. D. Laura Sant
+  [1098/4973] MISMATCH     id=17395  dist=762m  Refúgio Ana Luísa - Equip.social da Fundação José 
+  [1099/4973] MISMATCH     id=19661  dist=2092m  Ass. Promoção Social, Cultural e Desportiva de For
+  [1100/4973] MISMATCH     id=19704  dist=42275m  Creche da Santa Casa da Misericórdia
+  [1101/4973] MISMATCH     id=23627  dist=133743m  Casa da Freguesia de Escalhão - Creche/ Jardim/ C.
+  [1102/4973] MINOR        id=24450  dist=302m  Creche e Jardim de Infância o Castelo
+  [1105/4973] MISMATCH     id=27515  dist=14821m  Creche Lugar dos Pequeninos
+  [1107/4973] MINOR        id=17834  dist=179m  Adm Estrela - Associação Social e Desenvolvimento 
+  [1125/4973] MISMATCH     id=30604  dist=4648m  Escola Básica de Fornos de Algodres
+  [1126/4973] MINOR        id=30605  dist=341m  Jardim de Infância de Muxagata, Fornos de Algodres
+  [1127/4973] MINOR        id=30608  dist=183m  Escola Básica de Figueiró da Granja
+  [1128/4973] MINOR        id=30895  dist=310m  Jardim de Infância de Celorico da Beira
+  [1133/4973] MISMATCH     id=31465  dist=94624m  Jardim Infância de Mêda
+  [1137/4973] MINOR        id=31826  dist=194m  Escola Básica de Sequeira
+  [1145/4973] MISMATCH     id=32752  dist=6475m  Escola Básica de São Romão
+  [1150/4973] MINOR        id=35092  dist=150m  Escola Básica de Manteigas
+  [1151/4973] MINOR        id=35114  dist=285m  Escola Básica N.º 1 de Figueira de Castelo Rodrigo
+  [1156/4973] MISMATCH     id=2075  dist=163769m  Centro Social Paroquial de Santa Catarina da Serra
+  [1157/4973] MISMATCH     id=2078  dist=306418m  Centro Social Cultural da Paróquia do Souto da Car
+  [1158/4973] MISMATCH     id=2080  dist=3150m  Centro de Assistência Paroquial de Carvide
+  [1159/4973] MINOR        id=2081  dist=411m  Centro Social Paroquial dos Pousos
+  [1162/4973] MISMATCH     id=2096  dist=15868m  Colégio Infantil Chi-Coração
+  [1164/4973] MISMATCH     id=2104  dist=167670m  Casbi - Centro de Convívio e Apoio Social Bidoeire
+  [1166/4973] MISMATCH     id=2120  dist=68797m  Academia Cultural e Social de Maceira
+  [1167/4973] MINOR        id=2122  dist=263m  Creche Santa Cecília
+  [1168/4973] MINOR        id=2126  dist=128m  Centro Paroquial de Solidariedade Social de Castan
+  [1170/4973] MISMATCH     id=2132  dist=5256m  Santa Casa da Misericórdia de Ansião
+  [1171/4973] MISMATCH     id=2133  dist=41263m  Centro Social Paroquial da Ilha - Obra Social da S
+  [1173/4973] MISMATCH     id=2156  dist=13211m  Jardim Escola Primeiro Degrau, Lda
+  [1174/4973] MISMATCH     id=2157  dist=12976m  A Falinha Infantário
+  [1175/4973] MISMATCH     id=2159  dist=6021m  Jardim de Infância da Santa Casa da Misericórdia d
+  [1176/4973] MINOR        id=2160  dist=187m  Centro de Bem Estar Infantil S. José - Juncal
+  [1177/4973] MISMATCH     id=2163  dist=37304m  Apepi - Associação de Pais Educadores para Infânci
+  [1179/4973] MINOR        id=2167  dist=140m  Associação de Promoção Social -Jardim dos Pequenin
+  [1180/4973] MISMATCH     id=2170  dist=502m  Associação de Bem-Estar dos Parceiros
+  [1181/4973] MINOR        id=2184  dist=416m  Creche e Jardim de Infância - Santa Casa da Miseri
+  [1182/4973] MINOR        id=2191  dist=151m  Acurede - Infantáriojavascript:dosubmit('save')
+  [1183/4973] MINOR        id=2200  dist=271m  Abrigo Familiar Casa de São José
+  [1186/4973] MINOR        id=3206  dist=159m  Centro de Assistência Paroquial de Pataias
+  [1187/4973] MISMATCH     id=3207  dist=4242m  Confraria Nossa Senhora da Nazaré
+  [1188/4973] MINOR        id=3215  dist=356m  Equip Soc do Centro Social Paroquial de Alfeizerão
+  [1189/4973] MINOR        id=3217  dist=147m  Centro de Bem-Estar Social da Maiorga
+  [1190/4973] MINOR        id=3220  dist=114m  Centro Paroquial de Assistência de Nª Srª D'ajuda
+  [1191/4973] MINOR        id=3222  dist=106m  Casa do Povo de Óbidos
+  [1192/4973] MISMATCH     id=3227  dist=172094m  Santa Casa da Misericórdia do Vimeiro
+  [1193/4973] MINOR        id=3229  dist=201m  Centro Social Padre Fernando Diogo - Creche e Jard
+  [1194/4973] MISMATCH     id=3230  dist=852m  Santa Casa da Misericórdia de Peniche
+  [1196/4973] MINOR        id=3234  dist=103m  Centro Infantil Moinho de Vento
+  [1197/4973] MISMATCH     id=3238  dist=74599m  Santa Casa da Misericórdia de Óbidos
+  [1199/4973] MINOR        id=3248  dist=153m  Centro Social de Valado dos Frades
+  [1200/4973] 24%  {'MATCH': 240, 'MINOR': 182, 'MISMATCH': 229, 'CS_ONLY': 2, 'NO_CS_COORDS': 547, 'ERROR': 0}
+  [1203/4973] MISMATCH     id=3258  dist=223094m  Centro Social Paroquial do Bárrio
+  [1205/4973] MINOR        id=3263  dist=281m  Infancoop - Creche e Pre-Escolar "Girassol"
+  [1206/4973] MISMATCH     id=3268  dist=13793m  Centro Social Paroquial de Santa Catarina
+  [1207/4973] MINOR        id=3271  dist=208m  Fundação Maria e Oliveira
+  [1208/4973] MISMATCH     id=3276  dist=165311m  Centro Paroquial de Assistência do Reguengo do Fet
+  [1210/4973] MISMATCH     id=3282  dist=3951m  Nuclisol Jean Piaget - Associação P/ o Desenvolvim
+  [1211/4973] MINOR        id=3889  dist=380m  Centro Social Paroquial de Turquel
+  [1212/4973] MISMATCH     id=4464  dist=20578m  Associação Jardim Infantil de Ferrel
+  [1213/4973] MISMATCH     id=12257  dist=104681m  O Brinquinho - Colégio, Lda.
+  [1214/4973] MISMATCH     id=12260  dist=501m  Centro Social e Cultural da Paróquia de São Mamede
+  [1215/4973] MISMATCH     id=12262  dist=5217m  "O Dominó" - Infantário e Jardim de Infância, Lda
+  [1216/4973] MISMATCH     id=12267  dist=4824m  Centro Comunitário de Aljubarrota
+  [1218/4973] MISMATCH     id=18326  dist=98674m  Associação de Desenvolvimento Social da Loureira
+  [1219/4973] MISMATCH     id=18329  dist=184805m  Jardim de Infância Mouzinho de Albuquerque
+  [1221/4973] MISMATCH     id=18333  dist=8519m  Associação Social e Cultural Paradense
+  [1222/4973] MISMATCH     id=18334  dist=126035m  Centro de Amizade e Animação Social de Santiago da
+  [1223/4973] MISMATCH     id=18338  dist=49996m  Casa - Centro de Apoio Social de Azoia
+  [1224/4973] MISMATCH     id=18341  dist=166365m  Centro Social de Vila Cã
+  [1226/4973] MISMATCH     id=18346  dist=5494m  Os Kanitos
+  [1228/4973] MINOR        id=18654  dist=436m  Os Traquininhas - Creche, Jardim Infantil e ATL
+  [1229/4973] MINOR        id=19421  dist=242m  Colégio Infantil "O Saltitão"
+  [1231/4973] MISMATCH     id=19470  dist=2170m  Vida Plena - Associação de Solidariedade Social de
+  [1232/4973] MINOR        id=20981  dist=231m  Escola Pátio da Inês, Lda.
+  [1234/4973] MINOR        id=21025  dist=132m  Lugar dos Príncipes - Creche e Jardim de Infância
+  [1236/4973] MISMATCH     id=21027  dist=2952m  Creche os Pequenos Moinhos
+  [1239/4973] MINOR        id=21122  dist=122m  Jardim-Escola João de Deus - Alcobaça
+  [1241/4973] MISMATCH     id=21365  dist=214470m  Centro Social Paroquial de Regueira de Pontes
+  [1243/4973] MISMATCH     id=21562  dist=2058m  Centro Social Paroquial de Pelariga
+  [1244/4973] MISMATCH     id=22756  dist=611m  Sininho Azul - Creche e Jardim de Infância
+  [1245/4973] CS_ONLY      id=23343  dist=—  Fonte Santa / Centro Social da Serra do Bouro
+  [1246/4973] MISMATCH     id=23388  dist=116539m  Creche - Casa Sanches
+  [1248/4973] MISMATCH     id=24019  dist=180954m  Centro Social de Carnide
+  [1249/4973] MISMATCH     id=24455  dist=17315m  "Aprender & Companhia"
+  [1250/4973] MISMATCH     id=24458  dist=4284m  "O Sobreirinho"
+  [1259/4973] MISMATCH     id=26641  dist=13788m  Creche o Pedrinho
+  [1260/4973] MINOR        id=26711  dist=212m  Puro Mimo
+  [1261/4973] MISMATCH     id=26742  dist=5093m  Reino dos Sonhos
+  [1264/4973] MINOR        id=28376  dist=236m  Lindos Carinhos Unipessoal Lda
+  [1267/4973] MISMATCH     id=31927  dist=62061m  Colégio Conciliar de Maria Imaculada
+  [1268/4973] MISMATCH     id=32825  dist=901m  Centro de Apoio Social da Freguesia de São Gregóri
+  [1276/4973] MISMATCH     id=3228  dist=1198m  Centro Social Padre Fernando Diogo
+  [1280/4973] MISMATCH     id=29637  dist=8653m  Jardim de Infância a Escolinha
+  [1287/4973] MISMATCH     id=29845  dist=1538784m  Escola Básica N.º 1 de Benedita
+  [1293/4973] MINOR        id=30240  dist=287m  Jardim de Infância de Capuchos
+  [1294/4973] MINOR        id=30241  dist=199m  Escola Básica de Barosa
+  [1300/4973] 26%  {'MATCH': 270, 'MINOR': 194, 'MISMATCH': 261, 'CS_ONLY': 3, 'NO_CS_COORDS': 572, 'ERROR': 0}
+  [1315/4973] MINOR        id=30625  dist=159m  Escola Básica de Abiul
+  [1318/4973] MINOR        id=30630  dist=440m  Escola Básica de Pelariga
+  [1320/4973] MINOR        id=30632  dist=375m  Escola Básica de Almagreira
+  [1325/4973] MINOR        id=30749  dist=272m  Jardim de Infância de Maceirinha, Leiria
+  [1329/4973] MINOR        id=30754  dist=124m  Jardim de Infância de a-Dos-Pretos, Leiria
+  [1330/4973] MISMATCH     id=30755  dist=2883m  Jardim de Infância de a-Do-Barbas, Leiria
+  [1334/4973] MINOR        id=30773  dist=478m  Jardim de Infância de Bajouca
+  [1336/4973] MINOR        id=30775  dist=273m  Escola Básica de Souto da Carpalhosa
+  [1346/4973] MISMATCH     id=30797  dist=8550m  Jardim de Infância de Flandes
+  [1349/4973] MINOR        id=30804  dist=109m  Centro Escolar de Avelar
+  [1350/4973] MINOR        id=30805  dist=143m  Centro Escolar de Santiago da Guarda
+  [1352/4973] MISMATCH     id=30807  dist=675m  Centro Escolar de Lagarteira
+  [1353/4973] MINOR        id=30808  dist=319m  Jardim de Infância de Alvorge
+  [1355/4973] MINOR        id=30810  dist=200m  Jardim de Infância de Lagoa Parada
+  [1356/4973] MISMATCH     id=30902  dist=511m  Jardim de Infância de Bidoeira de Cima
+  [1358/4973] MISMATCH     id=30905  dist=753m  Jardim de Infância de Boavista
+  [1361/4973] MINOR        id=30908  dist=494m  Jardim de Infância de Bouça
+  [1372/4973] MISMATCH     id=30921  dist=9899m  Escola Básica de Batalha
+  [1373/4973] MINOR        id=30922  dist=468m  Escola Básica de São Mamede
+  [1374/4973] MINOR        id=30923  dist=446m  Escola Básica de Casais dos Ledos
+  [1375/4973] MISMATCH     id=30924  dist=963m  Escola Básica de Quinta do Sobrado
+  [1379/4973] MISMATCH     id=30969  dist=3224m  Jardim de Infância do Carvalhal Benfeito
+  [1385/4973] MINOR        id=31171  dist=116m  Jardim de Infância da Usseira
+  [1387/4973] MINOR        id=31173  dist=196m  Jardim de Infância de Gaeiras
+  [1388/4973] MINOR        id=31180  dist=308m  Escola Básica Nº 1 do Bombarral
+  [1389/4973] MISMATCH     id=31181  dist=35207m  Jardim de Infância da Quinta de Santo António
+  [1391/4973] MINOR        id=31183  dist=107m  Jardim de Infância de Vale da Várzea
+  [1396/4973] CS_ONLY      id=31195  dist=—  Jardim de Infância do Casal Celão
+  [1397/4973] MISMATCH     id=31196  dist=1438m  Jardim de Infância da Lagoa Parceira
+  [1398/4973] MINOR        id=31197  dist=454m  Jardim de Infância do Coto
+  [1400/4973] 28%  {'MATCH': 288, 'MINOR': 213, 'MISMATCH': 271, 'CS_ONLY': 4, 'NO_CS_COORDS': 624, 'ERROR': 0}
+  [1403/4973] MINOR        id=31254  dist=215m  Jardim de Infância de Souto do Meio
+  [1405/4973] MISMATCH     id=31256  dist=10735m  Jardim de Infância de Loureira
+  [1415/4973] MISMATCH     id=31360  dist=6447m  Jardim de Infância de Juncal
+  [1417/4973] MISMATCH     id=31363  dist=2201m  Escola Básica de Cumeira de Cima
+  [1419/4973] MISMATCH     id=31481  dist=248802m  Jardim de Infância São Cristóvão
+  [1421/4973] MISMATCH     id=31483  dist=9913m  Escola Básica N.º 1/JI de Santo Onofre
+  [1424/4973] MISMATCH     id=31755  dist=531m  EB1/JI de Ataíja de Cima
+  [1426/4973] MINOR        id=31757  dist=179m  EB1/JI de Carris
+  [1427/4973] MISMATCH     id=31758  dist=6594m  EB1/JI de Aljubarrota
+  [1432/4973] MINOR        id=31903  dist=201m  Jardim Escola João de Deus - Leiria
+  [1445/4973] MISMATCH     id=32383  dist=2325m  Escola Básica da Ribafria
+  [1446/4973] MISMATCH     id=32610  dist=2355m  Escola Básica da Rebolaria
+  [1449/4973] MISMATCH     id=33095  dist=6282m  Jardim de Infância de Vidigal
+  [1450/4973] MISMATCH     id=33096  dist=4058m  Jardim de Infância de Andrinos
+  [1456/4973] MISMATCH     id=33280  dist=1119m  Escola Básica de Mata Mourisca
+  [1457/4973] MINOR        id=33291  dist=341m  Jardim de Infância de Vila Facaia
+  [1459/4973] MISMATCH     id=33441  dist=763m  EB1/ JI de Alpedriz
+  [1461/4973] MISMATCH     id=33443  dist=794m  EB1/ JI de Casal de Ramos
+  [1462/4973] MISMATCH     id=33445  dist=1026m  EB1/ JI de Pataias
+  [1463/4973] MISMATCH     id=33736  dist=1650m  Escola Básica do Louriçal
+  [1466/4973] MINOR        id=35116  dist=352m  Escola Básica de Famalicão
+  [1470/4973] MISMATCH     id=35122  dist=663m  Jardim de Infância de Aguda,
+  [1471/4973] MINOR        id=35123  dist=336m  Escola Básica de Porto de Mós
+  [1473/4973] MINOR        id=35125  dist=486m  Escola Básica de Casais Garridos
+  [1475/4973] MISMATCH     id=35127  dist=5310m  Jardim de Infância do Alemão
+  [1478/4973] MINOR        id=35136  dist=132m  Escola Básica de Maceira
+  [1479/4973] MISMATCH     id=35138  dist=7182m  Jardim de Infância de Vermoil,
+  [1480/4973] MISMATCH     id=35141  dist=6780m  Jardim de Infância de Arega
+  [1482/4973] MISMATCH     id=35143  dist=732m  Escola Básica de Palmeiria
+  [1484/4973] MINOR        id=35145  dist=113m  Escola Básica de Fonte do Oleiro
+  [1486/4973] MISMATCH     id=35147  dist=71360m  Jardim de Infância da Colónia Balnear
+  [1500/4973] 30%  {'MATCH': 315, 'MINOR': 222, 'MISMATCH': 293, 'CS_ONLY': 4, 'NO_CS_COORDS': 666, 'ERROR': 0}
+  [1502/4973] MISMATCH     id=205  dist=11281m  Rosa Azul da Fonte Santa - Creche e Jardim Infanti
+  [1503/4973] MINOR        id=221  dist=225m  O Balão Circular
+  [1507/4973] MINOR        id=236  dist=252m  Centro Social de Sacavém
+  [1510/4973] MINOR        id=269  dist=449m  Creche Instituto de Apoio Á Comunidade - Bloco e
+  [1511/4973] MINOR        id=283  dist=149m  Casba - Centro Apoio Social Bom Sucesso e Arcena
+  [1512/4973] MINOR        id=285  dist=464m  Associação de Promoção Social de Alhandra
+  [1515/4973] MISMATCH     id=295  dist=2728m  Jardim de Infância da Marteleira
+  [1517/4973] MINOR        id=306  dist=148m  Centro Social Paroquial de São Vicente de Alcabide
+  [1519/4973] MISMATCH     id=311  dist=4336m  Centro de Apoio à Família Crescer para Integrar
+  [1520/4973] MISMATCH     id=316  dist=672m  Associação dos Antigos Alunos Salesianos do Estori
+  [1523/4973] MISMATCH     id=320  dist=2807m  Centro Comunitário de Tires
+  [1524/4973] MINOR        id=326  dist=355m  Ideia - Instituto para o Desenvolvimento Educativo
+  [1529/4973] MINOR        id=339  dist=154m  O Pioneiro
+  [1534/4973] MINOR        id=349  dist=145m  Creche e Jardim de Infância Nossa Senhora Acolhime
+  [1535/4973] MISMATCH     id=352  dist=5543m  Creche e Jardim de Infância Santa Ana
+  [1536/4973] MISMATCH     id=355  dist=6946m  O Chorão
+  [1540/4973] MISMATCH     id=375  dist=7828m  Centro Infantil da Sagrada Família
+  [1542/4973] MISMATCH     id=382  dist=9944m  Serviço de Apoio Domiciliário,Centro Dia, Creche e
+  [1546/4973] MINOR        id=621  dist=207m  Centro de Promoção Social Rainha Dona Leonor
+  [1548/4973] MISMATCH     id=638  dist=2726m  Creche Missão Nossa Senhora
+  [1550/4973] MINOR        id=649  dist=140m  Associação Protectora da Primeira Infância
+  [1552/4973] MISMATCH     id=664  dist=212952m  Centro Sagrada Família
+  [1554/4973] MINOR        id=669  dist=212m  A Praceta
+  [1558/4973] MISMATCH     id=682  dist=14311m  Creche e Jardim de Infância 1º de Maio
+  [1560/4973] MINOR        id=688  dist=339m  Creche Jardim Infância as Pintinhas
+  [1561/4973] MISMATCH     id=694  dist=3138m  Centro Infantil e Juvenil de Alenquer
+  [1562/4973] MISMATCH     id=695  dist=48019m  Creche Chemina - Santa Casa da Misericórdia de Ale
+  [1563/4973] MISMATCH     id=700  dist=1053m  Creche da Santa Casa da Misericórdia de Arruda dos
+  [1564/4973] MINOR        id=701  dist=224m  Centro Infantil João de Deus Alvalade 1
+  [1566/4973] MISMATCH     id=707  dist=556m  Centro Infantil Visconde Valmor
+  [1568/4973] MINOR        id=723  dist=124m  Icco Infantário Cooperativa de Campo de Ourique
+  [1569/4973] MINOR        id=728  dist=165m  Casinha de Nossa Senhora
+  [1571/4973] MISMATCH     id=745  dist=108947m  Associação do Pessoal da Fundação Gulbenkian
+  [1573/4973] MISMATCH     id=754  dist=1898m  Externato João XXIII
+  [1574/4973] MISMATCH     id=756  dist=907m  Externato Santa Maria do Mar
+  [1582/4973] MISMATCH     id=792  dist=3456m  Centro Social Paroquial de São Vicente de Paulo
+  [1583/4973] MINOR        id=1412  dist=244m  Quina - Infantário e Jardim de Infância
+  [1584/4973] MISMATCH     id=1413  dist=2866m  Infantário do IES Cesário Verde International Scho
+  [1587/4973] MISMATCH     id=1422  dist=1809m  Nuclisol - Unidade de Desenvolvimento Integrado de
+  [1590/4973] MISMATCH     id=1430  dist=14461m  Creche Quinta dos Bacelos - Associação Bem Estar I
+  [1591/4973] MISMATCH     id=1432  dist=26472m  Jardim Infantil Associação Popular Apoio à Criança
+  [1593/4973] MINOR        id=1438  dist=173m  Casa do Povo de Vialonga
+  [1595/4973] MINOR        id=1440  dist=157m  Actividades de Tempos Livres de Bolonha - Creche
+  [1598/4973] MISMATCH     id=1464  dist=5658m  Associação Bem Estar Infantil de Vialonga
+  [1599/4973] MISMATCH     id=1465  dist=42713m  Cebi - Fundação para o Desenvolvimento Comunitário
+  [1600/4973] 32%  {'MATCH': 367, 'MINOR': 241, 'MISMATCH': 319, 'CS_ONLY': 4, 'NO_CS_COORDS': 669, 'ERROR': 0}
+  [1601/4973] MISMATCH     id=1475  dist=9281m  Casa do Povo da Freguesia da Freiria
+  [1602/4973] MINOR        id=1510  dist=106m  Adeco - Jardim de Infância das Mercês
+  [1604/4973] MISMATCH     id=1518  dist=2573m  Creche Marquês de Olhão
+  [1606/4973] MINOR        id=1542  dist=263m  Jardim Escola João de Deus - Torres Vedras
+  [1608/4973] MINOR        id=1552  dist=103m  Centro Social Paroquial de Silveira
+  [1609/4973] MINOR        id=1559  dist=102m  Creche e Jardim de Infância o Jardim Encantado
+  [1610/4973] MINOR        id=1652  dist=459m  Babete e Companhia
+  [1611/4973] MISMATCH     id=1654  dist=2614m  Centro de Apoio Infantil Filadélfia
+  [1617/4973] MISMATCH     id=1683  dist=162884m  Fundaçâo Maria do Carmo Roque Pereira
+  [1622/4973] MINOR        id=1706  dist=116m  Colégio Moderno de João Soares e Filhos
+  [1623/4973] MINOR        id=1716  dist=403m  Centro Social Paroquial de Nossa Senhora da Encarn
+  [1624/4973] MINOR        id=1721  dist=372m  Centro Social José Luís Coelho
+  [1625/4973] MINOR        id=1726  dist=115m  Associação de Penha de França
+  [1627/4973] MISMATCH     id=1742  dist=26971m  Casa da Bela Flor
+  [1633/4973] MINOR        id=1760  dist=218m  Jardim Infantil os Pirralhos do Marquês
+  [1635/4973] MISMATCH     id=1791  dist=53373m  Educação Popular
+  [1636/4973] MINOR        id=2208  dist=108m  Associação Popular de Sobral de Monte Agraço
+  [1637/4973] MISMATCH     id=2211  dist=1888m  Santa Casa da Misericórdia de Aldeia Galega da Mer
+  [1638/4973] MISMATCH     id=2213  dist=35031m  Centro Social Paroquial de Azambuja
+  [1640/4973] MISMATCH     id=2216  dist=51042m  Centro Social Paroquial de Aveiras de Cima - Jardi
+  [1641/4973] MINOR        id=2227  dist=161m  Centro Cultural e Recreativo das Crianças do Cruze
+  [1644/4973] MISMATCH     id=2241  dist=7798m  Cai - Centro de Acolhimento Infantil Doutor José D
+  [1646/4973] MISMATCH     id=2252  dist=581m  Centro Social Paroquial de Carnide
+  [1648/4973] MINOR        id=2259  dist=231m  Centro Social Paroquial do Campo Grande
+  [1649/4973] MINOR        id=2266  dist=233m  Nuclisol - Jean Piaget - U.D.I. de Chelas /Bairro 
+  [1651/4973] MINOR        id=4880  dist=108m  ABLA Parede (Ex-Centro Infantil da Parede)
+  [1653/4973] MISMATCH     id=4895  dist=216051m  Associação Promotora da Criança
+  [1654/4973] MISMATCH     id=4896  dist=978m  Creche Popular de Rio de Mouro
+  [1655/4973] MINOR        id=4902  dist=192m  Centro Social Baptista
+  [1656/4973] MINOR        id=4909  dist=286m  Centro de Apoio à Criança
+  [1659/4973] MINOR        id=4916  dist=216m  Centro de Bem Estar Infantil de Nossa Senhora das 
+  [1660/4973] MINOR        id=4923  dist=286m  Sítio do Pica Pau Amarelo
+  [1661/4973] MISMATCH     id=4924  dist=177367m  Jardim de Infância Popular
+  [1664/4973] MINOR        id=4999  dist=181m  Cai do Bairro da Boavista
+  [1665/4973] MISMATCH     id=5102  dist=556m  Cai de São José
+  [1670/4973] MINOR        id=5116  dist=184m  Cai do Bairro do Padre Cruz
+  [1671/4973] MINOR        id=5121  dist=273m  Centro Social Polivalente do Bairro Padre Cruz
+  [1673/4973] MINOR        id=5130  dist=119m  Centro Social Polivalente do Bairro das Furnas
+  [1674/4973] MISMATCH     id=5159  dist=1625560m  Centro Social da Ericeira
+  [1676/4973] MISMATCH     id=5174  dist=7583m  Associação de Solidariedade e Promoção de a-Dos-Cu
+  [1678/4973] MINOR        id=5181  dist=140m  Unidades de Educação da CML
+  [1682/4973] MISMATCH     id=5197  dist=35445m  Centro Social Paroquial da Pena
+  [1683/4973] MISMATCH     id=5200  dist=3323m  Creche das Maçãs
+  [1684/4973] MISMATCH     id=5205  dist=187930m  Centro Social Paroquial de Colares - Almoçageme
+  [1686/4973] MINOR        id=5237  dist=109m  A Creche Sempre em Flor - S. Carlos
+  [1687/4973] MISMATCH     id=5238  dist=726m  A Creche Sempre em Flor (S.josé)
+  [1689/4973] MISMATCH     id=5241  dist=1320m  Os Patarecos - Associação Particular de Solidaried
+  [1690/4973] MINOR        id=5243  dist=120m  Infantário Popular de Sintra
+  [1691/4973] MISMATCH     id=5246  dist=696m  Equip Soc da Associação de Reformados da Freguesia
+  [1692/4973] MINOR        id=5247  dist=222m  Centro Social Paroquial São João das Lampas - Crec
+  [1693/4973] MINOR        id=5255  dist=258m  Jardim de Infância de Nossa Senhora dos Anjos
+  [1694/4973] MINOR        id=5260  dist=334m  Centro Social Paroquial da Bobadela
+  [1696/4973] MINOR        id=5265  dist=289m  Centro Comunitário e Social e Cultural de Stº Antº
+  [1698/4973] MISMATCH     id=5270  dist=872m  O Saltarico
+  [1699/4973] MINOR        id=5275  dist=239m  Equip Social da Instituição de Apoio Social da Fre
+  [1700/4973] MISMATCH     id=5280  dist=8434m  Sede - Centro Comunitário Paroquial da Ramada
+  [1701/4973] MISMATCH     id=5287  dist=9173m  Obra de Nossa Senhora da Purificação
+  [1703/4973] MISMATCH     id=5291  dist=5491m  Associação Doutor João dos Santos
+  [1705/4973] MISMATCH     id=5412  dist=8542m  Creche Jardim Infantil - O Caracol
+  [1706/4973] MINOR        id=5414  dist=221m  Complexo de Apoio à Infância "Sol Dourado"
+  [1708/4973] MINOR        id=5418  dist=191m  Creche Popular da Idanha e Jardim de Infância
+  [1709/4973] MISMATCH     id=5420  dist=5112m  Infantário a Mimi
+  [1716/4973] MISMATCH     id=5444  dist=792m  Centro Social 6 de Maio
+  [1719/4973] MISMATCH     id=5455  dist=2284m  Centro Social Paroquial da Brandoa
+  [1720/4973] MINOR        id=5459  dist=204m  Infantário do Externato Cinderela Alpedrinha
+  [1721/4973] MINOR        id=5460  dist=171m  Creche Municipal de Á-Da-Beja
+  [1724/4973] MINOR        id=5469  dist=121m  Centro de Santa Clara de Assis
+  [1729/4973] MINOR        id=5864  dist=153m  Externato a Minha Escola
+  [1730/4973] MINOR        id=6069  dist=103m  Centro Infantil Palhaço
+  [1731/4973] MISMATCH     id=6146  dist=1435m  A Chupeta - Berçario e Creche
+  [1739/4973] MINOR        id=17010  dist=331m  Creche Instituto de Apoio Comunitário - Bloco L
+  [1745/4973] MINOR        id=17246  dist=111m  O Cantinho da Cegonha
+  [1747/4973] MINOR        id=17276  dist=110m  Fundação "O Século"
+  [1748/4973] MINOR        id=17286  dist=454m  Centro de Recursos do Zambujal
+  [1749/4973] MINOR        id=17293  dist=336m  Lar de São José
+  [1750/4973] MINOR        id=17300  dist=317m  Associação Solidariedade Social e Apoio à Família
+  [1751/4973] MISMATCH     id=17303  dist=2020m  Centro Social Paroquial Nª Srª da Conceição da Igr
+  [1752/4973] MINOR        id=17308  dist=183m  Jardim Escola João de Deus - Albarraque
+  [1753/4973] MISMATCH     id=17311  dist=3346m  Ajpas - Associação de Intervenção Comunitária, Des
+  [1756/4973] MINOR        id=17702  dist=250m  Grémio Instrução Liberal Campo Ourique
+  [1757/4973] MINOR        id=17703  dist=262m  Associação de Actividades do Bairro 2 de Maio
+  [1758/4973] MINOR        id=17704  dist=146m  Caselsol
+  [1759/4973] MINOR        id=17709  dist=194m  Ass. Vida Abundante - Espaço Crescer
+  [1761/4973] MISMATCH     id=17866  dist=43548m  Creche e Jardim de Infância da Portela
+  [1763/4973] MINOR        id=18219  dist=116m  Associação Tempo de Mudar para Desenvolvimentos do
+  [1764/4973] MINOR        id=18226  dist=152m  Ced D. Maria Pia
+  [1765/4973] MINOR        id=18232  dist=109m  Ced D. Nuno Álvares Pereira
+  [1767/4973] MINOR        id=18250  dist=438m  Ced Jacob Rodrigues Pereira
+  [1768/4973] MISMATCH     id=18421  dist=13274m  O Rei na Barriga - Frielas
+  [1769/4973] MISMATCH     id=18423  dist=1825m  Creche S. Vicente
+  [1771/4973] MISMATCH     id=18541  dist=3309m  Colégio Catarina de Bragança
+  [1778/4973] MINOR        id=18570  dist=157m  Centro de Apoio à Família Educar para Incluir
+  [1781/4973] MISMATCH     id=18616  dist=894m  Rei Bebe Infantário
+  [1783/4973] MINOR        id=18622  dist=200m  Externato Nova Oeiras
+  [1784/4973] MINOR        id=18623  dist=147m  Externato a Palmeirinha
+  [1785/4973] MINOR        id=18625  dist=481m  Escola Ana Guedes
+  [1786/4973] MISMATCH     id=18626  dist=2474m  Creche e Jardim de Infância o Gonzo - Azambuja
+  [1789/4973] MINOR        id=18633  dist=128m  Jardim Infantil o Finório
+  [1790/4973] MINOR        id=18635  dist=124m  Colégio Quinta do Lago
+  [1791/4973] MISMATCH     id=18638  dist=1746m  Escolinha da Tita
+  [1792/4973] MISMATCH     id=18640  dist=4029m  Academia Associação Juvenil Estudos e Comunicação
+  [1793/4973] CS_ONLY      id=18644  dist=—  Externato Jardim dos Lombos
+  [1796/4973] MISMATCH     id=18653  dist=4541m  Boneca de Corda Jardim de Infância
+  [1798/4973] MISMATCH     id=20122  dist=1204m  Colégio S. Francisco de Assis
+  [1799/4973] MINOR        id=20221  dist=294m  Geração Chupeta
+  [1800/4973] 36%  {'MATCH': 459, 'MINOR': 301, 'MISMATCH': 363, 'CS_ONLY': 5, 'NO_CS_COORDS': 672, 'ERROR': 0}
+  [1804/4973] MISMATCH     id=20321  dist=9355m  Jardim das Brincadeiras
+  [1807/4973] MINOR        id=20352  dist=415m  Creche na Rua das Hortências
+  [1809/4973] MINOR        id=20364  dist=222m  Actividades de Tempos Livres de Bolonha -Creche
+  [1810/4973] MINOR        id=20365  dist=167m  Actividades de Tempos Livres de Bolonha -Creche
+  [1811/4973] MISMATCH     id=20382  dist=223392m  O Fofas - Berçário, Creche e Jardim de Infância
+  [1813/4973] MISMATCH     id=20385  dist=8202m  Creche e Jardim de Infância de S. Marçal
+  [1814/4973] MISMATCH     id=20386  dist=312717m  Assoc. para Inserção Sócio-Cultural Profissional d
+  [1815/4973] MISMATCH     id=20390  dist=5533m  Equip. Social do Centro Social e Paroquial Nossa S
+  [1817/4973] MISMATCH     id=20392  dist=1212m  Associação de Solidareidade Social de Apoio a Famí
+  [1818/4973] MINOR        id=20403  dist=320m  Centro Infantil de São Gerardo
+  [1819/4973] MISMATCH     id=20404  dist=896m  Abecedário
+  [1821/4973] MISMATCH     id=20426  dist=4816m  Creche "A Árvore"
+  [1822/4973] MISMATCH     id=20429  dist=7983m  Creche a Velha Formiguinha
+  [1823/4973] MISMATCH     id=20430  dist=198539m  Creche "Crescer Saudável"
+  [1824/4973] MINOR        id=20445  dist=214m  Associação Comunitária Infantil e Juvenil da Ramad
+  [1825/4973] MISMATCH     id=20446  dist=2225m  Colégio Brinca e Educa II
+  [1826/4973] MISMATCH     id=20447  dist=2635m  Infantário de Bicesse - SCM Cascais
+  [1828/4973] MISMATCH     id=20541  dist=128989m  Pião Mágico - Infantário
+  [1831/4973] MINOR        id=21142  dist=295m  Berçário da Santa Casa da Misericórdia Alenquer
+  [1832/4973] MINOR        id=21242  dist=130m  Centro Social Paroquial da Povoa de Sto Adrião
+  [1833/4973] MINOR        id=21381  dist=322m  Associação Humanidades
+  [1834/4973] MINOR        id=21382  dist=107m  Rute - Associação Solidariedade Social - Creche
+  [1835/4973] MINOR        id=21481  dist=163m  Jardim de Infância e ATL o Novo Pinóquio
+  [1836/4973] MINOR        id=21565  dist=392m  Centro Comunitário e Paroquial de Famões - Polo Sã
+  [1837/4973] MISMATCH     id=21591  dist=579m  Sociedade Filarmónica de Apoio Social e Recreio Ar
+  [1838/4973] MISMATCH     id=21621  dist=104155m  Aba-Associação Beneficente de Ajuda
+  [1841/4973] MISMATCH     id=21651  dist=121284m  Sementinha Mágica, Jardim Infantil e Creche
+  [1845/4973] MISMATCH     id=21672  dist=5909m  Creche - Associação Cantinho das Crianças do Prior
+  [1847/4973] MISMATCH     id=21675  dist=7225m  Centro Comunitário do Bairro de Sto António II
+  [1849/4973] MINOR        id=21716  dist=196m  Os Pequenos Mafrinhas - Creche
+  [1851/4973] MISMATCH     id=21718  dist=2311m  Centro Social Paroquial de S. Vicente de Alcabidec
+  [1853/4973] MINOR        id=21722  dist=281m  Creche a Quintinha da Fidalga
+  [1858/4973] MISMATCH     id=22542  dist=7894m  Jardim de Infância Mãe Patinha
+  [1859/4973] MISMATCH     id=22543  dist=115655m  Kriabebes - Berçario, Creche e Jardim de Infância
+  [1860/4973] MINOR        id=22545  dist=314m  Jardim de Infância Canteiro dos Sonhos
+  [1861/4973] MISMATCH     id=22546  dist=779m  Jardim da Fantasia - Actividades de Creche, Jardim
+  [1863/4973] MISMATCH     id=22549  dist=650m  Colégio Casa das Abelhinhas
+  [1866/4973] MISMATCH     id=22557  dist=14685m  Creche e Jardim de Infância Nª Srª das Graças
+  [1867/4973] MISMATCH     id=22558  dist=2932m  Espaço a Criança
+  [1870/4973] MINOR        id=22647  dist=123m  Só Miminhos
+  [1873/4973] MISMATCH     id=22764  dist=6492m  Tutor T
+  [1874/4973] MISMATCH     id=22773  dist=1681m  O Rei na Barriga - Infantado
+  [1875/4973] MISMATCH     id=22774  dist=32504m  Quintarola II
+  [1876/4973] MINOR        id=22795  dist=202m  Infantário Pipos & Bibas
+  [1878/4973] MINOR        id=22801  dist=136m  Creche e Jardim de Infância Cosme e Damião
+  [1881/4973] MISMATCH     id=22807  dist=1385m  Cooperativa Miminhos Alegres CRL
+  [1883/4973] MINOR        id=24378  dist=254m  Creche de Santa Teresinha
+  [1887/4973] MINOR        id=24424  dist=159m  Cebesa - Creche e CATL José Garcês
+  [1891/4973] CS_ONLY      id=24589  dist=—  Creche N.ª Sr.ª D` Ajuda
+  [1893/4973] MISMATCH     id=24603  dist=709m  Creche da Quinta da Ponte - Associação Bem Estar I
+  [1894/4973] MISMATCH     id=24604  dist=1889m  Cat-0/12 - Cat-12/18 - Creche (Fidalgos) - Ass.bem
+  [1899/4973] MINOR        id=24655  dist=190m  Traquinauta
+  [1900/4973] MINOR        id=24656  dist=113m  Colégio Quinta da Parreirinha, Rede Morangos Lda.
+  [1901/4973] MINOR        id=24657  dist=312m  Colégio das Colinas - Unipessoal, Lda.
+  [1903/4973] MINOR        id=24667  dist=155m  Externato Nobel - Creche
+  [1905/4973] MISMATCH     id=24669  dist=3699m  Colégio da Fonte
+  [1907/4973] MISMATCH     id=24696  dist=1545m  Colégio os Bobocas
+  [1908/4973] MINOR        id=24697  dist=139m  Verde Água - Creche e Jardim de Infância
+  [1909/4973] MINOR        id=24778  dist=124m  Centro Comunitário Senhora da Boa Nova
+  [1912/4973] MISMATCH     id=24909  dist=85379m  Colinho das Tias, Lda.
+  [1915/4973] MINOR        id=24914  dist=103m  O Sonho dos Pestinhas
+  [1916/4973] MINOR        id=24932  dist=302m  Externato o Cantinho de Carcavelos
+  [1922/4973] MINOR        id=25017  dist=201m  Amor Perfeito de Agualva-Cacém - Arpiac
+  [1924/4973] MINOR        id=25029  dist=187m  Iss Oeiras -International Sharing School Oeiras, S
+  [1926/4973] MISMATCH     id=25031  dist=1157m  Colégio Refúgio dos Anjos
+  [1927/4973] MINOR        id=25033  dist=213m  Colégio o Tapadinhas II
+  [1931/4973] MISMATCH     id=25059  dist=2186m  Vem Brincar! Actividades Educativas
+  [1934/4973] MINOR        id=25168  dist=182m  Colégio Rik & Rok Amadora
+  [1935/4973] MISMATCH     id=25176  dist=8818m  Creche os Gonçalinhos
+  [1937/4973] MINOR        id=25180  dist=242m  Creche Ecobabies
+  [1940/4973] MINOR        id=25331  dist=129m  Creche da Associação Popular Apoio à Criança
+  [1941/4973] MISMATCH     id=25332  dist=5939m  Creche do Reguengo Grande
+  [1943/4973] MINOR        id=25751  dist=175m  King's College School Cascais
+  [1944/4973] MISMATCH     id=25938  dist=788m  Associação Solidariedade Subud - Creche da Estrada
+  [1945/4973] MINOR        id=26088  dist=111m  Creche São Jorge
+  [1947/4973] MINOR        id=26091  dist=212m  Giz Mágico
+  [1954/4973] MISMATCH     id=26265  dist=23993m  Creche Municipal de Mafra
+  [1955/4973] MINOR        id=26266  dist=475m  Creche da Atalaia
+  [1956/4973] MISMATCH     id=26267  dist=3192m  Creche a Romã
+  [1957/4973] MISMATCH     id=26268  dist=507m  Creche e Jardim de Infância - Da Junta de Freguesi
+  [1960/4973] MINOR        id=26421  dist=263m  Creche da Venteira
+  [1961/4973] MINOR        id=26478  dist=284m  Escola do Arco
+  [1964/4973] MINOR        id=26761  dist=171m  Creche do Casal do Telheiro
+  [1967/4973] MINOR        id=26858  dist=338m  Fraldinhas e Travessuras
+  [1970/4973] MINOR        id=27041  dist=235m  Externato da Quintinha
+  [1971/4973] MINOR        id=27042  dist=409m  A Ritinha - Externato e Jardim de Infância
+  [1972/4973] MINOR        id=27043  dist=145m  Colégio B-A-Baby
+  [1973/4973] MISMATCH     id=27123  dist=614m  Jardim Escola Monte Flor
+  [1975/4973] MISMATCH     id=27383  dist=1503m  Centro Dr. José de Azeredo Perdigão
+  [1976/4973] MINOR        id=27401  dist=157m  Chuva de Papel - Creche e Jardim de Infância
+  [1978/4973] MISMATCH     id=27479  dist=4616m  Colégio Aqui Há Bebé
+  [1980/4973] MINOR        id=27487  dist=171m  Colégio Moinho de Sonho
+  [1982/4973] MINOR        id=27495  dist=267m  Colégio Rik & Rok Alfragide
+  [1985/4973] MINOR        id=27518  dist=158m  Infantário Popular Ribeiro Santos
+  [1986/4973] MINOR        id=27519  dist=200m  Creche João Katz
+  [1987/4973] MISMATCH     id=27520  dist=19943m  Creche da Pampilheira
+  [1988/4973] MINOR        id=27667  dist=207m  Creche os Pipoquinhas
+  [1991/4973] MISMATCH     id=27873  dist=2999m  Creche e Jardim de Infância Sonhos e Fantasias
+  [1992/4973] MINOR        id=28042  dist=131m  Afid Geração
+  [1996/4973] MINOR        id=28311  dist=152m  Creche Materama de Vila Chã
+  [2000/4973] MINOR        id=28672  dist=115m  Centro Infantil Maria de Monserrate
+  [2002/4973] MINOR        id=29038  dist=117m  Creche Crescer a Cores
+  [2004/4973] MISMATCH     id=29065  dist=11792m  Creche Santa Clara
+  [2011/4973] MINOR        id=29184  dist=225m  Amores Perfeitos - Berçário e Creche, Lda.
+  [2012/4973] MINOR        id=29253  dist=202m  Colégio Helen Keller
+  [2013/4973] MINOR        id=29255  dist=125m  A Mãe Canguru - Creche e Jardim de Infância Lda
+  [2015/4973] MISMATCH     id=29303  dist=3078m  Colégio do Mimo
+  [2019/4973] MISMATCH     id=29523  dist=8189m  Colégio Mira Rio
+  [2026/4973] MISMATCH     id=29677  dist=122241m  Grãos de Gente - Creche e Pré-Escolar
+  [2031/4973] MINOR        id=29756  dist=168m  Escola "Nova Apostólica"
+  [2032/4973] MINOR        id=29773  dist=177m  A Mamã Coelha
+  [2036/4973] MISMATCH     id=31852  dist=598m  Jardim de Infância Bela Vista
+  [2037/4973] MISMATCH     id=31963  dist=677m  Park International School Campus Restelo
+  [2040/4973] MINOR        id=32831  dist=185m  Centro Infantil João de Deus Alvalade/Campo Grande
+  [2043/4973] MISMATCH     id=32851  dist=59597m  O Bom Principezinho
+  [2046/4973] MISMATCH     id=32983  dist=1613m  Creche Vovovelos
+  [2048/4973] MISMATCH     id=33359  dist=3401m  Centro Social Paroquial São Vicente Alcabideche - 
+  [2049/4973] MINOR        id=33482  dist=122m  Saídos da Casca 2 (Parque das Nações)
+  [2051/4973] MINOR        id=33503  dist=119m  Brincar, Rir e Crescer
+  [2057/4973] MINOR        id=34088  dist=138m  Creche Pulguinhas Mestres
+  [2100/4973] 42%  {'MATCH': 582, 'MINOR': 364, 'MISMATCH': 419, 'CS_ONLY': 6, 'NO_CS_COORDS': 729, 'ERROR': 0}
+  [2103/4973] MISMATCH     id=303  dist=165990m  Externato/ Semi-Internato Nossa Senhora da Assunçã
+  [2104/4973] MINOR        id=639  dist=228m  Secretariado Diocesano de Lisboa da ONPC - Centro 
+  [2105/4973] MINOR        id=645  dist=158m  Secretariado Diocesano de Lisboa da ONPC - Chaborr
+  [2107/4973] MISMATCH     id=712  dist=22352m  Colégio o Pelicano
+  [2108/4973] MINOR        id=1404  dist=231m  CATL "O Nosso Mundo" Apelação
+  [2109/4973] MINOR        id=1410  dist=169m  Jardim Infantil o Alicerce
+  [2110/4973] MISMATCH     id=1428  dist=2589m  Cat Quinta dos Bacelos
+  [2115/4973] MISMATCH     id=1610  dist=1171m  Externato Liceal da Casa de São Vicente de Paulo
+  [2116/4973] MISMATCH     id=1647  dist=4831m  Apros - Associação de Educação e Promoção Social
+  [2117/4973] MINOR        id=1648  dist=114m  Casa Pastorinhos de Fátima
+  [2124/4973] MISMATCH     id=2258  dist=506m  Na Avózinha
+  [2125/4973] MISMATCH     id=4893  dist=238353m  Cooperativa de Ensino - Os Leõezinhos
+  [2129/4973] MISMATCH     id=5208  dist=736m  Fundação Cardeal Cerejeira
+  [2130/4973] MINOR        id=5263  dist=138m  Centro Popular Infantil "Nascer do Sol"
+  [2132/4973] MINOR        id=5485  dist=454m  Centro Social de Reabilitação do Zambujal
+  [2133/4973] MISMATCH     id=5494  dist=3895m  Creche da Abóboda - SCMC Cascais
+  [2135/4973] MISMATCH     id=5574  dist=1579m  Creche do Externato Modelo
+  [2137/4973] MINOR        id=5830  dist=206m  Associação Solidariedade Subud - Centro Educaciona
+  [2140/4973] MINOR        id=5838  dist=182m  Centro Soc. Paroq. São Maximiliano Kolbe - Equipam
+  [2141/4973] MINOR        id=5841  dist=403m  Instituto Condessa de Cuba
+  [2144/4973] MISMATCH     id=14088  dist=829m  Associação Luiz Pereira Motta
+  [2145/4973] MISMATCH     id=17008  dist=101080m  Complexo da Cartaxaria - Infância - Santa Casa da 
+  [2148/4973] MISMATCH     id=21715  dist=715m  Serviço de Apoio Domiciliário
+  [2149/4973] MINOR        id=24644  dist=333m  Escola Raiz
+  [2150/4973] MINOR        id=24699  dist=290m  Colégio Quinta do Mar
+  [2151/4973] MINOR        id=25116  dist=378m  Art & Manha
+  [2153/4973] MINOR        id=27836  dist=241m  Associação de S.bartolomeu dos Alemães em Lisboa /
+  [2157/4973] MISMATCH     id=29393  dist=103445m  Secretariado Diocesano de Lisboa da ONPC - Panioli
+  [2158/4973] MISMATCH     id=29394  dist=3773m  Cooperativa de Ensino "Os Pioneiros"
+  [2160/4973] MINOR        id=29405  dist=108m  Centro Social do Sagrado Coração de Jesus - S. Fél
+  [2165/4973] MINOR        id=29455  dist=107m  Nova Escola João de Deus Ramos
+  [2172/4973] MISMATCH     id=29479  dist=106462m  Colégio de São João de Brito
+  [2175/4973] MISMATCH     id=29487  dist=2698m  Externato "Pim-Pam-Pum"
+  [2188/4973] MINOR        id=29537  dist=434m  Escola Alemã do Estoril
+  [2190/4973] MISMATCH     id=29542  dist=18888m  Externato "O Viveirinho"
+  [2195/4973] MINOR        id=29548  dist=460m  Colégio de São José do Ramalhão
+  [2200/4973] MINOR        id=29563  dist=309m  Colégio "Dona Filipa"
+  [2203/4973] MISMATCH     id=29574  dist=7028m  Colégio "O Cocas"
+  [2205/4973] MISMATCH     id=29580  dist=569m  Jardim Infantil do Laboratório Nacional de Engenha
+  [2207/4973] MINOR        id=29583  dist=137m  Associação Unidos de Cabo Verde
+  [2213/4973] MINOR        id=29598  dist=327m  Associação Infantil Juvenil "O Nosso Recreio"
+  [2226/4973] MISMATCH     id=29676  dist=993m  Real Colégio de Portugal
+  [2229/4973] MINOR        id=29693  dist=165m  Colégio de Santa Maria
+  [2231/4973] MINOR        id=29695  dist=316m  Colégio São Tomás - Sete-Rios
+  [2244/4973] MINOR        id=29760  dist=122m  Colégio Pedro Arrupe
+  [2247/4973] MINOR        id=29785  dist=123m  Parque Encantado Lda.
+  [2249/4973] MINOR        id=29791  dist=121m  Colégio dos Plátanos
+  [2254/4973] MISMATCH     id=29801  dist=771m  Jardim Infantil Caíque
+  [2255/4973] MISMATCH     id=29813  dist=3879m  Ass. Actividades Tempos Livres de Bolonha - Pré-Es
+  [2258/4973] MINOR        id=29942  dist=260m  Escola Básica do Barro
+  [2262/4973] MISMATCH     id=29946  dist=3104m  Jardim de Infância da Serra da Vila
+  [2264/4973] MINOR        id=29948  dist=111m  Escola Básica do Varatojo
+  [2270/4973] MINOR        id=29965  dist=366m  Escola Básica de Chão do Sapo
+  [2271/4973] MISMATCH     id=29966  dist=724m  Escola Básica do Painho
+  [2274/4973] MINOR        id=29969  dist=140m  Escola Básica da Murteira
+  [2279/4973] MINOR        id=30035  dist=130m  Escola Básica da Portela
+  [2280/4973] MINOR        id=30036  dist=289m  Escola Básica da Quinta da Alegria, Moscavide
+  [2283/4973] MINOR        id=30039  dist=108m  Escola Básica de Alverca - Malva Rosa
+  [2285/4973] MINOR        id=30041  dist=391m  Jardim de Infância N.º 1 de Alverca do Ribatejo
+  [2290/4973] MISMATCH     id=30062  dist=130414m  Jardim de Infância da Torre
+  [2296/4973] MISMATCH     id=30071  dist=3138m  Escola Básica de Unhos
+  [2300/4973] 46%  {'MATCH': 684, 'MINOR': 398, 'MISMATCH': 446, 'CS_ONLY': 6, 'NO_CS_COORDS': 766, 'ERROR': 0}
+  [2319/4973] MINOR        id=30124  dist=145m  Escola Básica do Alto da Peça
+  [2323/4973] MINOR        id=30156  dist=122m  Jardim de Infância de Bucelas
+  [2326/4973] MINOR        id=30237  dist=124m  Jardim de Infância da Encarnação
+  [2333/4973] MISMATCH     id=30649  dist=793m  Escola Básica Engenheiro Duarte Pacheco
+  [2342/4973] MINOR        id=31055  dist=169m  Jardim de Infância do Quintal
+  [2346/4973] MISMATCH     id=31065  dist=3211m  Jardim de Infância do Bairro Padre Cruz, Lisboa
+  [2350/4973] MINOR        id=31098  dist=152m  Escola Básica de Lousa, Loures
+  [2354/4973] MINOR        id=31108  dist=232m  Escola Básica do Parque Silva Porto
+  [2355/4973] MINOR        id=31110  dist=124m  Escola Básica N.º 1 do Bom Retiro
+  [2356/4973] MINOR        id=31111  dist=148m  Escola Básica N.º4 de Vila Franca de Xira
+  [2357/4973] MISMATCH     id=31112  dist=5288m  Escola Básica João Villaret
+  [2358/4973] MINOR        id=31113  dist=149m  Escola Básica de Casal dos Apréstimos
+  [2364/4973] MINOR        id=31119  dist=136m  Escola Básica do 1ºciclo C/ JI de São Julião do To
+  [2371/4973] MISMATCH     id=31126  dist=2035m  Jardim de Infância N.º 1 de Benfica
+  [2372/4973] MISMATCH     id=31127  dist=7031m  Jardim de Infância da Várzea de Sintra
+  [2374/4973] MINOR        id=31129  dist=256m  Escola Básica da Alta de Lisboa
+  [2377/4973] MINOR        id=31138  dist=383m  Escola Básica de Santo Condestável
+  [2378/4973] MINOR        id=31140  dist=196m  Jardim de Infância Luísa Ducla Soares
+  [2379/4973] MINOR        id=31141  dist=143m  Escola Básica da Quinta das Dálias
+  [2380/4973] MINOR        id=31142  dist=211m  Escola Básica Manuel Beça Múrias
+  [2382/4973] MINOR        id=31144  dist=170m  Jardim de Infância de Palmeiros
+  [2383/4973] MINOR        id=31145  dist=101m  Jardim de Infância de Morelena
+  [2388/4973] MINOR        id=31154  dist=111m  Escola Básica de Sacavém
+  [2389/4973] MISMATCH     id=31155  dist=3845m  Jardim de Infância de Terraços da Ponte
+  [2390/4973] MINOR        id=31156  dist=150m  Escola Básica Manuel Teixeira Gomes
+  [2391/4973] MISMATCH     id=31157  dist=8672m  Escola Básica Alice Vieira
+  [2394/4973] MISMATCH     id=31164  dist=8991m  Jardim de Infância N.º 2 da Brandoa
+  [2397/4973] MINOR        id=31176  dist=309m  Escola Básica Paulino Montez / JI N.º 6
+  [2400/4973] 48%  {'MATCH': 718, 'MINOR': 418, 'MISMATCH': 454, 'CS_ONLY': 6, 'NO_CS_COORDS': 804, 'ERROR': 0}
+  [2403/4973] MISMATCH     id=31186  dist=506m  Jardim de Infância da Conquinha
+  [2404/4973] MISMATCH     id=31187  dist=801m  EB Carlos Bernardes
+  [2408/4973] MINOR        id=31200  dist=103m  Jardim de Infância Álvaro de Campos
+  [2411/4973] MINOR        id=31203  dist=147m  Escola Básica de Laranjeiras
+  [2413/4973] MINOR        id=31215  dist=124m  Jardim de Infância Tomás Ribeiro
+  [2416/4973] MINOR        id=31499  dist=394m  Escola Básica de Porto Salvo
+  [2417/4973] MINOR        id=31500  dist=321m  Escola Básica Pedro Álvares Cabral, Porto Salvo
+  [2429/4973] MINOR        id=31557  dist=101m  Jardim de Infância António José de Almeida
+  [2437/4973] MISMATCH     id=31588  dist=191312m  Escola Básica de Alvide
+  [2438/4973] MINOR        id=31589  dist=141m  Escola Básica Professor Manuel Gaião
+  [2440/4973] MISMATCH     id=31608  dist=2131m  Escola Básica de Sassoeiros
+  [2442/4973] MINOR        id=31612  dist=230m  Escola Básica de Atalaia, Lourinhã
+  [2449/4973] MISMATCH     id=31724  dist=579m  Escola Básica Boavida Canada
+  [2451/4973] MINOR        id=31753  dist=139m  Jardim de Infância de Murches
+  [2454/4973] MINOR        id=31910  dist=174m  Escola Básica Luz Carnide
+  [2455/4973] MISMATCH     id=31914  dist=128268m  Colégio do Amor de Deus
+  [2459/4973] MINOR        id=31920  dist=104m  Jardim de Infância Abecedário
+  [2462/4973] MINOR        id=31944  dist=410m  Escola Básica de S. Pedro da Cadeira
+  [2468/4973] MISMATCH     id=31970  dist=6342m  EB1/JI Águas Livres
+  [2471/4973] MINOR        id=32037  dist=217m  Escola Básica Santa Maria dos Olivais / JI N.º 8
+  [2472/4973] MINOR        id=32106  dist=202m  EB1/JI de Fetais
+  [2473/4973] MISMATCH     id=32107  dist=651m  EB1/JI N.º 1 de Camarate
+  [2475/4973] MINOR        id=32183  dist=151m  Escola Básica Eça de Queirós
+  [2478/4973] MISMATCH     id=32235  dist=6955m  Escola Básica de São Miguel
+  [2480/4973] MINOR        id=32269  dist=111m  Escola Básica Cesário Verde
+  [2483/4973] MINOR        id=32285  dist=186m  Escola Básica Professora Maria Costa
+  [2485/4973] MINOR        id=32305  dist=112m  Escola Básica de Fernanda de Castro
+  [2487/4973] MINOR        id=32330  dist=128m  Centro Cultural e Recreativo das Crianças do Cruze
+  [2490/4973] MISMATCH     id=32350  dist=659m  Bloco C+f - Pré Escolar
+  [2492/4973] MINOR        id=32441  dist=160m  Escola Básica do Prior Velho
+  [2494/4973] MINOR        id=32453  dist=334m  Escola Básica Olival do Covo
+  [2499/4973] MINOR        id=32624  dist=417m  Jardim de Infância de Lourinhã
+  [2500/4973] MINOR        id=32720  dist=108m  Escola Básica de Sobral de Monte Agraço e Santo Qu
+  [2502/4973] MINOR        id=32763  dist=105m  Escola Básica Manuel Coco
+  [2504/4973] MISMATCH     id=32772  dist=242564m  EB1/JI Cortegaça
+  [2516/4973] MINOR        id=33251  dist=144m  EB Nº2 de Vialonga
+  [2519/4973] MINOR        id=33271  dist=167m  Escola Básica de Lóios
+  [2520/4973] MINOR        id=33276  dist=303m  EB de Alpriate Nº2
+  [2521/4973] MISMATCH     id=33282  dist=189589m  Eb1.2.3. C/ JI Pedro de Santarém
+  [2523/4973] MINOR        id=33292  dist=192m  Escola EB1/ JI Adriano Correia de Oliveira
+  [2524/4973] MINOR        id=33302  dist=127m  Escola Básica José Jorge Letria
+  [2525/4973] MISMATCH     id=33303  dist=14053m  Escola EB1/ JI Infante D. Henrique
+  [2527/4973] MISMATCH     id=33341  dist=92538m  EB1/JI Monte Redondo
+  [2539/4973] MINOR        id=33477  dist=120m  EB/JI Conquinha
+  [2540/4973] MINOR        id=33615  dist=213m  Escola Básica Professor Oliveira Marques
+  [2541/4973] MINOR        id=33737  dist=123m  Escola Básica do Sobral da Abelheira
+  [2542/4973] MINOR        id=33836  dist=271m  Escola Básica António Rebelo de Andrade
+  [2553/4973] MINOR        id=35148  dist=110m  Jardim de Infância do Bom Sucesso
+  [2554/4973] CS_ONLY      id=35149  dist=—  EB1/JI Alice Vieira,
+  [2558/4973] MINOR        id=35155  dist=271m  Escola Básica de Arranhó
+  [2559/4973] MINOR        id=35175  dist=452m  Escola Básica com Jardim de Infância da Quinta Gra
+  [2560/4973] MINOR        id=35176  dist=285m  Escola Básica com Jardim de Infância do Alto do Mo
+  [2562/4973] MINOR        id=35178  dist=448m  Escola Básica N.º 2 de São Marcos
+  [2563/4973] MISMATCH     id=35179  dist=2009m  Escola Básica N.º 1 de São Marcos
+  [2566/4973] MINOR        id=35182  dist=206m  Escola Básica da Terra dos Arcos
+  [2570/4973] MISMATCH     id=35186  dist=1377m  Escola Básica Branquinho da Fonseca
+  [2572/4973] MISMATCH     id=35188  dist=744m  Escola Básica de Santa Susana
+  [2573/4973] MISMATCH     id=35189  dist=1913m  Escola Básica de São João das Lampas
+  [2574/4973] MINOR        id=35190  dist=327m  Escola Básica de Bolembre, Magoito,
+  [2577/4973] MINOR        id=35195  dist=475m  Escola Básica com Jardim de Infância de Alfragide
+  [2578/4973] MISMATCH     id=35196  dist=709m  Jardim de Infância de a-Da-Beja
+  [2582/4973] MISMATCH     id=35200  dist=2441m  Jardim de Infância de Povos
+  [2583/4973] MISMATCH     id=35201  dist=12733m  Escola Básica N.º 1 de Galiza
+  [2584/4973] MISMATCH     id=35202  dist=6275m  Escola Básica de Assafora
+  [2587/4973] MISMATCH     id=35205  dist=592m  Jardim de Infância da Cabeça Gorda,
+  [2595/4973] MINOR        id=35213  dist=473m  Escola Básica do Bairro da Covina
+  [2597/4973] MINOR        id=35215  dist=132m  Escola Básica de Colaride
+  [2600/4973] 52%  {'MATCH': 778, 'MINOR': 461, 'MISMATCH': 477, 'CS_ONLY': 7, 'NO_CS_COORDS': 877, 'ERROR': 0}
+  [2602/4973] MINOR        id=35220  dist=330m  Escola Básica N.º 2 de Queluz
+  [2604/4973] MINOR        id=35222  dist=368m  Escola Básica do Alto da Eira
+  [2607/4973] MINOR        id=35236  dist=168m  Escola Básica Nº 1 de Apelação
+  [2613/4973] MINOR        id=35243  dist=158m  Jardim de Infância de Ral
+  [2621/4973] MISMATCH     id=35262  dist=702m  Escola EB1/JI de S. João da Talha
+  [2632/4973] MINOR        id=35274  dist=174m  Escola Básica de Casais de Trigache
+  [2637/4973] MINOR        id=35280  dist=349m  Escola Básica da Brandoa
+  [2643/4973] MINOR        id=35286  dist=386m  Escola Básica Raúl Lino
+  [2646/4973] MISMATCH     id=35289  dist=692m  Escola Básica N.º 1 de Fitares
+  [2647/4973] MINOR        id=35291  dist=244m  Escola Básica de Ota
+  [2651/4973] MINOR        id=35295  dist=109m  Escola Básica de Cabra Figa
+  [2652/4973] MINOR        id=35296  dist=165m  Jardim de Infância Padre Agostinho da Mota
+  [2653/4973] MINOR        id=35298  dist=142m  Escola Básica de Cabanas de Torres
+  [2654/4973] MISMATCH     id=35300  dist=958m  Escola Básica de Colares
+  [2655/4973] MINOR        id=35301  dist=415m  Jardim de Infância de Azenhas do Mar
+  [2657/4973] MISMATCH     id=35303  dist=306494m  Escola Básica N.º 2 de Mem Martins
+  [2665/4973] MISMATCH     id=35320  dist=119281m  Escola Básica de Vila de Rei
+  [2670/4973] MISMATCH     id=35325  dist=2185m  Escola Básica N.º 1 do Linhó
+  [2673/4973] MINOR        id=35328  dist=110m  Escola Básica Cesário Verde
+  [2674/4973] MINOR        id=35329  dist=193m  Escola Básica de Vale Mourão
+  [2676/4973] MISMATCH     id=35331  dist=6035m  Escola Básica N.º 1 da Serra das Minas
+  [2680/4973] MINOR        id=35335  dist=270m  Escola Básica N.º 2 da Serras das Minas
+  [2686/4973] MINOR        id=36417  dist=179m  Escola Básica de Albarraque
+  [2688/4973] MINOR        id=36437  dist=261m  Escola Básica de Serradas
+  [2691/4973] MISMATCH     id=36546  dist=508m  Colégio Infantil de Educação Popular da Poça
+  [2700/4973] 54%  {'MATCH': 833, 'MINOR': 478, 'MISMATCH': 485, 'CS_ONLY': 7, 'NO_CS_COORDS': 897, 'ERROR': 0}
+  [2749/4973] MISMATCH     id=1811  dist=138971m  Creche Nossa Senhora Anjos
+  [2750/4973] MISMATCH     id=1817  dist=583m  Centro Infantil Nossa Senhora Vila Velha
+  [2752/4973] MISMATCH     id=1824  dist=103538m  Creche Casa Branca
+  [2753/4973] MISMATCH     id=1825  dist=7450m  Creche Nossa Senhora Graça
+  [2755/4973] MISMATCH     id=1828  dist=213924m  Equip Soc da Santa Casa da Misericórdia de Sousel
+  [2757/4973] MINOR        id=1835  dist=178m  Jardim de Infância Nossa Senhora Conceição
+  [2758/4973] MISMATCH     id=1841  dist=7300m  Centro Paroquial Assistência Castelo Vide
+  [2759/4973] MISMATCH     id=1848  dist=184160m  Jardim de Infância Centro Bem Estar Social Arronch
+  [2760/4973] MISMATCH     id=1860  dist=334703m  Centro Infantil Vila Boim
+  [2761/4973] MISMATCH     id=1862  dist=159046m  Jardim de Infância Semi-Internato Nossa Senhora En
+  [2763/4973] MISMATCH     id=1865  dist=672m  Obra de Santa Zita - Portalegre
+  [2769/4973] MINOR        id=1896  dist=224m  Fundação Centro Social Nossa Senhora do Paço
+  [2771/4973] MISMATCH     id=1899  dist=504m  Centro Dia Betânia-Campo Maior
+  [2773/4973] MISMATCH     id=1908  dist=21556m  "O Cantinho"
+  [2774/4973] MINOR        id=1986  dist=173m  Obra de Santa Zita - Elvas
+  [2775/4973] MISMATCH     id=4115  dist=299919m  Centro Infantil de Santa Eulália
+  [2778/4973] MINOR        id=16043  dist=193m  Centro Social Diocesano de Santo António
+  [2779/4973] MINOR        id=18148  dist=215m  Creche da Santa Casa da Misericórdia de Monforte
+  [2782/4973] MISMATCH     id=28701  dist=3306m  Centro Infantil de S. António das Areias - Creche 
+  [2785/4973] MISMATCH     id=34121  dist=941m  Os Pupilos
+  [2786/4973] MINOR        id=21442  dist=103m  Centro Educativo Alice Nabeiro
+  [2798/4973] MINOR        id=31530  dist=163m  Jardim de Infância de Benavila
+  [2800/4973] 56%  {'MATCH': 850, 'MINOR': 485, 'MISMATCH': 500, 'CS_ONLY': 7, 'NO_CS_COORDS': 958, 'ERROR': 0}
+  [2806/4973] MINOR        id=32478  dist=334m  Jardim de Infância de Casa Branca
+  [2810/4973] MISMATCH     id=33416  dist=600m  EB1/JI de Raposeira
+  [2813/4973] MINOR        id=35308  dist=195m  Escola Básica de Cabeço de Vide
+  [2815/4973] MISMATCH     id=35339  dist=822m  Escola Básica de Castelo de Vide
+  [2821/4973] MINOR        id=35358  dist=266m  Escola Básica de Alcôrrego
+  [2822/4973] MISMATCH     id=35359  dist=591m  Escola Básica de Santa Luzia
+  [2823/4973] MINOR        id=35360  dist=223m  Jardim de Infância de Revoltilho
+  [2824/4973] MINOR        id=35362  dist=112m  Escola Básica da Calçadinha
+  [2825/4973] MISMATCH     id=35363  dist=2756m  Jardim de Infância de Malvar
+  [2827/4973] MINOR        id=35365  dist=103m  Escola Básica de Ponte de Sôr
+  [2831/4973] MISMATCH     id=2601  dist=12325m  Abrigo Côrte Real- Obra de Nossa Senhora das Cande
+  [2832/4973] MISMATCH     id=2604  dist=2345m  Equip. Soc. Associação de Solidariedade Social - O
+  [2833/4973] MISMATCH     id=2610  dist=622m  Equip. Soc. Centro Social de Ermesinde
+  [2836/4973] MISMATCH     id=2638  dist=76950m  Equip. Soc. Centro Social de Cête
+  [2837/4973] MINOR        id=2644  dist=308m  Equip. Soc. Santa Casa da Misericórdia de Paredes
+  [2838/4973] MINOR        id=2646  dist=298m  Associação Cultural e Desportiva da Casa do Povo d
+  [2839/4973] MISMATCH     id=2654  dist=533m  Equip. Soc. Centro Social Paroquial da Vila de Alp
+  [2840/4973] MISMATCH     id=2656  dist=5784m  Centro Bem Estar Infantil Visconde Sousela e Isabe
+  [2841/4973] MISMATCH     id=2657  dist=12482m  Centro Social e Paroquial de Lustosa
+  [2842/4973] MISMATCH     id=2659  dist=87744m  Jardim de Infância e Creche do Centro Social e Par
+  [2843/4973] MISMATCH     id=2661  dist=823m  Centro Social Paroquial de Águas Santas
+  [2844/4973] MINOR        id=2663  dist=216m  Equip. Soc. o Lar do Comércio
+  [2845/4973] MINOR        id=2666  dist=209m  Centro de Animação à Infância de Vermoim
+  [2847/4973] MISMATCH     id=2668  dist=2985m  Creche Jardim de Infância São Pedro Fins
+  [2848/4973] MISMATCH     id=2669  dist=4733m  Centro Social José Moreira da Silva e Lucinda Alve
+  [2849/4973] MINOR        id=2674  dist=174m  Jardim de Infância Comendador Abílio F. Oliveira
+  [2852/4973] MINOR        id=2684  dist=160m  Centro Infantil de Matosinhos
+  [2854/4973] MISMATCH     id=2686  dist=571m  Jardim de Infância, Creche e ATL o Paraíso
+  [2856/4973] MISMATCH     id=2694  dist=8372m  Creche, Jardim de Infância e ATL "Maria do Rosário
+  [2858/4973] MINOR        id=2697  dist=177m  Jardimcoope-Solidariedade Social
+  [2863/4973] MINOR        id=2741  dist=215m  Infantário Águas Santas I
+  [2865/4973] MINOR        id=2743  dist=365m  Infantário de Crestins
+  [2867/4973] MISMATCH     id=2747  dist=8433m  Associação para o Desenvolvimento de Lagares
+  [2875/4973] MINOR        id=2780  dist=196m  Centro Social da Paróquia de Beiriz
+  [2882/4973] MISMATCH     id=2791  dist=8595m  Fundação Couto
+  [2885/4973] MISMATCH     id=2797  dist=8289m  Creche e Jardim Infantil do Torne
+  [2886/4973] MISMATCH     id=2800  dist=6274m  Jardim de Infância Associação Social Recreativa e 
+  [2888/4973] MINOR        id=3602  dist=212m  Associação das Creches de Santa Marinha de Gaia
+  [2891/4973] MISMATCH     id=3610  dist=69250m  Centro Social Paroquial de Aguçadoura
+  [2894/4973] MISMATCH     id=3622  dist=9647m  Lar de Santa Isabel
+  [2896/4973] MISMATCH     id=3629  dist=6688m  Creche do Centro Social e Paroquial da Igreja do S
+  [2897/4973] MISMATCH     id=3635  dist=5129m  Centro Social e Paroquial de Baltar
+  [2900/4973] 58%  {'MATCH': 888, 'MINOR': 502, 'MISMATCH': 525, 'CS_ONLY': 7, 'NO_CS_COORDS': 978, 'ERROR': 0}
+  [2902/4973] MINOR        id=3672  dist=161m  Jardim Infantil Paroquial Encanto
+  [2907/4973] MISMATCH     id=3686  dist=279992m  Assus - Associação de Solidariedade Social da Urba
+  [2908/4973] MISMATCH     id=3689  dist=4193m  Jardim de Infância Centro Social Paroquial de Pera
+  [2910/4973] MISMATCH     id=3705  dist=474643m  Equip. Soc. Centro Social Nossa Senhora Pedra Mari
+  [2911/4973] MISMATCH     id=3708  dist=587m  Creche Nossa Senhora da Conceição
+  [2912/4973] MINOR        id=3709  dist=108m  A Beneficente - Jardim de Infância Monsenhor Pires
+  [2913/4973] MINOR        id=3710  dist=196m  Centro Social da Sé Catedral
+  [2918/4973] MISMATCH     id=3724  dist=50581m  Instituto Profissional do Terço
+  [2920/4973] MINOR        id=3735  dist=271m  Obra Diocesana-Centro Social do Bairro do Lagartei
+  [2922/4973] MINOR        id=3739  dist=201m  Centro Social Fonte de Moura
+  [2924/4973] MISMATCH     id=3744  dist=6001m  Centro Social da Pasteleira
+  [2925/4973] MISMATCH     id=3746  dist=27826m  Centro Social do Bairro Rainha Dona Leonor
+  [2926/4973] MINOR        id=3749  dist=191m  Centro Social do Bairro do Cerco do Porto
+  [2927/4973] MINOR        id=3750  dist=206m  Obra Diocesiana de Promoção Social - Centro Social
+  [2930/4973] MISMATCH     id=3767  dist=9627m  Centro Infantil a Minha Janela
+  [2932/4973] MISMATCH     id=3785  dist=629m  Centro Infantil de São Mamede
+  [2935/4973] MISMATCH     id=4612  dist=27867m  A Toquinha 2
+  [2936/4973] MINOR        id=4613  dist=200m  Associação das Creches de São Vicente de Paulo - C
+  [2943/4973] MINOR        id=4655  dist=334m  Centro Social da Paroquia de Nossa Senhora da Ajud
+  [2947/4973] MINOR        id=4671  dist=202m  Equipamento Social do Viso
+  [2948/4973] MISMATCH     id=4680  dist=1769m  Centro Social da Paroquia de Gulpilhares
+  [2949/4973] MISMATCH     id=4681  dist=1767m  Jardim de Infância Jean Piaget
+  [2951/4973] MINOR        id=4684  dist=412m  Jardim de Infância Centro Social de Candal Marco
+  [2952/4973] MISMATCH     id=4686  dist=73615m  Centro Paroquial de S. João Baptista de Canelas
+  [2954/4973] MINOR        id=4698  dist=138m  Centro Juvenil Campanhã - Creche / Pré-Escolar
+  [2955/4973] MISMATCH     id=4712  dist=4192m  Equip. Social Centro Social do Soutelo
+  [2956/4973] MISMATCH     id=4715  dist=615m  Colégio Maria Droste
+  [2961/4973] MISMATCH     id=5911  dist=918m  Creche Arco Íris
+  [2963/4973] MISMATCH     id=5914  dist=6190m  Colégio Casa Mãe
+  [2968/4973] MINOR        id=13191  dist=223m  A Fisga - Infantário e Jardim de Infância
+  [2969/4973] MISMATCH     id=13195  dist=8668m  Creche Associação Baptista Ágape
+  [2970/4973] MISMATCH     id=13205  dist=473101m  Centro de Acolhimento de Crianças em Risco da Sant
+  [2972/4973] MISMATCH     id=13218  dist=8253m  Equip. Social Centro Social Paroquial de Caxinas
+  [2974/4973] MINOR        id=15180  dist=148m  Novo Colégio de Valongo
+  [2975/4973] MISMATCH     id=15181  dist=855m  Jardim de Infância a Criança
+  [2978/4973] MISMATCH     id=16098  dist=4490m  Creche, Jardim de Infância "O Capuchinho"
+  [2979/4973] MISMATCH     id=16101  dist=4234m  Complexo Social Lousada
+  [2980/4973] MINOR        id=16115  dist=272m  Jardim das Cores
+  [2981/4973] MINOR        id=17121  dist=272m  Centro Social de Silveirinhos
+  [2983/4973] MINOR        id=17128  dist=389m  Associação para o Desenvolvimento Social da Fregue
+  [2984/4973] MINOR        id=17137  dist=329m  Associação Social e de Desenvolvimento de Guifões
+  [2985/4973] MISMATCH     id=17164  dist=1776m  Centro Comunitário de S. Cosme da Santa Casa da Mi
+  [2986/4973] MINOR        id=17170  dist=183m  Solinorte-Jardim de Infância Acácio Gomes
+  [2988/4973] MISMATCH     id=17221  dist=2776m  Associação de Solidariedade Social de Nespereira
+  [2989/4973] MISMATCH     id=17580  dist=14834m  Colégio da Quinta Inglesa
+  [2991/4973] MINOR        id=17720  dist=260m  Centro Infantil de Valbom
+  [2992/4973] MISMATCH     id=17752  dist=2968m  Centro Infantil de Crestuma
+  [2995/4973] MINOR        id=17879  dist=101m  O Barquinho - Jardim de Infância,Unipessoal ,Lda
+  [2997/4973] MINOR        id=17891  dist=173m  Centro Social e Paroquial de Figueiró
+  [2999/4973] MISMATCH     id=17893  dist=6493m  Centro Social Paroquial de Santo Estêvão de Oldrõe
+  [3000/4973] 60%  {'MATCH': 936, 'MINOR': 524, 'MISMATCH': 553, 'CS_ONLY': 7, 'NO_CS_COORDS': 980, 'ERROR': 0}
+  [3002/4973] MISMATCH     id=17905  dist=4670m  Centro Social e Paroquial Padre António Mendonça
+  [3003/4973] MISMATCH     id=17906  dist=547m  Fundação Joaquim Oliveira Lopes
+  [3004/4973] MISMATCH     id=17910  dist=2617m  Equip. Social da Associação de Solidariedade Human
+  [3005/4973] MINOR        id=17921  dist=443m  Florinhas do Lar Casa Santa Isabel
+  [3011/4973] MISMATCH     id=17935  dist=2874m  Externato Senhora do Carmo
+  [3012/4973] MINOR        id=17938  dist=164m  A Torre dos Pequeninos - Creche e Jardim de Infânc
+  [3013/4973] MINOR        id=17942  dist=144m  Os Fecucos - Infantários
+  [3015/4973] MINOR        id=17948  dist=104m  Colégio Novo da Maia
+  [3017/4973] MISMATCH     id=17958  dist=11781m  Centro Infanto-Juvenil António Freire Gomes
+  [3018/4973] MISMATCH     id=17967  dist=55496m  Equipamento Social do Centro Social e Paroquial S.
+  [3019/4973] MINOR        id=17981  dist=167m  Jardim Escola a Conchinha
+  [3021/4973] MINOR        id=17983  dist=130m  Jardim Infantil o Filhote
+  [3023/4973] MISMATCH     id=17987  dist=610m  Externato Limiar - Creche e Jardim de Infância
+  [3024/4973] MINOR        id=17996  dist=209m  Atchim Infantário
+  [3025/4973] MINOR        id=17997  dist=268m  Academia de Ensino Particular
+  [3026/4973] MINOR        id=18003  dist=108m  O Barãozinho
+  [3030/4973] MISMATCH     id=18011  dist=1879m  O Sorriso
+  [3034/4973] MISMATCH     id=18035  dist=96531m  Equipamento Social da Associação para o Desenvolvi
+  [3036/4973] MINOR        id=18037  dist=254m  Creche Infantário Águas Santas II
+  [3037/4973] MISMATCH     id=18038  dist=6156m  Creche Infantário de Milheirós
+  [3038/4973] MINOR        id=18064  dist=115m  Centro Social Paroquial de São João da Foz do Sous
+  [3042/4973] MISMATCH     id=18491  dist=217688m  O "Bem-Estar", Associação de Solidariedade Social 
+  [3047/4973] MISMATCH     id=18523  dist=3280m  Equip Social do Centro Social e Paroquial de Recar
+  [3048/4973] MINOR        id=19242  dist=255m  Infantário Creche "O Miúdo 2"
+  [3049/4973] MISMATCH     id=19247  dist=6985m  Associação a Escolinha - Infantário e Jardim de In
+  [3051/4973] MISMATCH     id=19284  dist=7322m  Amas - Associação Mamedense de Apoio Social
+  [3054/4973] MISMATCH     id=19301  dist=8422m  Centro de Acção Social de Acolhimento à Terceira I
+  [3055/4973] MINOR        id=19304  dist=150m  Associação de Solidariedade Social e Cultura para 
+  [3058/4973] MINOR        id=19382  dist=178m  Ass Social Recreativa e Cultural Bem-Fazer Vaiavan
+  [3059/4973] MISMATCH     id=19444  dist=2018m  O Duende
+  [3061/4973] MISMATCH     id=21833  dist=16163m  Infantário Monfortinhos de Real
+  [3062/4973] MISMATCH     id=21838  dist=28500m  A Casa da Avó - Jardim de Infância
+  [3064/4973] MISMATCH     id=21991  dist=1754m  Creche Olival Social
+  [3065/4973] MINOR        id=22010  dist=277m  Creche "O Traquinas I"
+  [3066/4973] MINOR        id=22097  dist=394m  "Âncora" - Associação para o Desenvolvimento da Re
+  [3067/4973] MISMATCH     id=22101  dist=26313m  Centro de Dia Salvador Caetano e Ana Caetano
+  [3070/4973] MISMATCH     id=22565  dist=20998m  Colégio Tickles,Lda
+  [3071/4973] MINOR        id=22567  dist=188m  Creche de Sobrosa
+  [3073/4973] MINOR        id=22574  dist=120m  Grande Colégio de Paredes
+  [3077/4973] MISMATCH     id=22814  dist=148825m  O Girassol dos Pequeninos
+  [3078/4973] MINOR        id=22815  dist=166m  O Malmequer - Infantário e Centro de Estudos, Lda
+  [3082/4973] MINOR        id=22864  dist=117m  Infantário S. Vicente
+  [3083/4973] MISMATCH     id=23065  dist=101549m  Creche e Jardim de Infância da Santa Casa da Miser
+  [3085/4973] MISMATCH     id=23537  dist=1682m  Equip. Social Centro Social Paroquial de Caxinas
+  [3089/4973] MINOR        id=24711  dist=171m  Creche Imaculado Coração de Maria
+  [3097/4973] MISMATCH     id=24941  dist=628m  O Nosso Futuro Centro de Estudos
+  [3098/4973] MISMATCH     id=24948  dist=52411m  Creche- Fundação do Colégio de São Gonçalo de Amar
+  [3100/4973] MINOR        id=25048  dist=159m  Encosta dos Sonhos
+  [3103/4973] MISMATCH     id=25079  dist=2955m  Colégio do Forte
+  [3110/4973] MINOR        id=25872  dist=189m  Creche "O Traquinas II"
+  [3111/4973] MINOR        id=25896  dist=307m  Centro Social Paroquial de Santa Marinha do Zêzere
+  [3112/4973] MISMATCH     id=25897  dist=7024m  Creche do Centro Social Paroquial de Oliveira do D
+  [3113/4973] MISMATCH     id=26142  dist=4709m  Jardim Escola a Cegonha
+  [3114/4973] MINOR        id=26143  dist=241m  Colégio Paulo VI
+  [3115/4973] MINOR        id=26163  dist=166m  Educação Infantil a Criança no Século XXI
+  [3116/4973] MISMATCH     id=26164  dist=2571m  Colégio Oceanus
+  [3117/4973] MINOR        id=26231  dist=123m  Educar e Prevenir - Jardim de Infância Lda
+  [3118/4973] MINOR        id=26263  dist=188m  Colégio Efanor
+  [3120/4973] MISMATCH     id=26640  dist=6671m  Centro Social e Cultural de Custóias
+  [3121/4973] MISMATCH     id=26702  dist=678m  Creche Rosas Amorim Vieira
+  [3124/4973] MINOR        id=26762  dist=336m  Associação para o Desenvolvimento Integral da Sobr
+  [3126/4973] MINOR        id=27027  dist=132m  Raios de Luz - Creche e Jardim de Infância
+  [3128/4973] MINOR        id=27050  dist=328m  Berçário/Creche Pronto a Crescer
+  [3132/4973] MISMATCH     id=27361  dist=21207m  Creche Espaço para a Vida
+  [3134/4973] MINOR        id=27453  dist=451m  Equipamento Social da Associação para o Desenvolvi
+  [3136/4973] MISMATCH     id=27455  dist=1111m  Creche e Jardim-De-Infância Zebra
+  [3137/4973] MINOR        id=27466  dist=159m  Jardim da Régia
+  [3138/4973] MISMATCH     id=27470  dist=818m  Associação Social e Recreativa Guerra Junqueiro
+  [3139/4973] MISMATCH     id=27643  dist=810m  Sol dos Pequeninos - Creche e Jardim de Infância
+  [3143/4973] MISMATCH     id=28329  dist=42034m  Centro Social Paroquial Divino Salvador de Moure
+  [3144/4973] MISMATCH     id=28355  dist=280338m  Casa das Histórias
+  [3154/4973] MINOR        id=29587  dist=105m  Associação Infantário e Jardim de Infância Carolin
+  [3169/4973] MINOR        id=32893  dist=171m  Asstir
+  [3171/4973] MISMATCH     id=32985  dist=837m  Kids - I
+  [3175/4973] MINOR        id=34136  dist=101m  O Moinho
+  [3200/4973] 64%  {'MATCH': 1019, 'MINOR': 560, 'MISMATCH': 592, 'CS_ONLY': 7, 'NO_CS_COORDS': 1022, 'ERROR': 0}
+  [3207/4973] MISMATCH     id=2794  dist=10137m  Equip. Soc. Jardim Infantil de Nossa Senhora do Pi
+  [3208/4973] MISMATCH     id=3618  dist=546m  Instituto Maria da Paz Varzim
+  [3209/4973] MISMATCH     id=3636  dist=5508m  Casa do Povo de Peroselo
+  [3210/4973] MISMATCH     id=3645  dist=83339m  Equip. Soc. Santa Casa da Misericórdia de Nossa Se
+  [3215/4973] MISMATCH     id=4689  dist=13350m  Patronato Nossa Senhora da Nazaré
+  [3216/4973] MISMATCH     id=4703  dist=3762m  ATL da Associação Social Cultural de Louredo
+  [3218/4973] MISMATCH     id=11108  dist=1578m  Fundação Salesianos - Salesianos do Porto
+  [3221/4973] MISMATCH     id=17829  dist=932m  Centro Social e Paroquial de Perosinho
+  [3223/4973] MISMATCH     id=19401  dist=9186m  Villa Urbana de Valbom - Associação do Porto de Pa
+  [3224/4973] MINOR        id=22107  dist=492m  Fundação Joaquim Oliveira Lopes - Pólo 2
+  [3225/4973] MISMATCH     id=27241  dist=1128m  Centro de Actividades de Tempos Livres de Gueifães
+  [3228/4973] MISMATCH     id=29257  dist=16826m  O Meu Mundo
+  [3233/4973] MISMATCH     id=29431  dist=1540m  Jasmim Ensino Pré Escolar e Básico Ldª
+  [3243/4973] MISMATCH     id=29521  dist=1224m  Colégio de Ermesinde
+  [3244/4973] MISMATCH     id=29536  dist=604m  Colégio Nossa Senhora do Rosário
+  [3251/4973] MINOR        id=29601  dist=241m  Jardim Infantil do Centro Paroquial de Ariz
+  [3262/4973] MINOR        id=29782  dist=327m  Colégio São José de Bairros
+  [3265/4973] MINOR        id=29816  dist=108m  Jardim Escola João de Deus
+  [3266/4973] MINOR        id=29817  dist=119m  Jardim Escola João de Deus
+  [3275/4973] MINOR        id=30076  dist=297m  Escola Básica de Valpedre
+  [3281/4973] MINOR        id=30151  dist=407m  Jardim de Infância Lugar de Laúndos
+  [3282/4973] MINOR        id=30152  dist=120m  Jardim de Infância de Cruz, Balazar
+  [3283/4973] MISMATCH     id=30163  dist=1605m  Escola Básica de Costa
+  [3287/4973] MISMATCH     id=30167  dist=559m  Escola Básica da Lage
+  [3288/4973] MINOR        id=30193  dist=145m  Escola Básica da Praia
+  [3289/4973] MINOR        id=30194  dist=438m  Escola Básica Eng. Fernando Pinto de Oliveira
+  [3290/4973] MINOR        id=30200  dist=112m  Escola Básica N.º 1 de Campelo, Sobrado, Valongo
+  [3292/4973] MISMATCH     id=30252  dist=9056m  Jardim de Infância de Santa Bárbara
+  [3293/4973] MISMATCH     id=30253  dist=7262m  Escola Básica de Bela Vista
+  [3300/4973] MINOR        id=30297  dist=408m  Jardim de Infância de Giesta, Cidoi, Trofa
+  [3306/4973] MISMATCH     id=30335  dist=580m  Escola Básica da Agra
+  [3316/4973] MINOR        id=30512  dist=122m  Escola Básica de Matas
+  [3326/4973] MINOR        id=30599  dist=118m  Escola Básica de Carrapata
+  [3334/4973] MISMATCH     id=30645  dist=680m  EB1/JI da Serpente
+  [3340/4973] MINOR        id=30684  dist=317m  Escola Básica de Saibreiras
+  [3347/4973] MINOR        id=30722  dist=160m  Escola Básica N.º 1 de Vila de Este
+  [3349/4973] MINOR        id=30724  dist=141m  Escola Básica de Valado
+  [3350/4973] MINOR        id=30725  dist=205m  Escola Básica de Calvário
+  [3354/4973] MINOR        id=30737  dist=255m  Escola Básica de Enxurreiras
+  [3357/4973] MISMATCH     id=30813  dist=554m  Escola Básica de Aguda
+  [3358/4973] MINOR        id=30814  dist=213m  Escola Básica de Corvo
+  [3359/4973] MINOR        id=30815  dist=249m  Escola Básica de Chãos Velhos
+  [3360/4973] MINOR        id=30830  dist=155m  Escola Básica de Vilela, Paredes
+  [3371/4973] MISMATCH     id=30855  dist=1608m  Jardim de Infância de Igreja, Marecos
+  [3379/4973] MINOR        id=30869  dist=166m  EB de Bitarães
+  [3381/4973] MINOR        id=30871  dist=260m  Jardim de Infância de Carreiras Verdes, Louredo, P
+  [3386/4973] MISMATCH     id=30883  dist=11985m  Jardim de Infância de Vinha
+  [3388/4973] MINOR        id=30885  dist=370m  Escola Básica de Quinchães
+  [3389/4973] MISMATCH     id=30886  dist=25125m  Escola Básica de São Bento da Batalha
+  [3390/4973] MINOR        id=30887  dist=274m  Escola Básica de Santa Luzia
+  [3391/4973] MISMATCH     id=30888  dist=9516m  Escola Básica de Foral
+  [3393/4973] CS_ONLY      id=30890  dist=—  Escola Básica de Ermida, Santa Cristina do Couto
+  [3397/4973] MINOR        id=30894  dist=154m  Jardim de Infância de Jancido
+  [3400/4973] 68%  {'MATCH': 1092, 'MINOR': 587, 'MISMATCH': 617, 'CS_ONLY': 8, 'NO_CS_COORDS': 1096, 'ERROR': 0}
+  [3401/4973] MISMATCH     id=30954  dist=585m  Escola Básica de Duas Igrejas, Paredes
+  [3413/4973] MISMATCH     id=30984  dist=1465m  Escola Básica N.º 2 de Perafita, Matosinhos
+  [3414/4973] MINOR        id=31002  dist=374m  Escola Básica de Pombeiro de Ribavizela
+  [3420/4973] MINOR        id=31017  dist=124m  Escola Básica de Asprela
+  [3421/4973] MINOR        id=31021  dist=456m  Escola Básica de S. Tomé de Negrelos
+  [3422/4973] MISMATCH     id=31025  dist=2865m  Jardim de Infância de Prenhô
+  [3424/4973] MINOR        id=31045  dist=152m  Escola Básica de Recarei
+  [3428/4973] MISMATCH     id=31075  dist=586m  Escola Básica de Baguim do Monte
+  [3435/4973] MINOR        id=31085  dist=114m  Escola Básica de Vinha - Pedreira
+  [3437/4973] MINOR        id=31148  dist=416m  Escola Básica de Arcos, São Pedro Fins
+  [3439/4973] MINOR        id=31218  dist=117m  Escola Básica do Torno
+  [3444/4973] MINOR        id=31235  dist=161m  Escola Básica de Mós
+  [3446/4973] MISMATCH     id=31267  dist=1900m  Jardim de Infância de Cerdeiras, Tabuado
+  [3447/4973] MISMATCH     id=31269  dist=592m  Jardim de Infância de Murteirados,
+  [3448/4973] MISMATCH     id=31270  dist=758m  Jardim de Infância de Vila Verde
+  [3450/4973] MINOR        id=31272  dist=352m  Jardim de Infância de Ramalhais
+  [3451/4973] MISMATCH     id=31273  dist=2936m  Jardim de Infância da Aliviada
+  [3452/4973] MISMATCH     id=31274  dist=3268m  EB1/JI de Carreira - Avessadas
+  [3453/4973] MISMATCH     id=31275  dist=1394m  EB1/JI da Barroca
+  [3454/4973] MISMATCH     id=31276  dist=503m  Jardim de Infância da Quinta do Casal
+  [3455/4973] MINOR        id=31277  dist=333m  EB1/JI de Eiró
+  [3459/4973] MINOR        id=31342  dist=143m  Escola Básica de Várzea
+  [3460/4973] MISMATCH     id=31343  dist=945m  Jardim de Infância de Felgueiras
+  [3465/4973] MINOR        id=31377  dist=317m  Escola Básica de Gandra, Paredes
+  [3466/4973] MINOR        id=31378  dist=347m  Escola Básica de Cete
+  [3470/4973] MINOR        id=31382  dist=199m  Jardim de Infância de Boavista
+  [3471/4973] MINOR        id=31386  dist=267m  Jardim de Infância de Igreja, Gondar, Amarante
+  [3473/4973] MINOR        id=31408  dist=183m  Escola Básica de Medados
+  [3474/4973] MINOR        id=31409  dist=410m  Escola Básica de Bouçó, Rio Mau, Vila do Conde
+  [3476/4973] MISMATCH     id=31411  dist=6525m  Escola Básica N.º 1 de Junqueira
+  [3479/4973] MISMATCH     id=31467  dist=23120m  Escola Básica de Freamunde
+  [3481/4973] MINOR        id=31498  dist=238m  Escola Básica do Bom Pastor
+  [3486/4973] MISMATCH     id=31634  dist=648m  Escola Básica de Corim, Águas Santas
+  [3489/4973] MISMATCH     id=31655  dist=6325m  Jardim de Infância da Quinta do Sol, Valbom
+  [3491/4973] MINOR        id=31684  dist=142m  Escola Básica de Codiceira
+  [3495/4973] MISMATCH     id=31867  dist=631m  Externato Santa Margarida
+  [3500/4973] 70%  {'MATCH': 1116, 'MINOR': 606, 'MISMATCH': 634, 'CS_ONLY': 8, 'NO_CS_COORDS': 1136, 'ERROR': 0}
+  [3504/4973] MISMATCH     id=31950  dist=521m  EB1/JI de Brandariz
+  [3511/4973] MISMATCH     id=32042  dist=1457m  EB1/Jipicota
+  [3529/4973] MISMATCH     id=32289  dist=1256m  Escola Básica de Covelo Moure
+  [3534/4973] MINOR        id=32319  dist=132m  EB/JI S. Roque
+  [3535/4973] MINOR        id=32320  dist=240m  EB/JI Sra. Campanhã
+  [3539/4973] MINOR        id=32351  dist=176m  Jardim de Infância Pinheiro D Além
+  [3540/4973] MINOR        id=32405  dist=116m  Escola Básica Integrada da Barranha
+  [3556/4973] MINOR        id=32584  dist=289m  Escola Básica da Pícua
+  [3564/4973] MISMATCH     id=32708  dist=122694m  Escola Básica de Ribeirinho - Penacova
+  [3569/4973] MINOR        id=32716  dist=153m  Escola Básica Nº 2 de Lordelo, Paredes
+  [3571/4973] MINOR        id=33135  dist=479m  Escola Básica Nº 2 de Gueifães
+  [3572/4973] MINOR        id=33161  dist=246m  Jardim de Infância do Outeiro (Escola Básica de Ou
+  [3575/4973] MINOR        id=33181  dist=425m  Escola Básica de Carvalhais
+  [3576/4973] MINOR        id=33199  dist=210m  Escola Básica de Baltar
+  [3581/4973] MINOR        id=33221  dist=269m  Escola Básica Montes da Costa
+  [3590/4973] MINOR        id=33328  dist=154m  EB1/JI de Bairros
+  [3594/4973] MISMATCH     id=33384  dist=1312m  Escola Básica de Irivo
+  [3596/4973] MISMATCH     id=33390  dist=196609m  EB1/Jardim de Infância Quinta das Chás
+  [3597/4973] MINOR        id=33391  dist=263m  Escola Básica de Pinheiro
+  [3600/4973] MINOR        id=33952  dist=335m  Escola Básica Amorosa
+  [3607/4973] MINOR        id=33989  dist=343m  Escola Básica Viscondessa, Santa Cruz do Bispo, Ma
+  [3611/4973] MISMATCH     id=33995  dist=916m  Escola Básica (C/ JI) de Capela
+  [3612/4973] MISMATCH     id=33996  dist=10899m  Escola Básica (C/ JI) de Junqueira
+  [3614/4973] MISMATCH     id=33999  dist=13778m  Escola Básica de Cabo-Maureles
+  [3615/4973] MINOR        id=34015  dist=107m  Escola Básica (C/ JI) de Francelos
+  [3619/4973] MINOR        id=34037  dist=200m  Escola Básica de Peso Santo Isidoro
+  [3620/4973] MISMATCH     id=34040  dist=5705m  EB 1 com JI de Favões
+  [3624/4973] MINOR        id=34075  dist=151m  Escola Básica de Peroselo
+  [3625/4973] MISMATCH     id=34076  dist=45217m  Escola Básica de Luzim
+  [3638/4973] MISMATCH     id=34579  dist=9970m  Escola Básica de Portela
+  [3639/4973] MISMATCH     id=34580  dist=1235m  Escola Básica do Marão
+  [3640/4973] MINOR        id=34597  dist=127m  Escola Básica de Salvador do Monte
+  [3642/4973] MINOR        id=34599  dist=268m  Escola Básica N.º 2 de Amarante
+  [3649/4973] MISMATCH     id=35368  dist=709m  Escola Básica de São José
+  [3650/4973] MISMATCH     id=35369  dist=11059m  Escola Básica de São José
+  [3658/4973] CS_ONLY      id=35377  dist=—  Escola Básica de Parada
+  [3659/4973] MISMATCH     id=35378  dist=1097m  Escola Básica de Igreja
+  [3662/4973] MINOR        id=35382  dist=264m  Escola Básica de Igreja
+  [3663/4973] MISMATCH     id=35383  dist=2160m  Jardim de Infância dos Carregais
+  [3666/4973] MINOR        id=35386  dist=233m  Escola Básica de Aguiar
+  [3671/4973] MISMATCH     id=35417  dist=1484575m  Eb1ji Maia
+  [3676/4973] MISMATCH     id=35423  dist=9180m  Escola Básica de Maninho, Madalena
+  [3678/4973] MISMATCH     id=35425  dist=4066m  Escola Básica de Vairão
+  [3679/4973] MISMATCH     id=35426  dist=10899m  Escola Básica de Quinta
+  [3682/4973] MINOR        id=35430  dist=231m  Jardim de Infância do Cedro
+  [3684/4973] MISMATCH     id=35436  dist=7013m  Eb1ji Cidade Jardim
+  [3685/4973] MISMATCH     id=35439  dist=26119m  Escola Básica de Matosinhos
+  [3688/4973] MINOR        id=35443  dist=184m  Escola Básica de Marmoiral
+  [3694/4973] MISMATCH     id=35449  dist=1608m  Jardim de Infância de Santegãos
+  [3695/4973] MISMATCH     id=35450  dist=509m  Escola Básica de Boucinha
+  [3696/4973] MINOR        id=35451  dist=281m  Escola Básica N.º 2 de Pedrouços
+  [3698/4973] MINOR        id=35453  dist=164m  Escola Básica de Paço
+  [3699/4973] MISMATCH     id=35454  dist=11260m  Escola Básica de Azenha
+  [3700/4973] 74%  {'MATCH': 1172, 'MINOR': 632, 'MISMATCH': 660, 'CS_ONLY': 9, 'NO_CS_COORDS': 1227, 'ERROR': 0}
+  [3701/4973] MISMATCH     id=35456  dist=11353m  Escola Básica de Outeiro
+  [3702/4973] MINOR        id=35457  dist=157m  Escola Básica de Retorta
+  [3719/4973] MINOR        id=35484  dist=140m  Escola Básica da Torrinha
+  [3720/4973] MISMATCH     id=35485  dist=8422m  Escola Básica de Carlos Alberto
+  [3722/4973] MINOR        id=35487  dist=221m  Escola Básica de Igreja Velha
+  [3724/4973] MINOR        id=35489  dist=167m  Escola Básica de Ermida
+  [3728/4973] MISMATCH     id=35493  dist=28339m  Escola Básica de Gandra
+  [3729/4973] MISMATCH     id=35494  dist=533m  Escola Básica de São Miguel de Nevogilde
+  [3732/4973] MISMATCH     id=35497  dist=14921m  Escola Básica de Cimo de Vila
+  [3733/4973] MISMATCH     id=35498  dist=1845m  Escola Básica de Zebreiros
+  [3736/4973] MINOR        id=35502  dist=131m  Escola Básica de Amieira, Senhora da Hora
+  [3737/4973] MISMATCH     id=35503  dist=653m  Escola Básica de Gondivai
+  [3738/4973] MISMATCH     id=35505  dist=1652m  Escola Básica N.º 1 de Eiriz
+  [3743/4973] MINOR        id=35510  dist=258m  Jardim de Infância das Fontaínhas
+  [3746/4973] MINOR        id=35516  dist=103m  Escola Básica Fernão de Magalhães
+  [3747/4973] MINOR        id=35517  dist=183m  Escola Básica de Castelos
+  [3753/4973] MISMATCH     id=36278  dist=12861m  Escola Básica de Quintão
+  [3756/4973] MINOR        id=36434  dist=170m  Escola Básica Nº1 de Eiriz - Baião
+  [3757/4973] MISMATCH     id=36935  dist=1442516m  Jardim de Infância do Outeiro
+  [3788/4973] MISMATCH     id=414  dist=4763m  Centro Social Paroquial de Freixianda
+  [3789/4973] MISMATCH     id=416  dist=80573m  Equip. Soc. Centro Social Paroquial São João Bapti
+  [3790/4973] CS_ONLY      id=417  dist=—  Centro de Apoio Social do Olival
+  [3791/4973] MISMATCH     id=428  dist=131429m  Área Infantil Centro Assistência Social Tomar
+  [3792/4973] MINOR        id=439  dist=192m  Jardim de Infância Centro Social e Paroquial do En
+  [3794/4973] MINOR        id=448  dist=136m  Jardim Infância do Centro Social Paroquial de Vale
+  [3796/4973] MISMATCH     id=468  dist=116532m  Jardim de Infância Centro Social de Alferrarede
+  [3798/4973] MINOR        id=471  dist=108m  Jardim de Infância "O Coelhinho"
+  [3800/4973] MISMATCH     id=496  dist=100256m  Creche Centro Social Paroquial Nossa Senhora de Ol
+  [3803/4973] MISMATCH     id=505  dist=190258m  Santa Casa da Misericórdia de Mação
+  [3806/4973] MISMATCH     id=515  dist=8874m  Unidade do Padre Manuel Francisco Borges Centro So
+  [3807/4973] MISMATCH     id=517  dist=171595m  Unidade de São Domingos Centro Social Interparoqui
+  [3809/4973] MINOR        id=528  dist=248m  Creche - Berço do Alviela | Santa Casa da Misericó
+  [3810/4973] MINOR        id=530  dist=116m  Infantário Associação de Apoio às Famílias de Faze
+  [3812/4973] MISMATCH     id=550  dist=1256m  Centro Paroquial de Bem Estar Social de Almeirim
+  [3813/4973] MISMATCH     id=559  dist=53881m  Centro Paroquial de Bem Estar Social de Salvaterra
+  [3816/4973] MINOR        id=568  dist=283m  Creche e Jardim de Infância Centro de Bem Estar So
+  [3817/4973] MINOR        id=572  dist=279m  Jardim de Infância Lar São José
+  [3821/4973] MISMATCH     id=2401  dist=7759m  Creche Pim Pam Pum
+  [3823/4973] MISMATCH     id=2406  dist=42562m  Jardim de Infância o Ninho
+  [3824/4973] MISMATCH     id=2408  dist=151158m  Santa Casa da Misericórdia de Ferreira do Zêzere
+  [3825/4973] MINOR        id=2417  dist=347m  Centro Social da Divina Providência
+  [3828/4973] MINOR        id=2526  dist=352m  Centro Infantil Santa Maria de Leuca
+  [3829/4973] MISMATCH     id=2527  dist=2020m  Equip. Social Centro Centro Social da Ribeira de F
+  [3830/4973] MISMATCH     id=2571  dist=6926m  Centro de Bem Estar de Bairro
+  [3833/4973] MINOR        id=15067  dist=253m  ACVP - Associação Comunitária de Vale da Pedra - C
+  [3834/4973] MISMATCH     id=15072  dist=1107m  ATL e Creche da Associação Comunitária Assistência
+  [3836/4973] MISMATCH     id=15083  dist=274528m  Mãe Galinha - Centro de Bem Estar Social
+  [3837/4973] MISMATCH     id=15177  dist=545m  Creche e Jardim de Infância do Centro Bem Estar So
+  [3838/4973] MISMATCH     id=17315  dist=10284m  Centro Bem Estar Social de Foros de Salvaterra e M
+  [3839/4973] MINOR        id=17558  dist=369m  Jardim Escola João de Deus - Tramagal
+  [3841/4973] MISMATCH     id=18571  dist=57101m  Jardim de Infância do Cartaxo-Creche I
+  [3842/4973] MISMATCH     id=18572  dist=1039m  Edifício de Apoio Social Centro Social da Serra do
+  [3843/4973] MISMATCH     id=19546  dist=57101m  Jardim de Infância do Cartaxo -Creche II
+  [3848/4973] MISMATCH     id=21666  dist=14474m  Apdaf - Associação para a Promoção e Dinamização d
+  [3849/4973] MINOR        id=21841  dist=265m  Centro Social Paroquial de Atalaia
+  [3851/4973] MISMATCH     id=22689  dist=1953m  Creche da Sociedade Filarmónica Gualdim Pais
+  [3852/4973] MISMATCH     id=24442  dist=7226m  Creche Meio Palmo I
+  [3857/4973] MISMATCH     id=25930  dist=16904m  Centro Social Paroquial N. Sra. Purificação - Asse
+  [3858/4973] MINOR        id=25951  dist=309m  Colégio Lusitanos
+  [3859/4973] MINOR        id=26233  dist=270m  Creche e JI Azervadinha
+  [3860/4973] MINOR        id=26273  dist=106m  Creche e JI Quinta do Lago
+  [3861/4973] MISMATCH     id=26339  dist=9037m  Creche do Paço
+  [3862/4973] MINOR        id=26741  dist=180m  Creche Mãe Celeste
+  [3864/4973] MISMATCH     id=27450  dist=37336m  Creche de Malaqueijo
+  [3865/4973] MISMATCH     id=27910  dist=1043m  O Meu Pequeno Mundo - Creche e Jardim Infância
+  [3869/4973] MISMATCH     id=29619  dist=110284m  Escola Infantil Jacinta Marto
+  [3871/4973] MINOR        id=29736  dist=122m  Colégio Alto do Pina
+  [3877/4973] MINOR        id=32480  dist=483m  Creche os Pequenos Poetas
+  [3885/4973] MISMATCH     id=17913  dist=8985m  Casa da Criança - Centro de Assistência Social de 
+  [3887/4973] MISMATCH     id=29549  dist=899m  Externato de S. Domingos do Santíssimo Rosário
+  [3891/4973] MINOR        id=29882  dist=259m  Escola Básica de Alvega
+  [3894/4973] MINOR        id=29895  dist=271m  Centro Escolar Visconde de São Gião
+  [3896/4973] MISMATCH     id=29897  dist=37517m  Jardim de Infância da Glória do Ribatejo, Salvater
+  [3900/4973] 78%  {'MATCH': 1239, 'MINOR': 661, 'MISMATCH': 703, 'CS_ONLY': 10, 'NO_CS_COORDS': 1287, 'ERROR': 0}
+  [3905/4973] MINOR        id=29936  dist=314m  Escola Básica de Samora Correia
+  [3914/4973] MINOR        id=29984  dist=168m  Escola Básica Raul Lopes
+  [3945/4973] MINOR        id=30973  dist=275m  Jardim de Infância de Tancos
+  [3947/4973] MISMATCH     id=30975  dist=1161m  Jardim de Infância de Vila Nova da Barquinha
+  [3948/4973] MINOR        id=31005  dist=188m  Escola Básica António Gedeão
+  [3950/4973] MISMATCH     id=31134  dist=9454m  Jardim de Infância de Benfica do Ribatejo
+  [3952/4973] MISMATCH     id=31210  dist=816m  Escola Básica D. Sancho I
+  [3955/4973] MISMATCH     id=31213  dist=7108m  Jardim de Infância da Lapa
+  [3957/4973] MINOR        id=31425  dist=307m  Escola Básica de Alcobertas
+  [3961/4973] MISMATCH     id=31454  dist=870m  Jardim de Infância da Moçarria
+  [3963/4973] MINOR        id=31456  dist=365m  Escola Básica de Abitureiras
+  [3965/4973] MISMATCH     id=31459  dist=4140m  Jardim de Infância da Várzea
+  [3966/4973] MINOR        id=31494  dist=241m  Centro Escolar Poeta Ruy Belo
+  [3977/4973] MISMATCH     id=31628  dist=93548m  Escola Básica da Meia Via
+  [3990/4973] MISMATCH     id=31775  dist=1312m  Escola Básica de São Pedro
+  [3991/4973] MINOR        id=31907  dist=429m  Jardim Escola João de Deus N.º 2 - Tomar
+  [3992/4973] MISMATCH     id=31982  dist=4719m  Escola EB 1 de Sta. Maria
+  [3995/4973] MINOR        id=31996  dist=161m  Escola Básica do Tramagal
+  [3997/4973] MINOR        id=32134  dist=251m  Jardim de Infância da EB Zona Verde
+  [3998/4973] CS_ONLY      id=32148  dist=—  Jardim de Infância da EB Bonito
+  [4000/4973] 80%  {'MATCH': 1256, 'MINOR': 671, 'MISMATCH': 712, 'CS_ONLY': 11, 'NO_CS_COORDS': 1350, 'ERROR': 0}
+  [4007/4973] MISMATCH     id=33306  dist=608m  Escola Básica das Misericórdias
+  [4008/4973] MISMATCH     id=33307  dist=8933m  Escola Básica de Atouguia
+  [4019/4973] MISMATCH     id=35523  dist=249467m  Escola Básica de Bemposta
+  [4025/4973] MINOR        id=35532  dist=116m  Escola Básica do Couço
+  [4026/4973] MISMATCH     id=35533  dist=762m  Escola Básica de Fajarda
+  [4027/4973] MISMATCH     id=35534  dist=941m  Jardim de Infância N.º 2 de Benavente
+  [4028/4973] MISMATCH     id=35537  dist=2291m  Escola Básica de Casal dos Bernardos
+  [4030/4973] MISMATCH     id=35539  dist=13120m  Escola Básica N.º 1 de Coruche
+  [4031/4973] MINOR        id=35540  dist=471m  Escola Básica de Benavente
+  [4040/4973] MINOR        id=1579  dist=319m  Centro Social Paroquial S. Pedro da Comporta
+  [4044/4973] MINOR        id=1599  dist=298m  Centro Infantil da Trafaria
+  [4045/4973] MISMATCH     id=1600  dist=8239m  Centro Infantil Padre Baltazar
+  [4048/4973] MINOR        id=2320  dist=364m  Centro Social em Lagameças
+  [4049/4973] MISMATCH     id=2321  dist=7358128m  Creche e Jardim de Infância o Ninho
+  [4050/4973] CS_ONLY      id=2323  dist=—  Centro Bem Estar Infantil Santa Teresinha
+  [4051/4973] MISMATCH     id=2334  dist=669m  Centro Comunitário da Quinta do Conde - Centro Inf
+  [4052/4973] MISMATCH     id=2338  dist=1866m  Jardim de Infância "Os Pirilampos"
+  [4054/4973] MISMATCH     id=2343  dist=1287m  Centro Infantil de Alcácer do Sal "Universo da Bri
+  [4055/4973] MISMATCH     id=2347  dist=262514m  Centro Social Paroquial do Torrão
+  [4056/4973] MISMATCH     id=2348  dist=320382m  Creche Jardim de Infância e CATL o Charlot
+  [4058/4973] MINOR        id=2361  dist=172m  Centro de Convívio dos Reformados e Idosos da Vila
+  [4059/4973] MINOR        id=2369  dist=104m  Creche YMCA
+  [4060/4973] MINOR        id=2377  dist=495m  Creche e Pré Escolar - Cascuz - Centro de Apoio Só
+  [4061/4973] MISMATCH     id=2380  dist=6905m  Jardim de Infância Centro Social Paroquial de Pinh
+  [4062/4973] MINOR        id=2388  dist=292m  Sede - Fundação Coi - Pinhal Novo
+  [4064/4973] MISMATCH     id=2392  dist=6960m  A Cegonha
+  [4065/4973] MISMATCH     id=2396  dist=31226m  Centro Infantil Sebastião da Gama da Casa do Povo 
+  [4066/4973] MISMATCH     id=2399  dist=341793m  Centro Paroquial de Bem Estar Social do Castelo de
+  [4067/4973] MINOR        id=2580  dist=269m  Espaço Educativo do Laranjeiro - A Voz do Operário
+  [4069/4973] MISMATCH     id=3412  dist=29349m  Centro Social Paroquial Cristo Rei
+  [4071/4973] MINOR        id=3420  dist=194m  Casa do Povo de Canha
+  [4073/4973] MISMATCH     id=3424  dist=3010m  Censa - Centro Social São Brás do Samouco
+  [4077/4973] MINOR        id=3441  dist=195m  Creche Jardim de Infância Liberdade
+  [4078/4973] CS_ONLY      id=3442  dist=—  Creche Jardim de Infância Pão de Açúcar
+  [4079/4973] MINOR        id=3443  dist=140m  Creche Jardim de Infância Castelo
+  [4084/4973] MINOR        id=3460  dist=173m  Centro de Infância Rainha St. Isabel
+  [4085/4973] MISMATCH     id=3461  dist=14870m  Centro de Infância de S.jorge
+  [4086/4973] MINOR        id=3463  dist=416m  Centro Acção Social Cultural das Faias
+  [4089/4973] MISMATCH     id=3560  dist=2298m  Centro Social Paroquial da Sagrada Família de Mira
+  [4090/4973] MINOR        id=4815  dist=155m  Externato os Grilinhos, Lda
+  [4092/4973] MINOR        id=4817  dist=205m  O Pequeno Polegar - Berçário e Creche, Lda
+  [4094/4973] MISMATCH     id=4823  dist=7272m  Externato Rosarinho
+  [4096/4973] MINOR        id=4827  dist=409m  Colégio Atlântico
+  [4100/4973] 82%  {'MATCH': 1289, 'MINOR': 689, 'MISMATCH': 735, 'CS_ONLY': 13, 'NO_CS_COORDS': 1374, 'ERROR': 0}
+  [4101/4973] MINOR        id=4855  dist=269m  Jardim de Infância do Centro Social da Quinta do A
+  [4103/4973] MINOR        id=5004  dist=219m  Centro Infantil do Lousal
+  [4104/4973] MISMATCH     id=5528  dist=806m  Sede YMCA Setúbal
+  [4110/4973] MISMATCH     id=5985  dist=1882m  Berçário, Jardim de Infância e ATL da Associação S
+  [4111/4973] MINOR        id=6188  dist=228m  Centro Social e Paroquial Santo André
+  [4112/4973] MISMATCH     id=15091  dist=751m  Infantário o Mestre Cuco
+  [4113/4973] MISMATCH     id=15092  dist=25666m  Centro Paroquial de Bem Estar Social de Fernão Fer
+  [4114/4973] MINOR        id=15116  dist=104m  Centro Infantil António Marques
+  [4115/4973] MISMATCH     id=15123  dist=79378m  Jardim de Infância o Papagaio
+  [4117/4973] MISMATCH     id=15130  dist=12254m  Centro Comunitário Du Bocage
+  [4118/4973] MISMATCH     id=15171  dist=1461m  Centro Comunitário da Criar-T
+  [4127/4973] MISMATCH     id=17270  dist=6288m  O Escorrega
+  [4129/4973] MINOR        id=17353  dist=215m  Creche Parque do Falcão
+  [4134/4973] MISMATCH     id=18133  dist=1585m  Jardim do Pinhal
+  [4135/4973] MINOR        id=18181  dist=112m  Creche do Carvalhal os Ursitos
+  [4137/4973] MINOR        id=20022  dist=154m  Centro Social Paroquial de Vila Nova da Caparica
+  [4140/4973] MISMATCH     id=22443  dist=12851m  Dó-Ré-Mi II
+  [4143/4973] MISMATCH     id=22447  dist=539m  Externato a Casinha Mágica
+  [4144/4973] MINOR        id=22453  dist=321m  Colégio Educa a Brincar
+  [4149/4973] MINOR        id=22466  dist=158m  Jardim Infantil Xicoração
+  [4150/4973] MINOR        id=22471  dist=231m  Era Uma Vez...1,2,3
+  [4152/4973] MISMATCH     id=22836  dist=542m  Planeta Brilhante
+  [4154/4973] MINOR        id=23211  dist=201m  Cantinho Alegre da Infância - Cai
+  [4155/4973] MISMATCH     id=23284  dist=176712m  SDUB - Externato "O Início"
+  [4156/4973] MISMATCH     id=23932  dist=6023m  Creche do Bairro Liceu
+  [4157/4973] MINOR        id=24231  dist=431m  Creche de Nossa Senhora da Atalaia
+  [4158/4973] MISMATCH     id=24283  dist=1628m  Infantário Zoing
+  [4159/4973] MINOR        id=24353  dist=126m  O Refúgio dos Fidalguinhos - Barreiro
+  [4161/4973] MINOR        id=24355  dist=158m  Aldeia da Pequenada
+  [4163/4973] MISMATCH     id=24431  dist=8331m  Jardim de Infância Quinta Alegre
+  [4164/4973] MINOR        id=24439  dist=422m  Colégio Villalegre
+  [4171/4973] MISMATCH     id=24618  dist=726m  Os Beicinhas
+  [4172/4973] MINOR        id=24621  dist=169m  Cantinho das Descobertas
+  [4176/4973] MINOR        id=25118  dist=102m  Viva Kids
+  [4177/4973] MINOR        id=25120  dist=193m  Creche Mãos Dadas
+  [4182/4973] MINOR        id=25144  dist=196m  Colégio Estrela do Mar
+  [4184/4973] MINOR        id=25352  dist=354m  Creche e Jardim de Infância da Ramalha
+  [4188/4973] MINOR        id=25791  dist=186m  Creche Rainha D. Leonor
+  [4189/4973] MINOR        id=26034  dist=198m  Creche de Santa Teresinha
+  [4190/4973] MISMATCH     id=26151  dist=1014m  Jardim de Infância a Escolinha da Quinta
+  [4194/4973] MISMATCH     id=26422  dist=819m  Aurpis - Lar de Idosos e Creche do Seixal
+  [4198/4973] MISMATCH     id=26881  dist=3798m  Creche "O Regaço"
+  [4200/4973] MINOR        id=26941  dist=176m  O Recanto dos Nenucos
+  [4202/4973] MISMATCH     id=27030  dist=26397m  Crescer no Campo
+  [4204/4973] MISMATCH     id=27057  dist=850m  Escolinha do Campo
+  [4206/4973] MINOR        id=27126  dist=410m  Minimilkies
+  [4207/4973] MINOR        id=27280  dist=110m  Centro Integrado Arco-Íris
+  [4210/4973] MISMATCH     id=27447  dist=5937m  Edifício Voar Mais Alto
+  [4212/4973] MINOR        id=27461  dist=110m  Creche Golfinho Azul
+  [4214/4973] MINOR        id=27688  dist=479m  Colégio Corte Real - Edifício Tejo
+  [4218/4973] MISMATCH     id=28619  dist=2417m  Doce Chupeta
+  [4219/4973] MINOR        id=28621  dist=221m  Colégio Quinta do Concelho
+  [4220/4973] MISMATCH     id=29020  dist=2257m  Colégio Penas Real Alcochete
+  [4227/4973] MISMATCH     id=29678  dist=1286m  Colégio São Cristóvão
+  [4232/4973] MINOR        id=29780  dist=173m  Colégio São Filipe
+  [4235/4973] MINOR        id=31863  dist=123m  Centro Assistência Paroquial de Amora - Creche o C
+  [4236/4973] MISMATCH     id=31888  dist=13168m  Colégio do Vale
+  [4246/4973] MINOR        id=34041  dist=345m  Creche D'os Pastorinhos
+  [4247/4973] MISMATCH     id=34163  dist=529m  Outra Geração
+  [4268/4973] MISMATCH     id=2297  dist=3624m  Centro de Acção Social de Palhais
+  [4270/4973] MISMATCH     id=3410  dist=4228m  Centro Social Paroquial de Cristo Rei
+  [4272/4973] MISMATCH     id=3567  dist=2330m  Centro Social Nossa Senhora da Paz
+  [4276/4973] MISMATCH     id=3589  dist=2715m  Centro para a Infância - Toca do Trincas
+  [4277/4973] MISMATCH     id=3593  dist=1668m  Infantário Pintainho
+  [4279/4973] MINOR        id=3600  dist=271m  Centro Assistência Paroquial de Amora " Patronato 
+  [4280/4973] MINOR        id=4802  dist=183m  Jardim de Infância - O Pica-Pau
+  [4282/4973] MINOR        id=4813  dist=131m  Sorriso Mágico
+  [4286/4973] MISMATCH     id=22832  dist=2264m  Externato Espaço Verde
+  [4287/4973] MINOR        id=26212  dist=258m  Atrium 7
+  [4291/4973] MISMATCH     id=29503  dist=118871m  Colégio Campo de Flores
+  [4292/4973] MISMATCH     id=29526  dist=1077m  Externato Sol Nascente
+  [4296/4973] MISMATCH     id=29623  dist=561m  Colégio Guadalupe
+  [4300/4973] 86%  {'MATCH': 1384, 'MINOR': 724, 'MISMATCH': 772, 'CS_ONLY': 13, 'NO_CS_COORDS': 1407, 'ERROR': 0}
+  [4303/4973] MISMATCH     id=29792  dist=12979m  Jardim Infantil "Bichinho de Conta"
+  [4307/4973] MISMATCH     id=30050  dist=1036m  Escola Básica N.º 3 da Quinta do Conde
+  [4308/4973] MINOR        id=30064  dist=262m  Escola Básica da Quinta Cabouca
+  [4310/4973] MINOR        id=30119  dist=401m  Escola Básica da Quinta dos Franceses
+  [4315/4973] MISMATCH     id=30182  dist=971m  Escola Básica de Sampaio
+  [4319/4973] MISMATCH     id=30356  dist=29764m  Escola Básica N.º 2 de Santo André
+  [4324/4973] MISMATCH     id=30482  dist=1442m  Escola EB1/JI dos Fidalguinhos
+  [4334/4973] MISMATCH     id=31565  dist=665m  Jardim de Infância N.º 2 de Grândola
+  [4337/4973] MISMATCH     id=31568  dist=688m  Jardim de Infância N.º 1 de Grândola
+  [4338/4973] MINOR        id=31569  dist=100m  Escola Básica de Carvalhal, Grândola
+  [4342/4973] MINOR        id=31574  dist=235m  Escola Básica Presidente Maria Emília
+  [4345/4973] MISMATCH     id=31645  dist=37521m  Escola Básica de Areias
+  [4352/4973] MINOR        id=31857  dist=141m  Jardim de Infância "O Comboio"
+  [4362/4973] MINOR        id=32339  dist=117m  Escola Básica do Alto do Moinho
+  [4367/4973] MISMATCH     id=32484  dist=888m  Escola Básica da Liberdade
+  [4368/4973] MINOR        id=32685  dist=103m  EB de Sesimbra
+  [4369/4973] MISMATCH     id=32687  dist=1020m  EB de Aiana de Cima
+  [4370/4973] CS_ONLY      id=32688  dist=—  EB de Azoia
+  [4371/4973] MISMATCH     id=32698  dist=1259m  Colégio a Palmeira Unipessoal Lda
+  [4372/4973] MISMATCH     id=32701  dist=624m  Escola Básica N.º 2 da Moita
+  [4373/4973] MINOR        id=33249  dist=172m  Jardim de Infância de Sarilhos Grandes
+  [4374/4973] MINOR        id=33250  dist=178m  Escola Básica Rosa dos Ventos
+  [4385/4973] MISMATCH     id=34065  dist=113901m  Escola Básica D. António da Costa
+  [4388/4973] MISMATCH     id=35542  dist=10233m  Escola Básica N.º 1 da Trafaria
+  [4391/4973] MISMATCH     id=35546  dist=18628m  Escola Básica N.º 2 da Costa da Caparica
+  [4394/4973] MINOR        id=35549  dist=131m  Escola Básica N.º 1 de Vale da Amoreira
+  [4397/4973] MINOR        id=35552  dist=328m  Escola Básica de Relvas Verdes
+  [4400/4973] MINOR        id=35556  dist=131m  Jardim de Infância N.º 2 de Verderena
+  [4403/4973] MINOR        id=35570  dist=377m  Escola Básica de Aldeia dos Chãos
+  [4407/4973] MISMATCH     id=35574  dist=12865m  Escola Básica N.º 3 de Santo André
+  [4408/4973] MINOR        id=35575  dist=244m  Escola Básica N.º 2 do Lavradio
+  [4409/4973] MISMATCH     id=35576  dist=3617m  Escola Básica N.º 1 de Alhos Vedros
+  [4410/4973] MINOR        id=35577  dist=190m  Escola Básica de Alhos Vedros
+  [4411/4973] MISMATCH     id=35578  dist=777m  Escola Básica de Alfeite
+  [4412/4973] MINOR        id=35579  dist=350m  Escola Básica Luísa Todi
+  [4413/4973] MISMATCH     id=35580  dist=2281m  Jardim de Infância de Arroteias
+  [4414/4973] MINOR        id=35581  dist=183m  Escola Básica Maria Adelaide Silva
+  [4415/4973] MINOR        id=35582  dist=120m  Escola Básica Miradouro de Alfazina
+  [4416/4973] MINOR        id=35583  dist=143m  Jardim de Infância da Cruz de Pau
+  [4428/4973] MISMATCH     id=35608  dist=4435m  Jardim de Infância de Pegões-Gare
+  [4429/4973] MISMATCH     id=35609  dist=1337m  Escola Básica de Craveira do Norte
+  [4430/4973] MINOR        id=35610  dist=154m  Escola Básica N.º 1 da Telha Nova
+  [4434/4973] MINOR        id=35614  dist=316m  Escola Básica de Vale Flores
+  [4442/4973] MISMATCH     id=1  dist=41247m  Centro Social Paroquial São Romão do Neiva
+  [4443/4973] MINOR        id=6  dist=155m  Centro Social e Cultural de Carreço
+  [4445/4973] MISMATCH     id=26  dist=341989m  Santa Casa da Misericórdia de Paredes de Coura
+  [4446/4973] MISMATCH     id=32  dist=30731m  Casa do Povo Afife
+  [4447/4973] MISMATCH     id=37  dist=43431m  Centro Social e Paroquial de Vila Franca
+  [4448/4973] MISMATCH     id=47  dist=81841m  Centro Interparoquial e Social de Moselos, Padorne
+  [4449/4973] MISMATCH     id=49  dist=7815m  Santa Casa Misericórdia Monção
+  [4451/4973] MISMATCH     id=56  dist=43431m  Centro Social e Paroquial Vila de Punhe
+  [4452/4973] MISMATCH     id=59  dist=84962m  Equip. Soc. da Casa do Povo Vitorino dos Piães
+  [4455/4973] MISMATCH     id=67  dist=2794m  Centro Social Paroquial Deão
+  [4456/4973] MISMATCH     id=74  dist=1040m  Centro Social Paroquial Arcos de Valdevez
+  [4458/4973] MINOR        id=82  dist=411m  Santa Casa da Misericórdia de Ponte de Lima - Sede
+  [4459/4973] MISMATCH     id=83  dist=2788m  Santa Casa da Misericórdia de Ponte de Lima - Cent
+  [4460/4973] MINOR        id=86  dist=201m  Jardim de Infância Creche José Carneiro Bouças - S
+  [4462/4973] MISMATCH     id=96  dist=5187m  Centro Paroquial de Promoção Social e Cultural de 
+  [4463/4973] MISMATCH     id=101  dist=926m  Creche Alcofa - Centro Social e Cultural da Meadel
+  [4465/4973] MISMATCH     id=113  dist=6088m  Centro Social e Paroquial de Campos
+  [4466/4973] MISMATCH     id=117  dist=325217m  Creche e Jardim de Infância de S. Tiago da Barra
+  [4468/4973] MISMATCH     id=127  dist=350117m  Santa Casa da Misericórdia de Caminha
+  [4469/4973] MINOR        id=129  dist=108m  Creche da Casa do Povo de Lanhelas
+  [4471/4973] MISMATCH     id=13071  dist=289786m  Centro Social da Paroquia de Cerdal
+  [4472/4973] MISMATCH     id=13079  dist=6706m  Creche e Jardim de Infância de Chafé
+  [4473/4973] MISMATCH     id=13080  dist=4991m  Centro Paroquial e Social de Fornelos
+  [4475/4973] MISMATCH     id=21161  dist=2475m  Creche Bê-À-Bá
+  [4476/4973] MINOR        id=22842  dist=144m  Academia dos Pimpolhos, Sociedade Unipessoal, Lda
+  [4478/4973] MISMATCH     id=24023  dist=13261m  Centro Paroquial e Social de Barbeita - Creche Arc
+  [4479/4973] MINOR        id=24227  dist=157m  Patronato de Nossa Senhora da Bonança
+  [4480/4973] MISMATCH     id=24705  dist=767m  Centro Social Paroquial de Vila Nova de Anha
+  [4482/4973] MISMATCH     id=25433  dist=848m  Creche - Organismo Utilitário Social de Apoio Mútu
+  [4484/4973] MINOR        id=25952  dist=264m  Creche do Grémio Social Mazedo
+  [4486/4973] MISMATCH     id=26707  dist=1049m  Casa do Povo de S. Julião de Freixo
+  [4488/4973] MISMATCH     id=27443  dist=621m  Creche Bercinho S. José
+  [4493/4973] MISMATCH     id=55  dist=1425m  Associação Social Recreativa Juventude Vila Fonche
+  [4500/4973] 90%  {'MATCH': 1444, 'MINOR': 752, 'MISMATCH': 819, 'CS_ONLY': 14, 'NO_CS_COORDS': 1471, 'ERROR': 0}
+  [4506/4973] MINOR        id=30003  dist=132m  Escola Básica de Barroselas, Viana do Castelo
+  [4510/4973] MISMATCH     id=30153  dist=10286m  Escola Básica de Facha
+  [4511/4973] MINOR        id=30244  dist=119m  Escola Básica de Melgaço
+  [4512/4973] MISMATCH     id=30316  dist=636m  Escola Básica de Feitosa
+  [4519/4973] MISMATCH     id=30573  dist=855m  Jardim de Infância de Cepões
+  [4521/4973] MISMATCH     id=30575  dist=779m  Jardim de Infância de Canadelo
+  [4530/4973] MINOR        id=30995  dist=342m  Centro Escolar Norte -Campos
+  [4539/4973] MINOR        id=31858  dist=190m  Jardim Infantil do Centro Social Paroq. Nª Sra. Fá
+  [4548/4973] MISMATCH     id=32204  dist=171107m  Escola Básica de Freixo
+  [4556/4973] MINOR        id=33365  dist=345m  Escola Básica de Refoios – Ponte de Lima
+  [4561/4973] MINOR        id=35619  dist=163m  Jardim de Infância de Meio
+  [4562/4973] MISMATCH     id=35620  dist=215277m  Escola Básica de Monserrate
+  [4569/4973] MISMATCH     id=35628  dist=792m  Escola Básica de Subportela
+  [4570/4973] MISMATCH     id=35629  dist=201297m  Escola Básica de Pomares
+  [4572/4973] MINOR        id=35631  dist=231m  Escola Básica de Ponte de Lima
+  [4577/4973] MISMATCH     id=35639  dist=26484m  Escola Básica da Foz do Neiva
+  [4580/4973] MISMATCH     id=3477  dist=2909m  Patronato de Nossa Senhora da Conceição
+  [4583/4973] MISMATCH     id=3489  dist=1593m  Equip. Social Centro Social Paroquial D. Manuel Vi
+  [4585/4973] MISMATCH     id=3491  dist=363016m  Centro Social Paroquial de Chaves
+  [4586/4973] MINOR        id=3492  dist=464m  Creche a
+  [4587/4973] MINOR        id=3495  dist=415m  Creche e Jardim de Infância da Santa Casa da Miser
+  [4588/4973] MISMATCH     id=3502  dist=10266m  Equip. Soc. Fundação Doutor Carneiro Mesquita
+  [4589/4973] MINOR        id=3506  dist=269m  Centro Infantil
+  [4590/4973] MINOR        id=3507  dist=390m  Patronato Padre Alberto Teixeira de Carvalho
+  [4591/4973] MISMATCH     id=3517  dist=80422m  Equip. Social do Centro Social, Recreativo e Cultu
+  [4592/4973] MISMATCH     id=3520  dist=41972m  Equip. Soc. Centro Social Paroquial Santo António
+  [4593/4973] MINOR        id=3521  dist=356m  Creche Madame Brouillard
+  [4595/4973] MINOR        id=3529  dist=440m  Centro Social Paroquial Padre Sebastião Esteves
+  [4596/4973] MISMATCH     id=3530  dist=329641m  Equip. Soc. Santa Casa da Misericórdia de Cerva
+  [4597/4973] MINOR        id=3534  dist=119m  Jardim de Infância da Santa Casa da Misericórdia d
+  [4598/4973] MISMATCH     id=3537  dist=104058m  Creche da Santa Casa da Misericórdia de Montalegre
+  [4599/4973] MISMATCH     id=3539  dist=340861m  Lar Nossa Senhora da Livração
+  [4600/4973] MISMATCH     id=3543  dist=676m  Lar Nossa Senhora da Conceição
+  [4601/4973] MISMATCH     id=3544  dist=36149m  Santa Casa da Misericórdia de Ribeira de Pena
+  [4602/4973] MISMATCH     id=3545  dist=54791m  Equip. Soc. Santa Casa da Misericórdia de Mesão Fr
+  [4603/4973] MISMATCH     id=3547  dist=4230m  Centro Social Paroquial Santa Eulália da Cumieira
+  [4604/4973] MISMATCH     id=13009  dist=83492m  Creche Miminho - Celeste Maria Rodrigues Gonçalves
+  [4605/4973] MISMATCH     id=13012  dist=310426m  Creche "Bichinhos Carpinteiros,Lda"
+  [4607/4973] MISMATCH     id=13020  dist=1648m  Creche Maria de Lurdes Amaral
+  [4608/4973] MISMATCH     id=13029  dist=356889m  Creche da Santa Casa da Misericórdia de Valpaços
+  [4609/4973] MINOR        id=13047  dist=299m  Creche da Associação Social e Cultural de Sanfins 
+  [4611/4973] MISMATCH     id=18639  dist=67075m  Lar e Centro de Dia de São Miguel de Lobrigos
+  [4612/4973] MINOR        id=18801  dist=497m  Creche da Associaçao Miguel Torga
+  [4613/4973] MISMATCH     id=18824  dist=296788m  Centro Social de Casas dos Montes
+  [4614/4973] MINOR        id=18841  dist=393m  Externato Quinta da Fraga
+  [4615/4973] MISMATCH     id=18842  dist=679m  Externato Aeiou
+  [4618/4973] MISMATCH     id=22461  dist=147053m  Externato das Lagoas - Unipessoal Lda
+  [4619/4973] MISMATCH     id=24214  dist=106286m  Equip Social do Pinhão - SCM de Alijó
+  [4624/4973] MINOR        id=26017  dist=242m  Creche S. Francisco de Assis
+  [4641/4973] MISMATCH     id=30469  dist=1002m  Agrupamento de Escolas Professor António da Nativi
+  [4642/4973] MINOR        id=30520  dist=393m  Escola Básica de Montalegre
+  [4643/4973] MINOR        id=30541  dist=151m  Escola Básica de Valpaços
+  [4648/4973] MINOR        id=30662  dist=151m  Escola Básica de Árvores
+  [4653/4973] MISMATCH     id=30668  dist=1068m  Escola Básica de Prado
+  [4665/4973] MINOR        id=31430  dist=134m  Jardim de Infância de Vidago
+  [4668/4973] MISMATCH     id=31540  dist=12451m  Jardim de Infância do Lugar de São Martinho
+  [4669/4973] MINOR        id=31541  dist=332m  Escola Básica de Torneiros
+  [4670/4973] MINOR        id=31544  dist=413m  Jardim de Infância de Vila Meã
+  [4671/4973] MINOR        id=31676  dist=208m  Escola Básica de Godim
+  [4672/4973] MINOR        id=31677  dist=142m  Escola Básica N.º 1 de Peso da Régua
+  [4673/4973] MISMATCH     id=31678  dist=49208m  Jardim de Infância de Loureiro
+  [4675/4973] MISMATCH     id=32293  dist=18608m  Escola Básica Nº 7
+  [4677/4973] MISMATCH     id=33941  dist=24088m  Jardim de Infância de Galafura
+  [4678/4973] MINOR        id=35632  dist=119m  Escola Básica de Vilar de Maçada
+  [4685/4973] MINOR        id=35646  dist=442m  Escola Básica de Arrabães
+  [4686/4973] MINOR        id=35647  dist=316m  Jardim de Infância de Vila do Conde
+  [4690/4973] MINOR        id=35655  dist=306m  Jardim de Infância de Parada de Cunhos
+  [4691/4973] MISMATCH     id=35656  dist=558m  Escola Básica N.º 6 de Vila Real
+  [4693/4973] MINOR        id=35658  dist=302m  Jardim de Infância de Vila Marim
+  [4694/4973] MISMATCH     id=35659  dist=13624m  Escola Básica de Lordelo
+  [4695/4973] MISMATCH     id=35660  dist=873m  Jardim de Infância de Mondrões
+  [4700/4973] 95%  {'MATCH': 1481, 'MINOR': 783, 'MISMATCH': 859, 'CS_ONLY': 14, 'NO_CS_COORDS': 1563, 'ERROR': 0}
+  [4708/4973] MINOR        id=3305  dist=115m  Patronato de São José
+  [4709/4973] MISMATCH     id=3309  dist=4860m  Creche da Fundação Elísio Ferreira Afonso
+  [4711/4973] MINOR        id=3314  dist=171m  Creche/Pré-Escolar Santa Casa da Misericórdia de V
+  [4715/4973] MINOR        id=3333  dist=205m  Centro Paroquial de Vilar Seco
+  [4717/4973] MISMATCH     id=3335  dist=2825m  Equip. Soc. da Associação de Solidariedade de Farm
+  [4718/4973] MISMATCH     id=3337  dist=1054m  Equip. Soc. da Santa Casa da Misericórdia de Vale 
+  [4720/4973] MISMATCH     id=3342  dist=2157m  Centro Paroquial de Bem-Estar Social do Vimieiro
+  [4722/4973] MINOR        id=3345  dist=479m  Equip. Soc. da Associação Solidariedade Social Rec
+  [4723/4973] MINOR        id=3347  dist=231m  Creche da Cáritas Diocesana de Viseu - Sede
+  [4725/4973] MISMATCH     id=3357  dist=142182m  Creche e Jardim de Infância Fundaçâo S. José
+  [4726/4973] MINOR        id=3364  dist=388m  Centro Paroquial de Santiago de Cassurrães
+  [4727/4973] MINOR        id=3375  dist=145m  ATL Brincaprendo
+  [4730/4973] MINOR        id=3387  dist=205m  Creche da Associação de Solidariedade Social do Al
+  [4731/4973] MISMATCH     id=3392  dist=4966m  Equip. Soc. Centro Paroquial de Canas de Santa Mar
+  [4732/4973] MISMATCH     id=3803  dist=777m  Equip. Soc. da Santa Casa da Misericórdia de Tarou
+  [4734/4973] MINOR        id=3806  dist=274m  Equipamento Social do Centro Paroquial de Nelas
+  [4736/4973] MINOR        id=3809  dist=401m  Fundação Mariana Seixas
+  [4737/4973] MISMATCH     id=3810  dist=232719m  Equip. Soc. do Centro Social e Cultural de Orgens
+  [4739/4973] MINOR        id=3814  dist=184m  Infantário do Caramulo - Creche
+  [4741/4973] MISMATCH     id=3818  dist=17557m  Balsa Nova - A.S.C.D.R.
+  [4743/4973] MISMATCH     id=3829  dist=10633m  Equip. Soc. da Santa Casa da Misericórdia de Moime
+  [4745/4973] MINOR        id=4478  dist=198m  Centro de Apoio à Infância da Misericórdia de Tabu
+  [4752/4973] MINOR        id=12012  dist=395m  Lar de Jovens da Stª Casa da Misericórdia de Resen
+  [4753/4973] MISMATCH     id=12014  dist=1724m  Equip. Social da Ass. de Solidariedade Social de S
+  [4754/4973] MISMATCH     id=12018  dist=2428m  Equip. Social da Associação de Solidariedade Socia
+  [4755/4973] MINOR        id=17398  dist=348m  Equip Social da Associação de Solidariedade Social
+  [4757/4973] MINOR        id=17419  dist=103m  Centro de Bem-Estar Social Professor Oliveira e Co
+  [4758/4973] MISMATCH     id=17447  dist=126872m  Equipamento Social do Centro Social de Cambra
+  [4759/4973] MINOR        id=17461  dist=443m  Equipamento Social do Centro Social de Bodiosa
+  [4761/4973] MINOR        id=17469  dist=147m  Equipamento Social da Confraria Ou Irmandade de Sa
+  [4764/4973] MISMATCH     id=17820  dist=607m  Centro Infantil Mãe Admirável
+  [4768/4973] MISMATCH     id=18476  dist=531m  Equipamento Social do Centro Social da Campia
+  [4769/4973] MINOR        id=18568  dist=337m  Equip. Social do Centro Social Paroquial Santiago 
+  [4771/4973] MISMATCH     id=19633  dist=40829m  Creche da Casa do Povo de Abraveses
+  [4772/4973] MISMATCH     id=21861  dist=661m  Bugalhinha - Creche de Carvalhais
+  [4773/4973] MISMATCH     id=21901  dist=9180m  Equipamento Social da Associação de Solidariedade 
+  [4774/4973] MISMATCH     id=22146  dist=25606m  Palácio da Brincadeira
+  [4776/4973] MISMATCH     id=22835  dist=142027m  Infantinhos da Quinta do Bosque
+  [4778/4973] MINOR        id=24268  dist=292m  Centro Infantil de Sernancelhe "Casa da Criança"
+  [4780/4973] MISMATCH     id=24421  dist=237100m  Creche e Jardim-Infância da Misericódia de Castro 
+  [4783/4973] MINOR        id=26222  dist=143m  Sonho Mágico
+  [4784/4973] MISMATCH     id=26342  dist=691m  Creche do Centro Educativo de Mortágua
+  [4785/4973] MISMATCH     id=26519  dist=692m  Lar e Creche de Silgueiros
+  [4786/4973] MINOR        id=26639  dist=122m  Equipamento Social da Associação Cultural, Recreat
+  [4787/4973] MISMATCH     id=26720  dist=6489m  Centro Social Paroquial de Penude
+  [4788/4973] MISMATCH     id=27601  dist=1748m  Creche São Teotónio
+  [4797/4973] MINOR        id=4493  dist=300m  Equip. Soc. da Associação de Solidariedade Social 
+  [4798/4973] MINOR        id=19519  dist=137m  Santa Casa da Misericórdia de Tarouca
+  [4800/4973] 97%  {'MATCH': 1512, 'MINOR': 806, 'MISMATCH': 884, 'CS_ONLY': 14, 'NO_CS_COORDS': 1584, 'ERROR': 0}
+  [4803/4973] MINOR        id=29911  dist=325m  Jardim de Infância de Travanca de Bodiosa
+  [4805/4973] MISMATCH     id=30154  dist=962m  Escola Básica Dr. Afonso Abrantes - Mortágua
+  [4816/4973] MINOR        id=30199  dist=106m  Escola Básica da Ribeira-Jardim de Infância
+  [4817/4973] MINOR        id=30202  dist=363m  Escola Básica de São João da Pesqueira
+  [4826/4973] MISMATCH     id=30224  dist=16079m  Escola Básica de Parada de Ester
+  [4831/4973] MINOR        id=30242  dist=128m  Escola Básica de Tarouca
+  [4832/4973] MISMATCH     id=30243  dist=290729m  Jardim de Infância de Castanheiro do Ouro, Tarouca
+  [4833/4973] MISMATCH     id=30312  dist=643m  Escola Básica e Secundária de Moimenta da Beira
+  [4835/4973] MISMATCH     id=30337  dist=1267m  Escola Básica de Jugueiros
+  [4837/4973] MINOR        id=30339  dist=178m  Escola Básica de Paradinha
+  [4850/4973] MINOR        id=30354  dist=275m  Jardim de Infância de Gumirães, Viseu
+  [4864/4973] MISMATCH     id=30413  dist=6859m  Jardim de Infância de Vila Chã
+  [4893/4973] MISMATCH     id=31647  dist=1852m  Escola Básica de Santa Comba Dão-Centro
+  [4900/4973] 99%  {'MATCH': 1523, 'MINOR': 812, 'MISMATCH': 891, 'CS_ONLY': 14, 'NO_CS_COORDS': 1660, 'ERROR': 0}
+  [4906/4973] MINOR        id=31736  dist=300m  Escola Básica de Nelas
+  [4907/4973] MINOR        id=31737  dist=191m  Jardim de Infância de Vilar Seco, Nelas
+  [4909/4973] MISMATCH     id=31739  dist=123433m  Jardim de Infância de Santar
+  [4910/4973] MISMATCH     id=31740  dist=54583m  Jardim de Infância de Folhadal
+  [4917/4973] MINOR        id=31849  dist=359m  Jardim de Infância / EB1 de Queirã
+  [4919/4973] MINOR        id=31909  dist=104m  Jardim Escola João de Deus - Viseu
+  [4920/4973] MINOR        id=31922  dist=107m  Escola Básica de Vila Nova de Paiva
+  [4928/4973] MISMATCH     id=32301  dist=721m  EB de Tondelinha
+  [4929/4973] MINOR        id=32302  dist=444m  EB Vila Nova do Campo
+  [4932/4973] MINOR        id=32440  dist=286m  Centro Escolar de Lamego N.º 2 - Escola Básica N.º
+  [4945/4973] MISMATCH     id=33948  dist=81315m  Escola Básica de Repeses
+  [4947/4973] MINOR        id=33955  dist=145m  Escola Básica N.º1 de Vila Maior
+  [4958/4973] MISMATCH     id=35673  dist=99043m  Escola Básica de Carvalhais
+  [4959/4973] MINOR        id=35674  dist=131m  Escola Básica de Castelo de Penalva
+  [4961/4973] MINOR        id=35676  dist=171m  Escola Básica de Santa Eugénia, Viso
+  [4963/4973] MISMATCH     id=35678  dist=8248m  Escola Básica de Barbeita
+  [4966/4973] MISMATCH     id=35696  dist=646m  Escola Básica de Sezures
+  [4967/4973] MINOR        id=35697  dist=111m  Escola Básica de Ínsua
+  [4969/4973] MINOR        id=35699  dist=296m  Escola Básica de Cambres
+
+── Results ──────────────────────────────────────────
+  Total checked : 5879
+  MATCH         : 1537
+  MINOR         : 824
+  MISMATCH      : 898
+  CS_ONLY       : 14
+  NO_CS_COORDS  : 1700
+  ERROR         : 0
+
+Full results: cs_coord_check.csv
+Run completed: 2026-04-10 20:57:40
+Loaded 197,698 postcode centroids
+Loaded 5,879 rows from cs_coord_check.csv
+
+MISMATCH rows: 1107
+  OURS (our coord closer to postcode)  : 831
+  CS   (CS coord closer to postcode)   : 158
+  UNCLEAR (difference < 500m)         : 109
+  NO_POSTCODE                          : 9
+
+Output: cs_coord_verdict.csv
