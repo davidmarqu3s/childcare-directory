@@ -12,10 +12,12 @@ import json
 import re
 import ssl
 import time
+import unicodedata
 import urllib.request
 import urllib.error
 import argparse
 import os
+from urllib.parse import urlparse
 
 SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
@@ -27,6 +29,82 @@ URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash
 INPUT_CSV = "creches_portugal.csv"
 OUTPUT_CSV = "website_results.csv"
 OUTPUT_FIELDNAMES = ["id", "nome", "localidade", "concelho", "tipo", "website_found", "needs_review", "review_reason", "raw_response"]
+
+SKIP_DOMAINS = [
+    "google.com", "google.pt",
+    "facebook.com", "instagram.com", "linkedin.com", "twitter.com", "youtube.com",
+    "pai.pt", "118.pt", "einformar.pt", "infopages.pt", "guiame.pt",
+    "cartasocial.mtsss.gov.pt", "seg-social.pt", "mtsss.gov.pt",
+    "yelp.com", "foursquare.com",
+    "wikipedia.org", "wikimedia.org",
+    "tripadvisor.com", "tripadvisor.pt",
+    "sapo.pt", "dn.pt", "publico.pt", "jn.pt", "observador.pt",
+    "racius.com", "einforma.pt", "portugalio.com",
+    "wanderlog.com", "citysearch.com", "coverflex.com",
+    "mapasocial.pt", "socialgest.pt", "pordata.pt",
+    "dgeste.mec.pt", "dge.mec.pt", "acss.min-saude.pt",
+    "infantariospt.com", "crechenaminharua.pt", "creches.com.pt", "skoolist.pt",
+    "tendata.com", "kompass.com", "europages.pt", "dnb.com",
+    "grokipedia.com", "wikiwand.com", "wikimapia.org", "waze.com",
+    "escoladevidro.pt", "directorioescolas.eu", "ecoescolas.abaae.pt",
+    "servicospublicos.pt", "municipiosefreguesias.pt",
+    "correiodominho.pt", "noticiasdecoimbra.pt", "ovarnews.pt",
+    "jornaldenegocios.pt", "empresite.jornaldenegocios.pt",
+    "apoioperto.com", "laresonline.pt", "developmentaid.org",
+    "infoisinfo.com.pt", "portaldaqueixa.com", "primeiraimagem.com",
+    "moovitapp.com", "associativismo.guimaraes.pt",
+]
+
+STOP_WORDS = {
+    "de", "da", "do", "das", "dos", "e", "a", "o", "os", "as", "em", "no", "na",
+    "um", "uma",
+    "creche", "jardim", "infancia", "infantario", "infantil", "crianca", "centro",
+    "pre", "escolar", "escola", "colegio",
+    "social", "paroquial", "casa", "lar", "obra", "associacao", "fundacao",
+    "instituto", "cooperativa", "misericordia", "ipss",
+    "santa", "santo", "sao", "nossa", "senhora", "sagrado", "coracao",
+    "jesus", "maria", "jose", "paulo", "pedro", "joao", "francisco",
+    "portugal", "nacional", "municipal", "grande", "novo", "nova",
+    "primeiro", "segunda",
+}
+
+
+def normalize(text):
+    nfkd = unicodedata.normalize("NFKD", text.lower())
+    ascii_text = "".join(c for c in nfkd if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9\s]", " ", ascii_text)
+
+
+def distinctive_words(nome):
+    words = set(normalize(nome).split()) - STOP_WORDS
+    return {w for w in words if len(w) > 2}
+
+
+def should_skip(url):
+    try:
+        host = urlparse(url).netloc.lower().replace("www.", "")
+    except Exception:
+        return True
+    if any(skip in host for skip in SKIP_DOMAINS):
+        return True
+    if re.search(r"(^|\.)cm-|\.jf-|municipio\.", host):
+        return True
+    return False
+
+
+def is_confident_match(nome, url):
+    """Accept only if a distinctive name word appears in the URL (domain + path)."""
+    words = distinctive_words(nome)
+    if not words:
+        return True  # can't check — let it through
+    try:
+        parsed = urlparse(url)
+        host = parsed.netloc.lower().replace("www.", "")
+        path = parsed.path.lower()
+        url_slug = normalize(host + " " + path)
+    except Exception:
+        return False
+    return any(w in url_slug for w in words)
 
 
 def load_done_ids():
@@ -51,8 +129,9 @@ def load_missing():
 def extract_url(text):
     urls = re.findall(r'https?://[^\s\)\]\'"]+|[a-z0-9.-]+\.[a-z]{2,}(?:/[^\s\)\]\'"]*)?', text, re.I)
     for u in urls:
-        if "." in u and not any(skip in u.lower() for skip in ["google.com", "facebook.com", "not found", "cartasocial"]):
-            return u.rstrip(".,")
+        u = u.rstrip(".,")
+        if "." in u and not should_skip(u if u.startswith("http") else "https://" + u):
+            return u
     return ""
 
 
@@ -70,18 +149,17 @@ def validate_url(url):
 
 
 def needs_review(nome, website, tipo):
-    """Flag URLs that likely point to a parent org rather than the institution itself."""
     reasons = []
     if website:
-        # Extract domain keywords (strip www., tld, subpaths)
-        domain = re.sub(r'^https?://(www\.)?', '', website).split('/')[0]
-        domain_core = re.sub(r'\.[a-z]{2,3}$', '', domain).lower()
-        # Normalise name to comparable slug
-        name_words = set(re.sub(r'[^\w\s]', '', nome.lower()).split()) - {
-            'de', 'da', 'do', 'das', 'dos', 'e', 'a', 'o', 'creche', 'jardim',
-            'infancia', 'infantario', 'centro', 'social', 'paroquial', 'casa',
-        }
-        if name_words and not any(w in domain_core for w in name_words):
+        words = distinctive_words(nome)
+        try:
+            parsed = urlparse(website)
+            host = parsed.netloc.lower().replace("www.", "")
+            path = parsed.path.lower()
+            url_slug = normalize(host + " " + path)
+        except Exception:
+            url_slug = ""
+        if words and not any(w in url_slug for w in words):
             reasons.append("domain doesn't match institution name")
     if tipo == "Creche e Jardim de Infância":
         reasons.append("combined tipo — may have split pages")
@@ -97,9 +175,7 @@ def query_gemini(nome, localidade, concelho):
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "tools": [{"google_search": {}}],
-        "generationConfig": {
-            "thinkingConfig": {"thinkingBudget": 0}
-        },
+        "generationConfig": {"thinkingConfig": {"thinkingBudget": 0}},
     }
     req = urllib.request.Request(
         URL,
@@ -138,7 +214,7 @@ def main():
     if write_header:
         writer.writeheader()
 
-    batch = pending[: args.batch]
+    batch = pending[:args.batch]
     found_count = 0
 
     for i, row in enumerate(batch, 1):
@@ -154,6 +230,9 @@ def main():
         try:
             raw = query_gemini(nome, localidade, concelho)
             website = extract_url(raw)
+            if website:
+                if not is_confident_match(nome, website if website.startswith("http") else "https://" + website):
+                    website = ""
             if website:
                 website = validate_url(website)
             status = website if website else "not found"
